@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Rollup should throw error 1`] = `[Error: If you want to use this plugin through rollup, please use "@stylexjs/rollup-plugin" instead]`;
+
+exports[`Rollup should throw error 2`] = `[Error: If you want to use this plugin through rollup, please use "@stylexjs/rollup-plugin" instead]`;

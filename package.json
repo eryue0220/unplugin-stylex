@@ -1,0 +1,75 @@
+{
+  "name": "unplugin-stylex",
+  "version": "0.0.1",
+  "packageManager": "pnpm@8.11.0",
+  "description": "Unplugin for stylex",
+  "repository": "https://github.com/eryue0220/unplugin-stylex",
+  "keywords": [
+    "unplugin",
+    "stylex",
+    "stylex-plugin",
+    "esbuild",
+    "rspack",
+    "vite"
+  ],
+  "author": "eryue0220<eryue0220@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    },
+    "./esbuild": {
+      "types": "./dist/esbuild.d.ts",
+      "require": "./dist/esbuild.cjs",
+      "import": "./dist/esbuild.js"
+    },
+    "./vite": {
+      "types": "./dist/vite.d.ts",
+      "require": "./dist/vite.cjs",
+      "import": "./dist/vite.js"
+    },
+    "./rspack": {
+      "types": "./dist/rspack.d.ts",
+      "require": "./dist/rspack.cjs",
+      "import": "./dist/rspack.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/types.js",
+      "require": "./dist/types.cjs"
+    },
+    "./*": "./*"
+  },
+  "scripts": {
+    "dev": "tsup src/*ts --watch src",
+    "build": "tsup src/*.ts --format cjs,esm --dts --splitting --clean",
+    "test": "vitest",
+    "test:update": "vitest -u",
+    "test:coverage": "vitest --coverage"
+  },
+  "engines": {
+    "node": ">=16.14.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.23.6",
+    "@babel/plugin-syntax-flow": "^7.23.3",
+    "@babel/plugin-syntax-jsx": "^7.23.3",
+    "@babel/plugin-syntax-typescript": "^7.23.3",
+    "@rollup/pluginutils": "^5.1.0",
+    "@stylexjs/babel-plugin": "^0.3.0",
+    "unplugin": "^1.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10",
+    "vitest": "^1.1.0"
+  }
+}

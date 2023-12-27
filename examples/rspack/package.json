@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "dev": "rspack serve",
+    "build": "rspack build"
+  },
+  "dependencies": {
+    "@stylexjs/stylex": "0.3.0"
+  },
+  "devDependencies": {
+    "@rspack/cli": "^0.4.5",
+    "@rspack/core": "^0.4.5",
+    "unplugin-stylex": "latest"
+  }
+}

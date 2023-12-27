@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "@stylexjs/stylex": "0.3.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.10",
+    "unplugin-stylex": "latest"
+  }
+}

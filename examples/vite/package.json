@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@stylexjs/stylex": "0.3.0"
+  },
+  "devDependencies": {
+    "unplugin-stylex": "latest"
+  }
+}

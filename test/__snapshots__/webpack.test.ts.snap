@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`throw error 1`] = `[Error: If you want to use this plugin through webpack, please use "@stylexjs/webpack-plugin" instead]`;
+
+exports[`webpack should throw error 1`] = `[Error: If you want to use this plugin through webpack, please use "@stylexjs/webpack-plugin" instead]`;
+
+exports[`webpack should throw error 2`] = `[Error: If you want to use this plugin through webpack, please use "@stylexjs/webpack-plugin" instead]`;
