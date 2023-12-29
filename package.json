@@ -53,9 +53,8 @@
     "test:update": "vitest -u",
     "test:coverage": "vitest --coverage",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
-    "check": "pnpm run lint && pnpm run typecheck && pnpm run postcheck",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
-    "postcheck": "rm *.tsbuildinfo"
+    "check": "pnpm run lint && pnpm run typecheck",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "engines": {
     "node": ">=16.14.0"
