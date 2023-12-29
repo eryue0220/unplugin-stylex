@@ -8,7 +8,7 @@ import { getOptions } from './core/utils'
 import { transformer } from './core/transformer'
 import type { UnpluginStylexOptions } from './types'
 
-export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined> = (rawOptions = {}, meta) => {
+export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined> = (rawOptions = {}) => {
   const options = getOptions(rawOptions)
   const filter = createFilter(options.include, options.exclude)
   const stylexRules = {}

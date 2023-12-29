@@ -1,8 +1,8 @@
 import type { FilterPattern } from '@rollup/pluginutils'
 
 export type BabelConfig = {
-  plugins: any[]
-  presets: any[]
+  plugins: unknown[]
+  presets: unknown[]
   babelrc: boolean
 }
 

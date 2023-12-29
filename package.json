@@ -51,7 +51,10 @@
     "build": "tsup src/*.ts --format cjs,esm --dts --splitting --clean",
     "test": "vitest",
     "test:update": "vitest -u",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "check": "pnpm run lint && pnpm run typecheck",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "engines": {
     "node": ">=16.14.0"
@@ -67,6 +70,9 @@
   },
   "devDependencies": {
     "@types/node": "^20.10.5",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "eslint": "^8.56.0",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
     "vite": "^5.0.10",

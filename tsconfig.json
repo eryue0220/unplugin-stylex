@@ -8,11 +8,16 @@
     "lib": ["ESNext"],
     "moduleResolution": "Node",
     "preserveSymlinks": true,
+    "module": "esnext",
+    "skipLibCheck": true,
     "paths": {
       "@/*": ["./src/*"]
     }
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }

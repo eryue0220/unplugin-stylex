@@ -1,4 +1,4 @@
 import { createVitePlugin } from 'unplugin'
 import { unpluginFactory } from '.'
 
-export default createVitePlugin(unpluginFactory) as any
+export default createVitePlugin(unpluginFactory)
