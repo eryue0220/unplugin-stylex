@@ -51,7 +51,11 @@
     "build": "tsup src/*.ts --format cjs,esm --dts --splitting --clean",
     "test": "vitest",
     "test:update": "vitest -u",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage",
+    "lint": "",
+    "check": "pnpm run lint && pnpm run typecheck && pnpm run postcheck",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "postcheck": "rm *.tsbuildinfo"
   },
   "engines": {
     "node": ">=16.14.0"
