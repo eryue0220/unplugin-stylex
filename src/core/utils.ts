@@ -1,4 +1,4 @@
-import type { UnpluginStylexOptions, BabelConfig } from '@/types'
+import type { UnpluginStylexOptions } from '@/types'
 import { isDevelopment } from './constants'
 
 export function getOptions(options: UnpluginStylexOptions = ({} as UnpluginStylexOptions)) {
