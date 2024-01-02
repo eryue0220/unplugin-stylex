@@ -12,6 +12,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
   const options = getOptions(rawOptions)
   const filter = createFilter(options.include, options.exclude)
   const stylexRules = {}
+  let viteBuildConfig = null
 
   return {
     name: PLUGIN_NAME,
@@ -44,10 +45,30 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
 
     buildEnd() {
       const rules = Object.values(stylexRules).flat()
-      if (rules.length > 0) {
+      if (rules.length === 0) return
+
+      const collectedCSS = (stylexBabelPlugin as any).processStylexRules(rules, options.stylex.useCSSLayers)
+      const fileName = options.stylex.filename
+
+      this.emitFile({
+        fileName,
+        source: collectedCSS,
+        type: 'asset',
+      })
+    },
+    vite: {
+      config(config) {
+        viteBuildConfig = config.build;
+      },
+      buildEnd() {
+        const rules = Object.values(stylexRules).flat()
+        if (!viteBuildConfig || rules.length === 0) return
+
         const collectedCSS = (stylexBabelPlugin as any).processStylexRules(rules, options.stylex.useCSSLayers)
+        const fileName = `${viteBuildConfig.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
+
         this.emitFile({
-          fileName: options.stylex.filename,
+          fileName,
           source: collectedCSS,
           type: 'asset',
         })

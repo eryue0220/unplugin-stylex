@@ -3,6 +3,6 @@ import stylexVitePlugin from 'unplugin-stylex/vite'
 
 export default defineConfig({
   plugins: [
-    stylexVitePlugin({ dev: true, stylex: { filename: 'stylexxx.css' } }),
+    stylexVitePlugin({ dev: true, stylex: { filename: 'stylex-test.css' } }),
   ],
 })
