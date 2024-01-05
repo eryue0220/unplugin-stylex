@@ -13,7 +13,7 @@ export async function transformer(context) {
   const extname = path.extname(id)
   const stylexRules = {}
 
-  if (stylex.stylexImports.some((importName) => source.includes(importName))) {
+  if (stylex.stylexImports?.some?.((importName) => source.includes(importName))) {
     const originSource = stylex.babelConfig.babelrc
       ? await fs.readFile(id, 'utf-8')
       : source
