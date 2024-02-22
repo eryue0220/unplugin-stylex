@@ -1,33 +1,77 @@
-import { createFilter } from '@rollup/pluginutils'
-import stylexBabelPlugin from '@stylexjs/babel-plugin'
+import { existsSync } from 'node:fs'
+import { readFile } from 'node:fs/promises'
+import * as path from 'node:path'
+
 import { createUnplugin } from 'unplugin'
 import type { UnpluginFactory } from 'unplugin'
 
+import { buildStylexRules } from './core/build'
 import { PLUGIN_NAME } from './core/constants'
-import { getOptions } from './core/utils'
+import { getOptions } from './core/options'
 import { transformer } from './core/transformer'
 import type { UnpluginStylexOptions } from './types'
 
 export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined> = (rawOptions = {}) => {
   const options = getOptions(rawOptions)
-  const filter = createFilter(options.include, options.exclude)
   const stylexRules = {}
-  let viteBuildConfig = null
+  let viteConfig = null
 
   return {
     name: PLUGIN_NAME,
     enforce: options.enforce,
 
-    transformInclude(id) {
-      return filter(id)
-    },
+    async load(id) {
+      const dir = path.dirname(id)
+      const basename = path.basename(id)
+      const file = path.join(dir, basename.includes('?') ? basename.split('?')[0] : basename)
 
-    async transform(source, id) {
+      if (!existsSync(file)) {
+        return
+      }
+
+      const code = await readFile(file)
       const context = {
+        id: file,
+        inputCode: code,
         pluginContext: this,
         options,
-        source,
-        id,
+      }
+
+      if (!options.stylex.stylexImports.some((importName) => code.includes(importName))) {
+        return
+      }
+
+      try {
+        const result = await transformer(context)
+
+        if (result.stylexRules && result.stylexRules[id]) {
+          stylexRules[id] = result.stylexRules[id]
+        }
+
+        return result
+      } catch (error) {
+        this.error(error)
+      }
+    },
+
+    async transform(code, id) {
+      const dir = path.dirname(id)
+      const basename = path.basename(id)
+      const file = path.join(dir, basename.includes('?') ? basename.split('?')[0] : basename)
+
+      if (!existsSync(file)) {
+        return
+      }
+
+      const context = {
+        id: file,
+        inputCode: code,
+        pluginContext: this,
+        options,
+      }
+
+      if (!options.stylex.stylexImports.some((importName) => code.includes(importName))) {
+        return
       }
 
       try {
@@ -44,10 +88,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
     },
 
     buildEnd() {
-      const rules = Object.values(stylexRules).flat()
-      if (rules.length === 0) return
-
-      const collectedCSS = (stylexBabelPlugin as any).processStylexRules(rules, options.stylex.useCSSLayers)
+      const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
       const fileName = options.stylex.filename
 
       this.emitFile({
@@ -56,23 +97,55 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
         type: 'asset',
       })
     },
+
     vite: {
       config(config) {
-        viteBuildConfig = config.build;
+        viteConfig = {
+          build: config.build,
+          base: config.base,
+        }
       },
-      buildEnd() {
-        const rules = Object.values(stylexRules).flat()
-        if (!viteBuildConfig || rules.length === 0) return
 
-        const collectedCSS = (stylexBabelPlugin as any).processStylexRules(rules, options.stylex.useCSSLayers)
-        const fileName = `${viteBuildConfig.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
+      configResolved(config) {
+        config.optimizeDeps.exclude = config.optimizeDeps.exclude || []
+        config.optimizeDeps.exclude.push('@stylexjs/open-props')
+      },
+
+      buildEnd() {
+        const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
+        const fileName = `${viteConfig.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
 
         this.emitFile({
           fileName,
           source: collectedCSS,
           type: 'asset',
         })
-      }
+      },
+
+      transformIndexHtml(html, ctx) {
+        const fileName = `${viteConfig.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
+        const css = ctx.bundle?.[fileName]
+
+        if (!css) {
+          return html
+        }
+
+        const publicPath = path.posix.join(
+          viteConfig.base ?? '/',
+          fileName.replace(/\\/g, '/')
+        )
+
+        return [
+          {
+            tag: 'link',
+            attrs: {
+              rel: 'stylesheet',
+              href: publicPath,
+            },
+            injectTo: 'head',
+          },
+        ]
+      },
     },
   }
 }

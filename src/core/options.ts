@@ -1,19 +1,19 @@
-import type { UnpluginStylexOptions } from '@/types'
+import type { StylexOptions, UnpluginStylexOptions } from '@/types'
 import { isDevelopment } from './constants'
 
-export function getOptions(options: UnpluginStylexOptions = ({} as UnpluginStylexOptions)) {
-  const stylex = options.stylex || {}
+export function getOptions(options: UnpluginStylexOptions) {
+  const stylex = options.stylex || ({} as StylexOptions)
+  const isDev = options.dev || isDevelopment
 
   return {
     ...options,
-    dev: options.dev || isDevelopment,
-    include: options.include || [/\.[jt]sx?$/],
-    exclude: options.exclude || [/node_modules/, /\.git/],
+    dev: isDev,
     enforce: options.enforce || 'pre',
     stylex: {
-      ...stylex,
       filename: stylex.filename || 'stylex.css',
-      stylexImports: stylex.stylexImports || ['stylex', '@stylexjs/stylex'],
+      stylexImports: stylex.stylexImports || ['@stylexjs/stylex'],
+      runtimeInjection: stylex.runtimeInjection ?? isDev,
+      aliases: stylex.aliases,
       useCSSLayers: stylex.useCSSLayers || false,
       unstable_moduleResolution: stylex.unstable_moduleResolution || { type: 'commonJS', rootDir: process.cwd() },
       babelConfig: {
@@ -21,6 +21,7 @@ export function getOptions(options: UnpluginStylexOptions = ({} as UnpluginStyle
         plugins: (stylex.babelConfig || {}).plugins || [],
         presets: (stylex.babelConfig || {}).presets || [],
       },
+      ...stylex,
     },
   }
 }

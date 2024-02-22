@@ -1,12 +1,10 @@
-import type { FilterPattern } from '@rollup/pluginutils'
-
 export type BabelConfig = {
   plugins: unknown[]
   presets: unknown[]
   babelrc: boolean
 }
 
-type StylexOptions = {
+export type StylexOptions = {
   filename?: string
   stylexImports?: string[]
   classNamePrefix?: string
@@ -16,12 +14,12 @@ type StylexOptions = {
     rootDir: string
   }
   babelConfig?: BabelConfig
+  runtimeInjection: boolean
+  aliases?: string[]
 }
 
 export type UnpluginStylexOptions = {
   dev?: boolean
-  include?: FilterPattern
-  exclude?: FilterPattern
   enforce?: "post" | "pre"
   stylex?: StylexOptions
 }
