@@ -15,7 +15,7 @@ export async function transformer(context) {
     ...stylex,
   }
   const plugins = [
-    ...(stylex.babelConfig.plugins || []),
+    ...(stylex.babelConfig?.plugins || []),
     ...getSyntaxPlugins(extname),
     jsxSyntaxPlugin,
     [stylexBabelPlugin, stylexBabelPluginOptions],
