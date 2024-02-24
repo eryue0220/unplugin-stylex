@@ -8,7 +8,6 @@ export function getOptions(options: UnpluginStylexOptions) {
   return {
     ...options,
     dev: options.dev || isDev,
-    enforce: options.enforce || 'pre',
     stylex: {
       filename: stylex.filename || 'stylex.css',
       stylexImports: stylex.stylexImports || ['@stylexjs/stylex'],

@@ -2,6 +2,7 @@ import { extname as pathExtname } from 'node:path'
 import { transformAsync } from '@babel/core'
 import jsxSyntaxPlugin from '@babel/plugin-syntax-jsx'
 import stylexBabelPlugin from '@stylexjs/babel-plugin'
+
 import { getSyntaxPlugins } from './plugins'
 
 export async function transformer(context) {
@@ -18,7 +19,7 @@ export async function transformer(context) {
     ...(stylex.babelConfig?.plugins || []),
     ...getSyntaxPlugins(extname),
     jsxSyntaxPlugin,
-    [stylexBabelPlugin, stylexBabelPluginOptions],
+    stylexBabelPlugin.withOptions(stylexBabelPluginOptions),
   ]
 
   const { code, map, metadata } = await transformAsync(

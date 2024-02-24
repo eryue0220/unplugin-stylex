@@ -19,6 +19,7 @@ export type StylexOptions = {
 }
 
 export type UnpluginStylexOptions = {
+  compiler?: string
   dev?: boolean
   enforce?: "post" | "pre"
   stylex?: StylexOptions

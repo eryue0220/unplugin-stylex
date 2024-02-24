@@ -1,4 +1,3 @@
-import { existsSync } from 'node:fs'
 import * as path from 'node:path'
 
 import { createUnplugin } from 'unplugin'
@@ -17,14 +16,13 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
 
   return {
     name: PLUGIN_NAME,
-    enforce: options.enforce,
 
     async transform(code, id) {
       const dir = path.dirname(id)
       const basename = path.basename(id)
       const file = path.join(dir, basename.includes('?') ? basename.split('?')[0] : basename)
 
-      if (!existsSync(file)) {
+      if (!options.stylex.stylexImports.some((importName) => code.includes(importName))) {
         return
       }
 
@@ -33,10 +31,6 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
         inputCode: code,
         pluginContext: this,
         options,
-      }
-
-      if (!options.stylex.stylexImports.some((importName) => code.includes(importName))) {
-        return
       }
 
       try {
@@ -121,5 +115,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
 }
 
 export const unplugin = createUnplugin(unpluginFactory)
+
+export * from './types'
 
 export default unplugin
