@@ -52,8 +52,6 @@ module.exports = {
       dev: isDev,
       stylex: {
         useCSSLayers: true,
-        // genConditionalClasses: true,
-        // treeshakeCompensation: true,
       }
     }),
     new rspack.HtmlRspackPlugin({

@@ -1,5 +1,4 @@
 import { extname as pathExtname } from 'node:path'
-
 import { transformAsync } from '@babel/core'
 import jsxSyntaxPlugin from '@babel/plugin-syntax-jsx'
 import stylexBabelPlugin from '@stylexjs/babel-plugin'
@@ -15,19 +14,20 @@ export async function transformer(context) {
     importSources: stylex.stylexImports,
     ...stylex,
   }
+  const plugins = [
+    ...(stylex.babelConfig.plugins || []),
+    ...getSyntaxPlugins(extname),
+    jsxSyntaxPlugin,
+    [stylexBabelPlugin, stylexBabelPluginOptions],
+  ]
 
   const { code, map, metadata } = await transformAsync(
     inputCode,
     {
       babelrc: stylex.babelConfig.babelrc,
       filename: id,
-      plugins: [
-        ...(stylex.babelConfig.plugins || []),
-        ...getSyntaxPlugins(extname),
-        jsxSyntaxPlugin,
-        stylexBabelPlugin.withOptions(stylexBabelPluginOptions),
-      ],
       presets: stylex.babelConfig.presets,
+      plugins,
     }
   )
 

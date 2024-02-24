@@ -1,5 +1,4 @@
 import { existsSync } from 'node:fs'
-import { readFile } from 'node:fs/promises'
 import * as path from 'node:path'
 
 import { createUnplugin } from 'unplugin'
@@ -19,40 +18,6 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
   return {
     name: PLUGIN_NAME,
     enforce: options.enforce,
-
-    async load(id) {
-      const dir = path.dirname(id)
-      const basename = path.basename(id)
-      const file = path.join(dir, basename.includes('?') ? basename.split('?')[0] : basename)
-
-      if (!existsSync(file)) {
-        return
-      }
-
-      const code = await readFile(file)
-      const context = {
-        id: file,
-        inputCode: code,
-        pluginContext: this,
-        options,
-      }
-
-      if (!options.stylex.stylexImports.some((importName) => code.includes(importName))) {
-        return
-      }
-
-      try {
-        const result = await transformer(context)
-
-        if (result.stylexRules && result.stylexRules[id]) {
-          stylexRules[id] = result.stylexRules[id]
-        }
-
-        return result
-      } catch (error) {
-        this.error(error)
-      }
-    },
 
     async transform(code, id) {
       const dir = path.dirname(id)
@@ -83,13 +48,16 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
 
         return result
       } catch (error) {
+        console.error('transform::error::', error)
         this.error(error)
       }
     },
 
     buildEnd() {
-      const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
       const fileName = options.stylex.filename
+      const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
+
+      if (!collectedCSS) return
 
       this.emitFile({
         fileName,
@@ -112,8 +80,10 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       },
 
       buildEnd() {
-        const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
         const fileName = `${viteConfig.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
+        const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
+
+        if (!collectedCSS) return
 
         this.emitFile({
           fileName,

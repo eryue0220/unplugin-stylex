@@ -1,0 +1,21 @@
+{
+  "name": "esbuild-example",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/dev.mjs"
+  },
+  "dependencies": {
+    "@stylexjs/open-props": "^0.5.1",
+    "@stylexjs/stylex": "^0.5.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "unplugin-stylex": "latest"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "esbuild": "^0.19.10"
+  }
+}
