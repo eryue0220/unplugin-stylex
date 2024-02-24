@@ -36,7 +36,7 @@ export async function transformer(context) {
     stylexRules[id] = metadata.stylex
   }
 
-  if (!stylex.babelConfig.babelrc) {
+  if (!stylex.babelConfig?.babelrc) {
     return { code, map, stylexRules }
   }
 
