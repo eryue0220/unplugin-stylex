@@ -10,7 +10,7 @@ export type StylexOptions = {
   classNamePrefix?: string
   useCSSLayers?:  boolean
   unstable_moduleResolution?: {
-    type: "commonjs" | "haste"
+    type: 'commonjs' | 'haste'
     rootDir: string
   }
   babelConfig?: BabelConfig
@@ -21,6 +21,6 @@ export type StylexOptions = {
 export type UnpluginStylexOptions = {
   compiler?: string
   dev?: boolean
-  enforce?: "post" | "pre"
+  enforce?: 'post' | 'pre'
   stylex?: StylexOptions
 }
