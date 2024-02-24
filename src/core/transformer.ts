@@ -25,9 +25,9 @@ export async function transformer(context) {
   const { code, map, metadata } = await transformAsync(
     inputCode,
     {
-      babelrc: stylex.babelConfig.babelrc,
+      babelrc: stylex.babelConfig?.babelrc,
       filename: id,
-      presets: stylex.babelConfig.presets,
+      presets: stylex.babelConfig?.presets,
       plugins,
     }
   )
