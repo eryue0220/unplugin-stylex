@@ -2,15 +2,13 @@
   "env": {
     "node": true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@stylistic/ts"],
   "root": true,
   "rules": {
-    "semi": "off",
+    "max-len": ["error", { "code": 120 }],
+    "semi": ["error", "never"],
+    "quotes": ["error", "single"],
     "@typescript-eslint/no-explicit-any": "off"
   }
 }

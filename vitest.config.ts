@@ -4,8 +4,8 @@ export default defineConfig({
   test: {
     coverage: {
       exclude: [
-        "examples/**",
-        "test/**"
+        'examples/**',
+        'test/**'
       ],
       reporter: ['text', 'json', 'html'],
     },
