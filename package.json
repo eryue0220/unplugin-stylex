@@ -59,6 +59,9 @@
   "engines": {
     "node": ">=16.14.0"
   },
+  "peerDependencies": {
+    "@stylexjs/stylex": "^0.5.1"
+  },
   "dependencies": {
     "@babel/core": "^7.23.6",
     "@babel/plugin-syntax-flow": "^7.23.3",
