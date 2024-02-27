@@ -20,7 +20,7 @@
     },
 
     {
-      "matchPackageNames": ["@stylexjs/babel-plugin"],
+      "matchPackageNames": ["@stylexjs/stylex", "@stylexjs/babel-plugin"],
       "groupName": "stylex"
     }
   ]
