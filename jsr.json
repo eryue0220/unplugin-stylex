@@ -1,6 +1,6 @@
 {
-  "name": "unplugin-stylex",
-  "version": "0.2.1",
+  "name": "@eryue0220/unplugin-stylex",
+  "version": "0.2.2",
   "exports": {
     "./index": "./src/index.ts",
     "./esbuild": "./src/esbuild.ts",
@@ -15,7 +15,6 @@
     "test",
     "examples",
     "pnpm-lock.yaml",
-    "pnpm-workspace.yaml",
-    "tsconfig.json"
+    "pnpm-workspace.yaml"
   ]
 }
