@@ -1,5 +1,8 @@
 # unplugin-stylex &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/eryue0220/unplugin-stylex/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/unplugin-stylex.svg?style=flat)](https://www.npmjs.com/package/unplugin-stylex)
 
+> [!WARNING]  
+> This plugin is in early development and may not work as expected. Please report any issues you find.
+
 ## Installation
 
 Install the package from the following command
@@ -75,9 +78,9 @@ module.exports = {
 
 ## Options
 
-### options.dev
+Current support argument, which may have change in the future
 
-### options.stylex
+### options.dev
 
 #### options.stylex.runtimeInjection
 
@@ -91,6 +94,7 @@ module.exports = {
 
 #### options.stylex.unstable_moduleResolution
 
-## License
+# Acknowledgments
 
-StyleX is [MIT licensed](./LICENSE)
+- [@stylexjs/rollup-plugin](https://github.com/facebook/stylex/tree/main/packages/rollup-plugin)
+- [vite-plugin-stylex](https://github.com/HorusGoul/vite-plugin-stylex)

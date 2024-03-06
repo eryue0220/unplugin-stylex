@@ -16,7 +16,7 @@
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react": "^4.2.1",
-    "unplugin-stylex": "latest",
+    "unplugin-stylex": "workspace:*",
     "vite": "^5.0.10"
   }
 }

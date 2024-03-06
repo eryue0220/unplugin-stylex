@@ -10,7 +10,7 @@
     "@stylexjs/stylex": "^0.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "unplugin-stylex": "0.1.0"
+    "unplugin-stylex": "workspace:*"
   },
   "devDependencies": {
     "@rspack/cli": "^0.5.4",

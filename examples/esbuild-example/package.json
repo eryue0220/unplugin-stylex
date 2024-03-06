@@ -11,7 +11,7 @@
     "@stylexjs/stylex": "^0.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "unplugin-stylex": "latest"
+    "unplugin-stylex": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
