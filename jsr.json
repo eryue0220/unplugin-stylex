@@ -1,0 +1,21 @@
+{
+  "name": "unplugin-stylex",
+  "version": "0.2.0",
+  "exports": {
+    "./index": "./src/index.ts",
+    "./esbuild": "./src/esbuild.ts",
+    "./rollup": "./src/rollup.ts",
+    "./rspack": "./src/rspack",
+    "./vite": "./src/vite.ts",
+    "./webpack": "./src/webpack.ts"
+  },
+  "exclude": [
+    ".eslintrc.json",
+    ".eslintignore",
+    "test",
+    "examples",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+    "tsconfig.json"
+  ]
+}
