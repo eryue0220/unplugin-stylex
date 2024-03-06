@@ -24,3 +24,5 @@ export type UnpluginStylexOptions = {
   enforce?: 'post' | 'pre'
   stylex?: StylexOptions
 }
+
+export type UnpluginStylexInstance<T> = (options?: UnpluginStylexOptions) => T
