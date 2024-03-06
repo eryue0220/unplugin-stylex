@@ -1,5 +1,5 @@
 {
-  "name": "unplugin-stylex",
+  "name": "@eryue0220/unplugin-stylex",
   "version": "0.2.2",
   "exports": {
     "./index": "./src/index.ts",
