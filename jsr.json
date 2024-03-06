@@ -1,11 +1,11 @@
 {
   "name": "unplugin-stylex",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "exports": {
     "./index": "./src/index.ts",
     "./esbuild": "./src/esbuild.ts",
     "./rollup": "./src/rollup.ts",
-    "./rspack": "./src/rspack",
+    "./rspack": "./src/rspack.ts",
     "./vite": "./src/vite.ts",
     "./webpack": "./src/webpack.ts"
   },
