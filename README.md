@@ -1,4 +1,4 @@
-# unplugin-stylex
+# unplugin-stylex &middot; [![MIT licensed][license-badge]](https://github.com/eryue0220/unplugin-stylex/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/unplugin-stylex.svg?style=flat)](https://www.npmjs.com/package/unplugin-stylex) [![Build Status][ci-badge]][ci-url]
 
 ## Installation
 
@@ -76,8 +76,6 @@ module.exports = {
 ## Options
 
 ### options.dev
-
-### options.enforce
 
 ### options.stylex
 
