@@ -1,7 +1,8 @@
 import * as path from 'node:path'
 
 import { createUnplugin } from 'unplugin'
-import type { UnpluginFactory } from 'unplugin'
+import type { UnpluginFactory, UnpluginInstance } from 'unplugin'
+import type { BuildOptions } from 'vite'
 
 import { buildStylexRules } from './core/build'
 import { PLUGIN_NAME } from './core/constants'
@@ -12,7 +13,7 @@ import type { UnpluginStylexOptions } from './types'
 export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined> = (rawOptions = {}) => {
   const options = getOptions(rawOptions)
   const stylexRules = {}
-  let viteConfig = null
+  let viteConfig: { build: BuildOptions | undefined; base: string | undefined; } | null = null
 
   return {
     name: PLUGIN_NAME,
@@ -74,7 +75,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       },
 
       buildEnd() {
-        const fileName = `${viteConfig.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
+        const fileName = `${viteConfig!.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
         const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
 
         if (!collectedCSS) return
@@ -87,7 +88,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       },
 
       transformIndexHtml(html, ctx) {
-        const fileName = `${viteConfig.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
+        const fileName = `${viteConfig!.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
         const css = ctx.bundle?.[fileName]
 
         if (!css) {
@@ -95,7 +96,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
         }
 
         const publicPath = path.posix.join(
-          viteConfig.base ?? '/',
+          viteConfig!.base ?? '/',
           fileName.replace(/\\/g, '/')
         )
 
@@ -114,7 +115,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
   }
 }
 
-export const unplugin = createUnplugin(unpluginFactory)
+export const unplugin: UnpluginInstance<UnpluginStylexOptions | undefined, boolean> = createUnplugin(unpluginFactory)
 
 export * from './types'
 
