@@ -28,7 +28,7 @@ pnpm i unplugin-stylex --save-dev
 <details>
 <summary>Vite</summary><br>
 
-```ts
+```js
 // vite.config.js
 import { defineConfig } from 'vite'
 import stylexPlugin from 'unplugin-stylex/vite'
@@ -45,7 +45,7 @@ export default defineConfig({
 <details>
 <summary>esbuild</summary><br>
 
-```ts
+```js
 // esbuild.config.js
 import { build } from 'esbuild'
 import stylexPlugin from 'unplugin-stylex/esbuild'
@@ -62,7 +62,7 @@ export default {
 <details>
 <summary>rspack</summary><br>
 
-```ts
+```js
 // rspack.config.js
 import stylexPlugin from 'unplugin-stylex/rspack'
 
@@ -75,6 +75,44 @@ module.exports = {
 ```
 
 </br></details>
+
+<details>
+<summary>rollup</summary><br>
+
+```js
+// rollup.config.js
+import stylexRollupPlugin from 'unplugin-stylex/rollup'
+
+export default {
+  // other rollup config
+  plugins: [
+    stylexRollupPlugin({ /* options */}),
+  ],
+}
+```
+
+</br></details>
+
+<details>
+<summary>webpack</summary><br>
+
+```js
+// webpack.config.js
+import stylexWebpackPlugin from 'unplugin-stylex/webpack'
+
+module.exports = {
+  // other webpack config
+  plugins: [
+    stylexWebpackPlugin({ /* options */}),
+  ],
+}
+```
+
+</br></details>
+
+## Usage
+
+More detail usage can check [examples](https://github.com/eryue0220/unplugin-stylex/tree/main/examples)
 
 ## Options
 
