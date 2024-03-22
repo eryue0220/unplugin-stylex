@@ -8,6 +8,7 @@
     "unplugin",
     "stylex",
     "stylex-plugin",
+    "farm",
     "esbuild",
     "rollup",
     "rspack",
@@ -29,6 +30,11 @@
       "types": "./dist/esbuild.d.ts",
       "require": "./dist/esbuild.cjs",
       "import": "./dist/esbuild.js"
+    },
+    "./farm": {
+      "types": "./dist/farm.d.ts",
+      "require": "./dist/farm.cjs",
+      "import": "./dist/farm.js"
     },
     "./rollup": {
       "types": "./dist/rollup.d.ts",

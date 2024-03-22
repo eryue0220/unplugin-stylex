@@ -4,6 +4,7 @@
   "exports": {
     "./index": "./src/index.ts",
     "./esbuild": "./src/esbuild.ts",
+    "./farm": "./src/farm.ts",
     "./rollup": "./src/rollup.ts",
     "./rspack": "./src/rspack.ts",
     "./vite": "./src/vite.ts",
