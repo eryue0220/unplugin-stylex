@@ -76,6 +76,24 @@ module.exports = {
 
 </br></details>
 
+
+<details>
+<summary>rollup</summary><br>
+
+```ts
+// rollup.config.js
+import stylexRollupPlugin from 'unplugin-stylex/rollup'
+
+export default {
+  // other rollup config
+  plugins: [
+    stylexRollupPlugin({ /* options */}),
+  ],
+}
+```
+
+</br></details>
+
 ## Options
 
 Current support argument, which may have change in the future
