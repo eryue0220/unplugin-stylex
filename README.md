@@ -76,7 +76,6 @@ module.exports = {
 
 </br></details>
 
-
 <details>
 <summary>rollup</summary><br>
 
@@ -90,6 +89,23 @@ export default {
     stylexRollupPlugin({ /* options */}),
   ],
 }
+
+<details>
+<summary>webpack</summary><br>
+
+```ts
+// webpack.config.js
+import stylexWebpackPlugin from 'unplugin-stylex/webpack'
+
+module.exports = {
+  // other webpack config
+  plugins: [
+    stylexWebpackPlugin({ /* options */}),
+  ],
+}
+```
+
+</br></details>
 ```
 
 </br></details>
