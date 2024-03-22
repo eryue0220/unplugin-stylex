@@ -1,3 +1,9 @@
+/**
+ * This entry file is for main unplugin.
+ * 
+ * @module
+ */
+
 import * as path from 'node:path'
 
 import { createUnplugin } from 'unplugin'
@@ -10,6 +16,9 @@ import { getOptions } from './core/options'
 import { transformer } from './core/transformer'
 import type { UnpluginStylexOptions } from './types'
 
+/**
+ * The main unplugin factory.
+ */
 export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined> = (rawOptions = {}) => {
   const options = getOptions(rawOptions)
   const stylexRules = {}
