@@ -110,6 +110,10 @@ module.exports = {
 
 </br></details>
 
+## Usage
+
+More detail usage can check [examples](https://github.com/eryue0220/unplugin-stylex/tree/main/examples)
+
 ## Options
 
 Current support argument, which may have change in the future
