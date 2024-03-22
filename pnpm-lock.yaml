@@ -30,8 +30,8 @@ importers:
         specifier: ^0.5.1
         version: 0.5.1
       unplugin:
-        specifier: ^1.7.1
-        version: 1.7.1
+        specifier: ^1.10.0
+        version: 1.10.0
     devDependencies:
       '@stylistic/eslint-plugin-ts':
         specifier: ^1.6.2
@@ -6792,8 +6792,9 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /unplugin@1.7.1:
-    resolution: {integrity: sha512-JqzORDAPxxs8ErLV4x+LL7bk5pk3YlcWqpSNsIkAZj972KzFZLClc/ekppahKkOczGkwIG6ElFgdOgOlK4tXZw==}
+  /unplugin@1.10.0:
+    resolution: {integrity: sha512-CuZtvvO8ua2Wl+9q2jEaqH6m3DoQ38N7pvBYQbbaeNlWGvK2l6GHiKi29aIHDPoSxdUzQ7Unevf1/ugil5X6Pg==}
+    engines: {node: '>=14.0.0'}
     dependencies:
       acorn: 8.11.3
       chokidar: 3.6.0

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "webpack serve",
+    "dev": "NODE_ENV=development webpack serve",
     "build": "webpack build"
   },
   "devDependencies": {

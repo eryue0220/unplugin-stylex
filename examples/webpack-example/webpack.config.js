@@ -42,12 +42,17 @@ module.exports = {
     hot: true,
     port: 8080,
   },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
   plugins: [
     stylexWebpackPlugin({
-      dev: isDev,
+      dev: true,
       stylex: {
         useCSSLayers: true,
-      }
+      },
     }),
     new HtmlWebpackPlugin({
       template: 'public/index.html',

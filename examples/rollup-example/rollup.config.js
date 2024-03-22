@@ -40,7 +40,7 @@ export default {
     }),
     serve({
       contentBase: ['dist'],
-      host: 'localhost',
+      host: '127.0.0.1',
       port: 8081,
     }),
     html({

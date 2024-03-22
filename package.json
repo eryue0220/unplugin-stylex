@@ -45,6 +45,11 @@
       "require": "./dist/vite.cjs",
       "import": "./dist/vite.js"
     },
+    "./webpack": {
+      "types": "./dist/webpack.d.ts",
+      "require": "./dist/webpack.cjs",
+      "import": "./dist/webpack.js"
+    },
     "./types": {
       "types": "./dist/types.d.ts",
       "import": "./dist/types.js",
@@ -75,7 +80,7 @@
     "@babel/plugin-syntax-typescript": "^7.23.3",
     "@rollup/pluginutils": "^5.1.0",
     "@stylexjs/babel-plugin": "^0.5.1",
-    "unplugin": "^1.7.1"
+    "unplugin": "^1.10.0"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin-ts": "^1.6.2",

@@ -10,7 +10,7 @@ await context
     port,
   })
   .then(() => {
-    console.log(`[info]: server start at http:127.0.0.1:${port}.`)
+    console.log(`[info]: server start at http://127.0.0.1:${port}.`)
   })
   .catch((error) => {
     console.error(error)
