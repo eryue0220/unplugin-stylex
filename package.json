@@ -1,6 +1,6 @@
 {
   "name": "unplugin-stylex",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "packageManager": "pnpm@8.11.0",
   "description": "Unplugin for stylex",
   "repository": "https://github.com/eryue0220/unplugin-stylex",
@@ -9,6 +9,7 @@
     "stylex",
     "stylex-plugin",
     "esbuild",
+    "rollup",
     "rspack",
     "vite"
   ],
@@ -29,15 +30,20 @@
       "require": "./dist/esbuild.cjs",
       "import": "./dist/esbuild.js"
     },
-    "./vite": {
-      "types": "./dist/vite.d.ts",
-      "require": "./dist/vite.cjs",
-      "import": "./dist/vite.js"
+    "./rollup": {
+      "types": "./dist/rollup.d.ts",
+      "require": "./dist/rollup.cjs",
+      "import": "./dist/rollup.js"
     },
     "./rspack": {
       "types": "./dist/rspack.d.ts",
       "require": "./dist/rspack.cjs",
       "import": "./dist/rspack.js"
+    },
+    "./vite": {
+      "types": "./dist/vite.d.ts",
+      "require": "./dist/vite.cjs",
+      "import": "./dist/vite.js"
     },
     "./types": {
       "types": "./dist/types.d.ts",
