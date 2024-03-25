@@ -3,6 +3,7 @@
   "version": "0.0.3",
   "exports": {
     "./index": "./src/index.ts",
+    "./astro": "./src/astro.ts",
     "./esbuild": "./src/esbuild.ts",
     "./rollup": "./src/rollup.ts",
     "./rspack": "./src/rspack.ts",
