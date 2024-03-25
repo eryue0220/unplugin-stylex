@@ -19,7 +19,7 @@ import type { UnpluginStylexOptions } from './types'
 /**
  * The main unplugin factory.
  */
-export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined> = (rawOptions = {}) => {
+export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined> = (rawOptions = {}, meta) => {
   const options = getOptions(rawOptions)
   const stylexRules = {}
   let viteConfig: { build: BuildOptions | undefined; base: string | undefined; } | null = null

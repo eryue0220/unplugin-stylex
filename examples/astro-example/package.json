@@ -1,0 +1,22 @@
+{
+  "name": "astro-example",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "astro build",
+    "dev": "astro dev"
+  },
+  "devDependencies": {
+    "@astrojs/react": "^3.1.0",
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "astro": "^4.5.9",
+    "unplugin-stylex": "workspace:^"
+  },
+  "dependencies": {
+    "@stylexjs/open-props": "^0.5.1",
+    "@stylexjs/stylex": "^0.5.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
