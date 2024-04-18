@@ -10,18 +10,16 @@ export const styles = stylex.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-
-    // backgroundColor: colors.pink7,
+    backgroundColor: colors.pink7,
   },
   card: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-
-    // backgroundColor: colors.blue9,
-    // padding: sizes.spacing5,
-    // borderRadius: sizes.spacing2,
-    // color: colors.gray0,
-    // fontFamily: fonts.mono,
+    backgroundColor: colors.blue9,
+    padding: sizes.spacing5,
+    borderRadius: sizes.spacing2,
+    color: colors.gray0,
+    fontFamily: fonts.mono,
   },
 })
