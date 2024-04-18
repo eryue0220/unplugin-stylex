@@ -8,6 +8,11 @@ export default defineConfig({
     react(),
     stylexAstroPlugin({
       dev: true,
+      stylex: {
+        useCSSLayers: true,
+        genConditionalClasses: true,
+        treeshakeCompensation: true,
+      },
     }),
   ],
 })

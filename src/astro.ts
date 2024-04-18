@@ -8,7 +8,6 @@ import { PLUGIN_NAME } from './core/constants'
 import vitePlugin from './vite'
 import type { UnpluginStylexOptions } from './types'
 
-
 /**
  * Astro plugin
  *
@@ -28,7 +27,7 @@ export default function (options: UnpluginStylexOptions) {
     name: PLUGIN_NAME,
 
     hooks: {
-      'astro:config:setup': async (astro: any) => {
+      'astro:config:setup': async (astro) => {
         astro.config.vite.plugins ||= []
         astro.config.vite.plugins.push(vitePlugin(options))
       },
