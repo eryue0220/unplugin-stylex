@@ -8,17 +8,17 @@
     "build": "farm build"
   },
   "dependencies": {
-    "@stylexjs/open-props": "^0.5.1",
-    "@stylexjs/stylex": "^0.5.1",
+    "@stylexjs/open-props": "^0.6.0",
+    "@stylexjs/stylex": "^0.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@farmfe/cli": "^1.0.0",
-    "@farmfe/core": "^1.0.2",
-    "@farmfe/plugin-react": "^1.0.0",
-    "@types/react": "^18.2.56",
-    "@types/react-dom": "^18.2.19",
+    "@farmfe/core": "^1.0.22",
+    "@farmfe/plugin-react": "^1.0.1",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
     "react-refresh": "^0.14.0",
     "unplugin-stylex": "workspace:*"
   }
