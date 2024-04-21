@@ -3,6 +3,9 @@ import vue from '@vitejs/plugin-vue'
 import stylexVitePlugin from 'unplugin-stylex/vite'
 
 export default defineConfig({
+  build: {
+    outDir: 'dist'
+  },
   plugins: [
     vue(),
     stylexVitePlugin({

@@ -1,6 +1,6 @@
 {
   "name": "unplugin-stylex",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "packageManager": "pnpm@8.11.0",
   "description": "Unplugin for stylex",
   "repository": "https://github.com/eryue0220/unplugin-stylex",
@@ -9,6 +9,7 @@
     "stylex",
     "stylex-plugin",
     "esbuild",
+    "rollup",
     "rspack",
     "vite"
   ],
@@ -29,15 +30,25 @@
       "require": "./dist/esbuild.cjs",
       "import": "./dist/esbuild.js"
     },
-    "./vite": {
-      "types": "./dist/vite.d.ts",
-      "require": "./dist/vite.cjs",
-      "import": "./dist/vite.js"
+    "./rollup": {
+      "types": "./dist/rollup.d.ts",
+      "require": "./dist/rollup.cjs",
+      "import": "./dist/rollup.js"
     },
     "./rspack": {
       "types": "./dist/rspack.d.ts",
       "require": "./dist/rspack.cjs",
       "import": "./dist/rspack.js"
+    },
+    "./vite": {
+      "types": "./dist/vite.d.ts",
+      "require": "./dist/vite.cjs",
+      "import": "./dist/vite.js"
+    },
+    "./webpack": {
+      "types": "./dist/webpack.d.ts",
+      "require": "./dist/webpack.cjs",
+      "import": "./dist/webpack.js"
     },
     "./types": {
       "types": "./dist/types.d.ts",
@@ -63,25 +74,25 @@
     "@stylexjs/stylex": "^0.5.1"
   },
   "dependencies": {
-    "@babel/core": "^7.23.6",
-    "@babel/plugin-syntax-flow": "^7.23.3",
-    "@babel/plugin-syntax-jsx": "^7.23.3",
-    "@babel/plugin-syntax-typescript": "^7.23.3",
+    "@babel/core": "^7.24.4",
+    "@babel/plugin-syntax-flow": "^7.24.1",
+    "@babel/plugin-syntax-jsx": "^7.24.1",
+    "@babel/plugin-syntax-typescript": "^7.24.1",
     "@rollup/pluginutils": "^5.1.0",
     "@stylexjs/babel-plugin": "^0.5.1",
-    "unplugin": "^1.7.1"
+    "unplugin": "^1.10.1"
   },
   "devDependencies": {
-    "@stylistic/eslint-plugin-ts": "^1.6.2",
-    "@types/node": "^20.10.5",
-    "@typescript-eslint/eslint-plugin": "^6.16.0",
-    "@typescript-eslint/parser": "^6.16.0",
-    "@vitest/coverage-v8": "^1.1.1",
-    "babel-plugin-syntax-hermes-parser": "^0.19.1",
-    "eslint": "^8.56.0",
-    "tsup": "^8.0.1",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.10",
-    "vitest": "^1.1.0"
+    "@stylistic/eslint-plugin-ts": "^1.7.2",
+    "@types/node": "^20.12.7",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitest/coverage-v8": "^1.5.0",
+    "babel-plugin-syntax-hermes-parser": "^0.19.2",
+    "eslint": "^8.57.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.9",
+    "vitest": "^1.5.0"
   }
 }

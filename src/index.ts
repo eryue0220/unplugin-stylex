@@ -1,3 +1,9 @@
+/**
+ * This entry file is for main unplugin.
+ * 
+ * @module
+ */
+
 import * as path from 'node:path'
 
 import { createUnplugin } from 'unplugin'
@@ -10,6 +16,9 @@ import { getOptions } from './core/options'
 import { transformer } from './core/transformer'
 import type { UnpluginStylexOptions } from './types'
 
+/**
+ * The main unplugin factory.
+ */
 export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined> = (rawOptions = {}) => {
   const options = getOptions(rawOptions)
   const stylexRules = {}
@@ -17,6 +26,16 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
 
   return {
     name: PLUGIN_NAME,
+
+    transformInclude(id) {
+      // webpack will contain these files, which will occur errors
+      const invalidExts = ['.json', '.html', '.jade', '.json5']
+      const extname = path.extname(id)
+      // for handle vite
+      const questionMarkIndex = extname.indexOf('?')
+      const validExtName = questionMarkIndex > -1 ? extname.slice(0, questionMarkIndex) : extname
+      return !invalidExts.includes(validExtName)
+    },
 
     async transform(code, id) {
       const dir = path.dirname(id)
