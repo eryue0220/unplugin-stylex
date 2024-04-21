@@ -1,10 +1,9 @@
-import { createRoot } from 'react-dom/client'
 import * as stylex from '@stylexjs/stylex'
 import { colors } from '@stylexjs/open-props/lib/colors.stylex'
 import { sizes } from '@stylexjs/open-props/lib/sizes.stylex'
 import { fonts } from '@stylexjs/open-props/lib/fonts.stylex'
 
-const styles = stylex.create({
+export const styles = stylex.create({
   main: {
     width: '100vw',
     height: '100vh',
@@ -14,25 +13,13 @@ const styles = stylex.create({
     backgroundColor: colors.pink7,
   },
   card: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: colors.blue9,
     padding: sizes.spacing5,
     borderRadius: sizes.spacing2,
-    justifyContent: 'center',
-    display: 'flex',
-    alignItems: 'center',
     color: colors.gray0,
     fontFamily: fonts.mono,
   },
 })
-
-function App() {
-  return (
-    <div {...stylex.props(styles.main)}>
-      <div {...stylex.props(styles.card)}>
-        <span>Blue rounded rectangle</span>
-      </div>
-    </div>
-  )
-}
-
-createRoot(document.getElementById('root')).render(<App />)

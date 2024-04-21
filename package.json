@@ -25,6 +25,11 @@
       "require": "./dist/index.cjs",
       "import": "./dist/index.js"
     },
+     "./astro": {
+      "types": "./dist/astro.d.ts",
+      "require": "./dist/astro.cjs",
+      "import": "./dist/astro.js"
+    },
     "./esbuild": {
       "types": "./dist/esbuild.d.ts",
       "require": "./dist/esbuild.cjs",
