@@ -3,9 +3,16 @@
 .pnp
 .pnp.js
 .idea
+.eslintignore
+.eslintrc.json
 .eslintcache
+.github
+
+typos.toml
+vitest.config.ts
 
 /examples
 /node_modules
+/src
 /test
 /coverage
