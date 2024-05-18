@@ -29,7 +29,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
 
     transformInclude(id) {
       // webpack will contain these files, which will occur errors
-      const invalidExts = ['.json', '.html', '.jade', '.json5']
+      const invalidExts = options.invalidExts
       const extname = path.extname(id)
       // for handle vite
       const questionMarkIndex = extname.indexOf('?')
