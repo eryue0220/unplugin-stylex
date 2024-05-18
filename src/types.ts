@@ -10,7 +10,7 @@ export type StylexOptions = {
   stylexImports?: string[]
   classNamePrefix?: string
   unstable_moduleResolution?: {
-    type: 'commonjs' | 'haste'
+    type: 'commonJS' | 'haste'
     rootDir: string
   }
   babelConfig?: BabelConfig
@@ -21,9 +21,10 @@ export type StylexOptions = {
 }
 
 export type UnpluginStylexOptions = {
-  compiler?: string
+  // compiler?: string
+  invalidExts?: string[]
   dev?: boolean
-  enforce?: 'post' | 'pre'
+  // enforce?: 'post' | 'pre'
   stylex?: StylexOptions
 }
 
