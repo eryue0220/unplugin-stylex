@@ -27,22 +27,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
   return {
     name: PLUGIN_NAME,
 
-    loadInclude(id) {
-      const excludes = [
-        'farmfe_plugin_react_is_react_refresh_boundary',
-        'farmfe_plugin_react_global_inject',
-      ]
-      console.log('load::include::', id)
-      return !excludes.includes(id)
-    },
-
-    load(id) {
-      console.log('load::id::', id)
-      return null
-    },
-
     transformInclude(id) {
-      console.log('transform::id::', id)
       // webpack will contain these files, which will occur errors
       const invalidExts = options.invalidExts
       const extname = path.extname(id)
@@ -60,8 +45,6 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       if (!options.stylex.stylexImports.some((importName) => code.includes(importName))) {
         return
       }
-
-      console.log('transform::id::', id, code)
 
       const context = {
         id: file,
