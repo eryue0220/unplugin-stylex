@@ -249,25 +249,6 @@ importers:
         specifier: workspace:*
         version: link:../..
 
-  examples/solid-example:
-    dependencies:
-      solid-js:
-        specifier: ^1.8.18
-        version: 1.8.18
-    devDependencies:
-      '@farmfe/cli':
-        specifier: ^1.0.0
-        version: 1.0.2
-      '@farmfe/core':
-        specifier: ^1.0.22
-        version: 1.2.0
-      '@farmfe/js-plugin-solid':
-        specifier: ^2.7.0
-        version: 2.7.0(@farmfe/core@1.2.0)(rollup@4.18.0)(solid-js@1.8.18)
-      solid-refresh:
-        specifier: ^0.7.5
-        version: 0.7.5(solid-js@1.8.18)
-
   examples/vite-example:
     dependencies:
       '@stylexjs/open-props':
