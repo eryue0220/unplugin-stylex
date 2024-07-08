@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs';
+import { readFileSync } from 'fs'
 import nodeResolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import babel from '@rollup/plugin-babel'
@@ -48,7 +48,7 @@ export default {
       title: 'Stylex With Rollup',
       template: ({ attributes, files, publicPath, title }) => {
         const htmlTemplate = 'public/index.html'
-        const { css, js } = files;
+        const { css, js } = files
         const scripts = (js || [])
           .map(({ fileName }) =>
             `<script src="${publicPath}${fileName}" ${makeHtmlAttributes(attributes.script)}></script>`

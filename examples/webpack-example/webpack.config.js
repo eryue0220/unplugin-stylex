@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { default: stylexWebpackPlugin } = require('unplugin-stylex/webpack')
 
 const isDev = process.env.NODE_ENV === 'development'
