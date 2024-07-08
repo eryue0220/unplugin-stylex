@@ -12,8 +12,17 @@ export default defineConfig({
       targetEnv: 'browser'
     },
   },
+  server: {
+    hmr: true,
+  },
   plugins: [
-    '@farmfe/plugin-react',
-    stylexFarmPlugin({ dev: true }),
+    ['@farmfe/plugin-react', {
+      refresh: true,
+      development: true,
+      runtime: 'automatic',
+    }],
+    stylexFarmPlugin({
+      dev: true,
+    }),
   ],
-});
+})

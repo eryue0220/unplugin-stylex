@@ -10,11 +10,13 @@ export async function transformer(context) {
   const stylex = options.stylex
   const extname = pathExtname(id)
   const stylexRules = {}
+
   const stylexBabelPluginOptions = {
     dev: options.dev,
     importSources: stylex.stylexImports,
     ...stylex,
   }
+
   const plugins = [
     ...(stylex.babelConfig?.plugins || []),
     ...getSyntaxPlugins(extname),
@@ -37,7 +39,12 @@ export async function transformer(context) {
   }
 
   if (!stylex.babelConfig?.babelrc) {
-    return { code, map, stylexRules }
+    return {
+      code,
+      // compatible for farm, null will occur an error
+      map: map || undefined,
+      stylexRules,
+    }
   }
 
   return { code, stylexRules }

@@ -9,7 +9,7 @@ import type { RspackPluginInstance } from 'unplugin'
 import { unpluginFactory } from './index'
 import type { UnpluginStylexInstance } from './types'
 
-type RspackPluginType = UnpluginStylexInstance<RspackPluginInstance | RspackPluginInstance[]>
+type RspackPluginType = UnpluginStylexInstance<RspackPluginInstance>
 
 const rspackPlugin: RspackPluginType = createRspackPlugin(unpluginFactory)
 

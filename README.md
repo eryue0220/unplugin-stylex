@@ -1,5 +1,8 @@
 # unplugin-stylex &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/eryue0220/unplugin-stylex/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/unplugin-stylex.svg?style=flat)](https://www.npmjs.com/package/unplugin-stylex)
 
+> [!WARNING]  
+> This plugin is in early development and may not work as expected. Please report any issues you find.
+
 ## Installation
 
 Install the package from the following command
@@ -21,6 +24,23 @@ pnpm i unplugin-stylex --save-dev
 ```
 
 ## Configuration
+
+<details>
+<summary>Vite</summary><br>
+
+```js
+// vite.config.js
+import { defineConfig } from 'vite'
+import stylexPlugin from 'unplugin-stylex/vite'
+
+export default defineConfig({
+  plugins: [
+    stylexPlugin({ /* options */}),
+  ],
+})
+```
+
+</br></details>
 
 <details>
 <summary>esbuild</summary><br>
@@ -58,23 +78,6 @@ export default defineConfig({
 </br></details>
 
 <details>
-<summary>rollup</summary><br>
-
-```js
-// rollup.config.js
-import stylexRollupPlugin from 'unplugin-stylex/rollup'
-
-export default {
-  // other rollup config
-  plugins: [
-    stylexRollupPlugin({ /* options */}),
-  ],
-}
-```
-
-</br></details>
-
-<details>
 <summary>rspack</summary><br>
 
 ```js
@@ -92,18 +95,18 @@ module.exports = {
 </br></details>
 
 <details>
-<summary>vite</summary><br>
+<summary>rollup</summary><br>
 
 ```js
-// vite.config.js
-import { defineConfig } from 'vite'
-import stylexPlugin from 'unplugin-stylex/vite'
+// rollup.config.js
+import stylexRollupPlugin from 'unplugin-stylex/rollup'
 
-export default defineConfig({
+export default {
+  // other rollup config
   plugins: [
-    stylexPlugin({ /* options */}),
+    stylexRollupPlugin({ /* options */}),
   ],
-})
+}
 ```
 
 </br></details>
@@ -127,15 +130,13 @@ module.exports = {
 
 ## Usage
 
-More detail usages can check [examples](https://github.com/eryue0220/unplugin-stylex/tree/main/examples)
+More detail usage can check [examples](https://github.com/eryue0220/unplugin-stylex/tree/main/examples)
 
 ## Options
 
 Current support argument, which may have change in the future
 
 ### options.dev
-
-### options.stylex
 
 #### options.stylex.runtimeInjection
 

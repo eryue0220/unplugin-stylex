@@ -1,6 +1,6 @@
 {
   "name": "@eryue0220/unplugin-stylex",
-  "version": "0.0.3",
+  "version": "0.4.0",
   "exports": {
     "./index": "./src/index.ts",
     "./esbuild": "./src/esbuild.ts",
