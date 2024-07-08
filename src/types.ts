@@ -6,22 +6,25 @@ export type BabelConfig = {
 
 export type StylexOptions = {
   filename?: string
+  aliases?: string[]
   stylexImports?: string[]
   classNamePrefix?: string
-  useCSSLayers?:  boolean
   unstable_moduleResolution?: {
-    type: 'commonjs' | 'haste'
+    type: 'commonJS' | 'haste'
     rootDir: string
   }
   babelConfig?: BabelConfig
-  runtimeInjection: boolean
-  aliases?: string[]
+  useCSSLayers?:  boolean
+  genConditionalClasses?: boolean
+  treeshakeCompensation?: boolean
+  runtimeInjection?: boolean
 }
 
 export type UnpluginStylexOptions = {
-  compiler?: string
+  // compiler?: string
+  invalidExts?: string[]
   dev?: boolean
-  enforce?: 'post' | 'pre'
+  // enforce?: 'post' | 'pre'
   stylex?: StylexOptions
 }
 

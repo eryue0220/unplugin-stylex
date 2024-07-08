@@ -1,13 +1,14 @@
 import type { StylexOptions, UnpluginStylexOptions } from '@/types'
 import { isDevelopment } from './constants'
 
-export function getOptions(options: UnpluginStylexOptions) {
+export function getOptions(options: UnpluginStylexOptions): Required<UnpluginStylexOptions> {
   const stylex = options.stylex || ({} as StylexOptions)
   const isDev = options.dev || isDevelopment
 
   return {
     ...options,
     dev: options.dev || isDev,
+    invalidExts: ['.json', '.html', '.jade', '.json5', ...(options.invalidExts ?? [])],
     stylex: {
       filename: stylex.filename || 'stylex.css',
       stylexImports: stylex.stylexImports || ['@stylexjs/stylex'],
