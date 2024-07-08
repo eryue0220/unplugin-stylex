@@ -1,6 +1,6 @@
-import { defineConfig } from '@rsbuild/core';
-import { pluginReact } from '@rsbuild/plugin-react';
-import stylexPlugin from 'unplugin-stylex/rspack';
+import { defineConfig } from '@rsbuild/core'
+import { pluginReact } from '@rsbuild/plugin-react'
+import stylexPlugin from 'unplugin-stylex/rspack'
 
 export default defineConfig({
   plugins: [
@@ -23,4 +23,4 @@ export default defineConfig({
       ],
     },
   },
-});
+})
