@@ -60,6 +60,24 @@ export default {
 </br></details>
 
 <details>
+<summary>farm</summary><br>
+
+```js
+// farm.config.js
+import { defineConfig } from '@farmfe/core'
+import stylexPlugin from 'unplugin-stylex/farm'
+
+export default defineConfig({
+  // other rollup config
+  plugins: [
+    stylexPlugin({ /* options */}),
+  ],
+})
+```
+
+</br></details>
+
+<details>
 <summary>rspack</summary><br>
 
 ```js

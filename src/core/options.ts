@@ -7,7 +7,7 @@ export function getOptions(options: UnpluginStylexOptions): Required<UnpluginSty
 
   return {
     ...options,
-    dev: options.dev || isDev,
+    dev: isDev,
     invalidExts: ['.json', '.html', '.jade', '.json5', ...(options.invalidExts ?? [])],
     stylex: {
       filename: stylex.filename || 'stylex.css',

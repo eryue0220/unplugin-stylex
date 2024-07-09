@@ -1,5 +1,5 @@
 /**
- * This entry file is for Rspac plugin.
+ * This entry file is for Rspack plugin.
  *
  * @module
  */

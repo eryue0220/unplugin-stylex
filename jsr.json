@@ -1,9 +1,10 @@
 {
   "name": "@eryue0220/unplugin-stylex",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "exports": {
     "./index": "./src/index.ts",
     "./esbuild": "./src/esbuild.ts",
+    "./farm": "./src/farm.ts",
     "./rollup": "./src/rollup.ts",
     "./rspack": "./src/rspack.ts",
     "./vite": "./src/vite.ts",

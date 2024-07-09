@@ -1,6 +1,6 @@
 {
   "name": "unplugin-stylex",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "packageManager": "pnpm@8.11.0",
   "description": "Unplugin for stylex",
   "repository": "https://github.com/eryue0220/unplugin-stylex",
@@ -8,6 +8,7 @@
     "unplugin",
     "stylex",
     "stylex-plugin",
+    "farm",
     "esbuild",
     "rollup",
     "rspack",
@@ -29,6 +30,11 @@
       "types": "./dist/esbuild.d.ts",
       "require": "./dist/esbuild.cjs",
       "import": "./dist/esbuild.js"
+    },
+    "./farm": {
+      "types": "./dist/farm.d.ts",
+      "require": "./dist/farm.cjs",
+      "import": "./dist/farm.js"
     },
     "./rollup": {
       "types": "./dist/rollup.d.ts",
@@ -74,25 +80,25 @@
     "@stylexjs/stylex": "^0.5.1"
   },
   "dependencies": {
-    "@babel/core": "^7.24.5",
-    "@babel/plugin-syntax-flow": "^7.24.1",
-    "@babel/plugin-syntax-jsx": "^7.24.1",
-    "@babel/plugin-syntax-typescript": "^7.24.1",
+    "@babel/core": "^7.24.7",
+    "@babel/plugin-syntax-flow": "^7.24.7",
+    "@babel/plugin-syntax-jsx": "^7.24.7",
+    "@babel/plugin-syntax-typescript": "^7.24.7",
     "@rollup/pluginutils": "^5.1.0",
     "@stylexjs/babel-plugin": "^0.5.1",
-    "unplugin": "^1.10.1"
+    "unplugin": "^1.11.0"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin-ts": "^1.8.1",
-    "@types/node": "^20.12.11",
+    "@types/node": "^20.14.10",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "@vitest/coverage-v8": "^1.6.0",
     "babel-plugin-syntax-hermes-parser": "^0.19.2",
     "eslint": "^8.57.0",
-    "tsup": "^8.0.2",
-    "typescript": "^5.4.5",
-    "vite": "^5.2.11",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.3",
     "vitest": "^1.6.0"
   }
 }
