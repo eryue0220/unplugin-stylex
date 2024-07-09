@@ -23,6 +23,11 @@ export default defineConfig({
     }],
     stylexFarmPlugin({
       dev: true,
+      stylex: {
+        useCSSLayers: true,
+        // this must set `true` in farm
+        treeshakeCompensation: true,
+      },
     }),
   ],
 })

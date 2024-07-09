@@ -26,8 +26,6 @@ const styles = stylex.create({
 })
 
 function App() {
-  console.log('app::', colors.pink7, sizes, fonts.mono)
-
   return (
     <div {...stylex.props(styles.main)}>
       <div {...stylex.props(styles.card)}>
