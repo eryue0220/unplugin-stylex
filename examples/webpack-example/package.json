@@ -1,6 +1,5 @@
 {
   "name": "webpack-example",
-  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "NODE_ENV=development webpack serve",
