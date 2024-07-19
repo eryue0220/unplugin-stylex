@@ -28,12 +28,16 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
     name: PLUGIN_NAME,
 
     transformInclude(id) {
-      // webpack will contain these files, which will occur errors
+      // TODO: deprecate
+      const invalidExts = options.invalidExts
       const validExts = options.validExts
       const extname = path.extname(id)
       // for handle vite
       const questionMarkIndex = extname.indexOf('?')
       const validExtName = questionMarkIndex > -1 ? extname.slice(0, questionMarkIndex) : extname
+      if (invalidExts.length > 0) {
+        return !invalidExts.includes(validExtName)
+      }
       return validExts instanceof RegExp ?  validExts.test(validExtName) : validExts.includes(validExtName)
     },
 
