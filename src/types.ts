@@ -22,7 +22,7 @@ export type StylexOptions = {
 
 export type UnpluginStylexOptions = {
   // compiler?: string
-  invalidExts?: string[]
+  validExts?: RegExp
   dev?: boolean
   // enforce?: 'post' | 'pre'
   stylex?: StylexOptions
