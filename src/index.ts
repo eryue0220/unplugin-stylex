@@ -34,7 +34,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       // for handle vite
       const questionMarkIndex = extname.indexOf('?')
       const validExtName = questionMarkIndex > -1 ? extname.slice(0, questionMarkIndex) : extname
-      return validExts.test(validExtName)
+      return validExts instanceof RegExp ?  validExts.test(validExtName) : validExts.includes(validExtName)
     },
 
     async transform(code, id) {
