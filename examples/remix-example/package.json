@@ -1,0 +1,29 @@
+{
+  "name": "remix-example",
+  "private": true,
+  "scripts": {
+    "build": "remix vite:build",
+    "dev": "remix vite:dev",
+    "start": "remix-serve ./build/server/index.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "@remix-run/node": "^2.11.1",
+    "@remix-run/react": "^2.11.1",
+    "@remix-run/serve": "^2.11.1",
+    "@stylexjs/open-props": "^0.6.0",
+    "@stylexjs/stylex": "^0.6.0",
+    "isbot": "^4.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^2.11.1",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
+    "typescript": "^5.5.4",
+    "unplugin-stylex": "workspace:*",
+    "vite": "5.1.0",
+    "vite-tsconfig-paths": "^5.0.1"
+  }
+}
