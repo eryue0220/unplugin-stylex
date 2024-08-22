@@ -77,7 +77,7 @@
     "node": ">=16.14.0"
   },
   "peerDependencies": {
-    "@stylexjs/stylex": "^0.5.1"
+    "@stylexjs/stylex": "0.x"
   },
   "dependencies": {
     "@babel/core": "^7.25.2",
