@@ -22,7 +22,6 @@ export type StylexOptions = {
 
 export type UnpluginStylexOptions = {
   // compiler?: string
-  invalidExts?: string[]
   validExts?: RegExp | string[]
   dev?: boolean
   // enforce?: 'post' | 'pre'
