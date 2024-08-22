@@ -8,10 +8,6 @@
   "dependencies": {
     "@stylexjs/open-props": "^0.6.0",
     "@stylexjs/stylex": "^0.6.0",
-    "esbuild-example": "workspace:^",
-    "rollup-example": "^1.0.0",
-    "rspack-example": "workspace:^",
-    "vite-example": "^1.0.39",
     "vue": "^3.4.23"
   },
   "devDependencies": {
