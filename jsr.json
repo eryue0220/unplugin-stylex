@@ -13,6 +13,7 @@
   "exclude": [
     ".eslintrc.json",
     ".eslintignore",
+    ".github",
     "test",
     "examples",
     "pnpm-lock.yaml",
