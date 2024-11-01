@@ -1,6 +1,7 @@
 /**
  * This entry file is for main unplugin.
- * 
+ *
+ *
  * @module
  */
 
@@ -22,7 +23,7 @@ import type { UnpluginStylexOptions } from './types'
 export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined> = (rawOptions = {}) => {
   const options = getOptions(rawOptions)
   const stylexRules = {}
-  let viteConfig: { build: BuildOptions | undefined; base: string | undefined; } | null = null
+  let viteConfig: { build: BuildOptions | undefined; base: string | undefined } | null = null
 
   return {
     name: PLUGIN_NAME,
@@ -33,7 +34,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       // for handle vite
       const questionMarkIndex = extname.indexOf('?')
       const validExtName = questionMarkIndex > -1 ? extname.slice(0, questionMarkIndex) : extname
-      return validExts instanceof RegExp ?  validExts.test(validExtName) : validExts.includes(validExtName)
+      return validExts instanceof RegExp ? validExts.test(validExtName) : validExts.includes(validExtName)
     },
 
     async transform(code, id) {
@@ -55,7 +56,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       try {
         const result = await transformer(context)
 
-        if (result.stylexRules && result.stylexRules[id]) {
+        if (result.stylexRules?.[id]) {
           stylexRules[id] = result.stylexRules[id]
         }
 
@@ -93,7 +94,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       },
 
       buildEnd() {
-        const fileName = `${viteConfig!.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
+        const fileName = `${viteConfig?.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
         const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
 
         if (!collectedCSS) return
@@ -106,17 +107,14 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       },
 
       transformIndexHtml(html, ctx) {
-        const fileName = `${viteConfig!.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
+        const fileName = `${viteConfig?.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
         const css = ctx.bundle?.[fileName]
 
         if (!css) {
           return html
         }
 
-        const publicPath = path.posix.join(
-          viteConfig!.base ?? '/',
-          fileName.replace(/\\/g, '/')
-        )
+        const publicPath = path.posix.join(viteConfig?.base ?? '/', fileName.replace(/\\/g, '/'))
 
         return [
           {

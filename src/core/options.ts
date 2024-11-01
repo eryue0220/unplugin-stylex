@@ -18,9 +18,9 @@ export function getOptions(options: UnpluginStylexOptions): Required<UnpluginSty
       useCSSLayers: stylex.useCSSLayers || false,
       unstable_moduleResolution: stylex.unstable_moduleResolution || { type: 'commonJS', rootDir: process.cwd() },
       babelConfig: {
-        babelrc: (stylex.babelConfig || {}).babelrc || false,
-        plugins: (stylex.babelConfig || {}).plugins || [],
-        presets: (stylex.babelConfig || {}).presets || [],
+        babelrc: stylex.babelConfig?.babelrc ?? false,
+        plugins: stylex.babelConfig?.plugins ?? [],
+        presets: stylex.babelConfig?.presets ?? [],
       },
       ...stylex,
     },

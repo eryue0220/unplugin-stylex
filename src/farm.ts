@@ -11,7 +11,6 @@ import type { UnpluginStylexInstance } from './types'
 
 const farmPlugin: UnpluginStylexInstance<JsPluginExtended | JsPluginExtended[]> = createFarmPlugin(unpluginFactory)
 
-
 /**
  * Farm plugin
  *

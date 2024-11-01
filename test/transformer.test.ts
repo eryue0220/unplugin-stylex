@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { transformer } from '../src/core/transformer'
 
-[ 'javascript', 'typescript' ].forEach((name) => {
+for (const name of ['javascript', 'typescript']) {
   describe(name, () => {
     it('basic', async () => {
       const context = {
@@ -35,4 +35,4 @@ import { transformer } from '../src/core/transformer'
       expect(code).toMatchSnapshot()
     })
   })
-})
+}
