@@ -12,7 +12,7 @@
     "rollup-example": "^1.0.0",
     "rspack-example": "workspace:^",
     "vite-example": "^1.0.39",
-    "vue": "^3.4.23"
+    "vue": "^3.5.12"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.6.2",
@@ -20,6 +20,6 @@
     "typescript": "^5.4.5",
     "unplugin-stylex": "workspace:*",
     "vite": "^5.2.9",
-    "vue-tsc": "^1.8.27"
+    "vue-tsc": "^2.1.10"
   }
 }

@@ -1,5 +1,5 @@
-import path from 'path'
-import { fileURLToPath } from 'url'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import stylexEsbuildPlugin from 'unplugin-stylex/esbuild'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -17,6 +17,6 @@ export const config = {
         treeshakeCompensation: true,
         stylexImports: ['@stylexjs/stylex'],
       },
-    })
+    }),
   ],
 }
