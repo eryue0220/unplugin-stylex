@@ -1,10 +1,11 @@
 [files]
 extend-exclude = [
   "*.snap",
-  "examples/*",
+  "dist/"
 ]
 
 [default.extend-words]
 # Ignore false-positives
 stylex = "stylex"
+stylexjs = "stylexjs"
 unplugin = "unplugin"
