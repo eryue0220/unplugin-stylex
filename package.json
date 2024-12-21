@@ -1,10 +1,19 @@
 {
   "name": "unplugin-stylex",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "packageManager": "pnpm@8.11.0",
   "description": "Unplugin for stylex",
   "repository": "https://github.com/eryue0220/unplugin-stylex",
-  "keywords": ["unplugin", "stylex", "stylex-plugin", "farm", "esbuild", "rollup", "rspack", "vite"],
+  "keywords": [
+    "unplugin",
+    "stylex",
+    "stylex-plugin",
+    "farm",
+    "esbuild",
+    "rollup",
+    "rspack",
+    "vite"
+  ],
   "author": "eryue0220<eryue0220@gmail.com>",
   "license": "MIT",
   "type": "module",
