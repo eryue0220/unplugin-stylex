@@ -27,6 +27,7 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org
+          scope: eryue0220
           cache: "pnpm"
 
       - name: Install dependencies
