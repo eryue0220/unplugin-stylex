@@ -10,6 +10,7 @@
     "stylex-plugin",
     "farm",
     "esbuild",
+    "rolldown",
     "rollup",
     "rspack",
     "vite"
