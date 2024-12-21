@@ -1,7 +1,7 @@
 {
   "name": "unplugin-stylex",
   "version": "0.5.0",
-  "packageManager": "pnpm@8.11.0",
+  "packageManager": "pnpm@9.12.2",
   "description": "Unplugin for stylex",
   "repository": "https://github.com/eryue0220/unplugin-stylex",
   "keywords": [
@@ -80,7 +80,7 @@
     "changeset:release": "pnpm run build && pnpm dlx @changesets/cli publish"
   },
   "engines": {
-    "node": ">=16.14.0"
+    "node": ">=18"
   },
   "peerDependencies": {
     "@stylexjs/stylex": "0.x"
