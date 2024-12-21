@@ -1,0 +1,10 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@3.0.4/schema.json",
+  "changelog": ["@changesets/changelog-github", { "repo": "eryue0220/unplugin-stylex" }],
+  "access": "public",
+  "commit": false,
+  "linked": [],
+  "baseBranch": "origin/main",
+  "updateInternalDependencies": "patch",
+  "ignore": ["examples"]
+}

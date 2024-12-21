@@ -1,0 +1,19 @@
+name: Release JSR
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Release JSR
+    if: github.repository == 'eryue0220/unplugin-stylex'
+    permissions:
+      contents: read
+      pull-requests: write
+      id-token: write # The OIDC ID token is used for authentication with JSR.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npx jsr publish
