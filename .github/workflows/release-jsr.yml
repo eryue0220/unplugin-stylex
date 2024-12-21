@@ -29,10 +29,10 @@ jobs:
           cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build Packages
         run: pnpm build
 
       - uses: actions/checkout@v4
-      - run: npx jsr publish
+      - run: pnpm run jsr
