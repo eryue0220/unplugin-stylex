@@ -5,11 +5,9 @@
  */
 
 import { createFarmPlugin } from 'unplugin'
-import type { JsPluginExtended } from 'unplugin'
 import { unpluginFactory } from './index'
-import type { UnpluginStylexInstance } from './types'
 
-const farmPlugin: UnpluginStylexInstance<JsPluginExtended | JsPluginExtended[]> = createFarmPlugin(unpluginFactory)
+const farmPlugin: ReturnType<typeof createFarmPlugin>  = createFarmPlugin(unpluginFactory)
 
 /**
  * Farm plugin
