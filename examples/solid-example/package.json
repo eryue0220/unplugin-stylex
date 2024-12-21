@@ -7,8 +7,8 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@stylexjs/open-props": "^0.6.0",
-    "@stylexjs/stylex": "^0.6.0",
+    "@stylexjs/open-props": "^0.9.3",
+    "@stylexjs/stylex": "^0.9.3",
     "solid-js": "^1.8.18"
   },
   "devDependencies": {

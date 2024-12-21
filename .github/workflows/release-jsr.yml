@@ -31,10 +31,10 @@ jobs:
           version: 9.12.2
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build Packages
         run: pnpm build
 
       - name: Publish JSR
-        run: npx jsr publish
+        run: pnpm run jsr
