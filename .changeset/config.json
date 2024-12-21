@@ -6,5 +6,15 @@
   "linked": [],
   "baseBranch": "origin/main",
   "updateInternalDependencies": "patch",
-  "ignore": ["examples"]
+  "ignore": [
+    "esbuild-example",
+    "farm-example",
+    "rollup-example",
+    "rsbuild-example",
+    "rspack-example",
+    "solid-example",
+    "vite-example",
+    "vue-example",
+    "webpack-example"
+  ]
 }
