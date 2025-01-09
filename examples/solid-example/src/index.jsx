@@ -2,8 +2,7 @@ import { colors } from '@stylexjs/open-props/lib/colors.stylex'
 import { fonts } from '@stylexjs/open-props/lib/fonts.stylex'
 import { sizes } from '@stylexjs/open-props/lib/sizes.stylex'
 import * as stylex from '@stylexjs/stylex'
-import React from 'react'
-import { createRoot } from 'react-dom/client'
+import { render } from 'solid-js/web'
 
 const styles = stylex.create({
   main: {
@@ -36,4 +35,8 @@ function App() {
   )
 }
 
-createRoot(document.getElementById('root')).render(<App />)
+const root = document.getElementById('root')
+
+if (root) {
+  render(() => <App />, root)
+}

@@ -8,7 +8,8 @@ export function getOptions(options: UnpluginStylexOptions): Required<UnpluginSty
   return {
     ...options,
     dev: isDev,
-    invalidExts: ['.json', '.html', '.jade', '.json5', ...(options.invalidExts ?? [])],
+    // .js, .jsx, .mjs, .cjs, .ts, .tsx, .mts, .cts
+    validExts: options.validExts ?? /\.[mc]?[jt]sx?$/,
     stylex: {
       filename: stylex.filename || 'stylex.css',
       stylexImports: stylex.stylexImports || ['@stylexjs/stylex'],
@@ -17,9 +18,9 @@ export function getOptions(options: UnpluginStylexOptions): Required<UnpluginSty
       useCSSLayers: stylex.useCSSLayers || false,
       unstable_moduleResolution: stylex.unstable_moduleResolution || { type: 'commonJS', rootDir: process.cwd() },
       babelConfig: {
-        babelrc: (stylex.babelConfig || {}).babelrc || false,
-        plugins: (stylex.babelConfig || {}).plugins || [],
-        presets: (stylex.babelConfig || {}).presets || [],
+        babelrc: stylex.babelConfig?.babelrc ?? false,
+        plugins: stylex.babelConfig?.plugins ?? [],
+        presets: stylex.babelConfig?.presets ?? [],
       },
       ...stylex,
     },

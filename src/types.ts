@@ -14,7 +14,7 @@ export type StylexOptions = {
     rootDir: string
   }
   babelConfig?: BabelConfig
-  useCSSLayers?:  boolean
+  useCSSLayers?: boolean
   genConditionalClasses?: boolean
   treeshakeCompensation?: boolean
   runtimeInjection?: boolean
@@ -22,7 +22,7 @@ export type StylexOptions = {
 
 export type UnpluginStylexOptions = {
   // compiler?: string
-  invalidExts?: string[]
+  validExts?: RegExp | string[]
   dev?: boolean
   // enforce?: 'post' | 'pre'
   stylex?: StylexOptions

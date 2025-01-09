@@ -1,0 +1,10 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "files": {
+    "ignoreUnknown": false,
+    "ignore": [".github/*", "biomejs.json", "dist/*", "node_modules/*", "pnpm-lock.yaml", "pnpm-workspace.yaml"]
+  },
+  "linter": {
+    "enabled": true
+  }
+}

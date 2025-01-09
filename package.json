@@ -1,7 +1,7 @@
 {
   "name": "unplugin-stylex",
-  "version": "0.4.0",
-  "packageManager": "pnpm@8.11.0",
+  "version": "0.5.1",
+  "packageManager": "pnpm@9.12.2",
   "description": "Unplugin for stylex",
   "repository": "https://github.com/eryue0220/unplugin-stylex",
   "keywords": [
@@ -10,8 +10,10 @@
     "stylex-plugin",
     "farm",
     "esbuild",
+    "rolldown",
     "rollup",
     "rspack",
+    "svelte",
     "vite"
   ],
   "author": "eryue0220<eryue0220@gmail.com>",
@@ -69,36 +71,40 @@
     "test": "vitest",
     "test:update": "vitest -u",
     "test:cov": "vitest --coverage",
-    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
-    "check": "pnpm run lint && pnpm run typecheck",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "lint": "pnpm biome lint .",
+    "check": "pnpm biome check . --line-width=120 --quote-style=single --indent-style=space --indent-width=2 --semicolons=as-needed",
+    "ci": "pnpm run lint && pnpm run check",
+    "jsr": "pnpm dlx jsr publish",
+    "changeset": "pnpm dlx @changesets/cli add",
+    "changeset:version": "pnpm dlx @changesets/cli version && pnpm install",
+    "changeset:release": "pnpm run build && pnpm dlx @changesets/cli publish"
   },
   "engines": {
-    "node": ">=16.14.0"
+    "node": ">=18"
   },
   "peerDependencies": {
-    "@stylexjs/stylex": "^0.5.1"
+    "@stylexjs/stylex": "0.x"
   },
   "dependencies": {
-    "@babel/core": "^7.24.7",
-    "@babel/plugin-syntax-flow": "^7.24.7",
-    "@babel/plugin-syntax-jsx": "^7.24.7",
-    "@babel/plugin-syntax-typescript": "^7.24.7",
-    "@rollup/pluginutils": "^5.1.0",
-    "@stylexjs/babel-plugin": "^0.5.1",
-    "unplugin": "^1.11.0"
+    "@babel/core": "^7.26.0",
+    "@babel/plugin-syntax-flow": "^7.26.0",
+    "@babel/plugin-syntax-jsx": "^7.25.9",
+    "@babel/plugin-syntax-typescript": "^7.25.9",
+    "@rollup/pluginutils": "^5.1.3",
+    "@stylexjs/babel-plugin": "^0.9.3",
+    "unplugin": "^1.15.0"
   },
   "devDependencies": {
-    "@stylistic/eslint-plugin-ts": "^1.8.1",
-    "@types/node": "^20.14.10",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
+    "@biomejs/biome": "1.9.4",
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.10",
+    "@types/node": "^20.17.2",
     "@vitest/coverage-v8": "^1.6.0",
     "babel-plugin-syntax-hermes-parser": "^0.19.2",
-    "eslint": "^8.57.0",
-    "tsup": "^8.1.0",
-    "typescript": "^5.5.3",
-    "vite": "^5.3.3",
+    "jsr": "^0.13.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10",
     "vitest": "^1.6.0"
   }
 }

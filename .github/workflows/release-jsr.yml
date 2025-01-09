@@ -1,0 +1,38 @@
+name: Release JSR
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Release JSR
+    if: github.repository == 'eryue0220/unplugin-stylex'
+    permissions:
+      contents: read
+      pull-requests: write
+      id-token: write # The OIDC ID token is used for authentication with JSR.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Packages
+        run: pnpm build
+
+      - name: Publish JSR
+        run: pnpm run jsr
