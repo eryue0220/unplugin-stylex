@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "",
-    "build": ""
+    "dev": "rolldown -w",
+    "build": "rolldown -c rolldown.config.mjs"
   },
   "dependencies": {
     "@stylexjs/open-props": "^0.6.0",
@@ -13,6 +13,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "rolldown": "1.0.0-beta.1",
     "unplugin-stylex": "workspace:*"
   }
 }

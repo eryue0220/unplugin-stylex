@@ -38,6 +38,11 @@
       "require": "./dist/farm.cjs",
       "import": "./dist/farm.js"
     },
+    "./rolldown": {
+      "types": "./dist/rolldown.d.ts",
+      "require": "./dist/rolldown.cjs",
+      "import": "./dist/rolldown.js"
+    },
     "./rollup": {
       "types": "./dist/rollup.d.ts",
       "require": "./dist/rollup.cjs",
