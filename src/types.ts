@@ -6,7 +6,7 @@ export type BabelConfig = {
 
 export type StylexOptions = {
   filename?: string
-  aliases?: string[]
+  aliases?: Record<string, string | string[]>
   stylexImports?: string[]
   classNamePrefix?: string
   unstable_moduleResolution?: {
