@@ -5,12 +5,12 @@
  */
 
 import { createRolldownPlugin } from 'unplugin'
+import type { RolldownPlugin } from 'unplugin'
 import { unpluginFactory } from './index'
 import type { UnpluginStylexInstance } from './types'
 
 // Todo(eryue0220): upgrade ts declaration
-const rolldownPlugin: UnpluginStylexInstance<ReturnType<typeof createRolldownPlugin>> =
-  createRolldownPlugin(unpluginFactory)
+const rolldownPlugin: UnpluginStylexInstance<RolldownPlugin | RolldownPlugin[]> = createRolldownPlugin(unpluginFactory)
 
 /**
  * @experimental
