@@ -1,5 +1,11 @@
 # unplugin-stylex
 
+## 0.5.3
+
+### Patch Changes
+
+- [#106](https://github.com/eryue0220/unplugin-stylex/pull/106) [`1b1434a`](https://github.com/eryue0220/unplugin-stylex/commit/1b1434a099f64c0fc05d06914d77a6597e9ff10a) Thanks [@eryue0220](https://github.com/eryue0220)! - update all deps
+
 ## 0.5.2
 
 ### Patch Changes
