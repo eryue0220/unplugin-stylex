@@ -8,8 +8,8 @@
   "dependencies": {
     "@rspack/cli": "^1.0.14",
     "@rspack/core": "^1.0.14",
-    "@stylexjs/open-props": "^0.9.3",
-    "@stylexjs/stylex": "^0.9.3",
+    "@stylexjs/open-props": "^0.11.1",
+    "@stylexjs/stylex": "^0.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

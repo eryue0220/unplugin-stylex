@@ -7,8 +7,8 @@
     "build": "rolldown -c rolldown.config.mjs"
   },
   "dependencies": {
-    "@stylexjs/open-props": "^0.6.0",
-    "@stylexjs/stylex": "^0.6.0",
+    "@stylexjs/open-props": "^0.11.1",
+    "@stylexjs/stylex": "^0.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
