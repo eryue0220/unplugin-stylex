@@ -2,6 +2,7 @@
   "name": "rollup-example",
   "private": true,
   "type": "module",
+  "version": "0.0.0",
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c"
