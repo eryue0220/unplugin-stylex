@@ -1,6 +1,7 @@
 {
   "name": "esbuild-example",
   "private": true,
+  "version": "0.0.0",
   "scripts": {
     "build": "node scripts/build.mjs",
     "dev": "node scripts/dev.mjs"
