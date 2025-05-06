@@ -12,16 +12,16 @@ import type { UnpluginFactory, UnpluginInstance } from 'unplugin'
 import type { BuildOptions } from 'vite'
 
 import { buildStylexRules } from './core/build'
-import { PLUGIN_NAME } from './core/constants'
 import { getOptions } from './core/options'
 import { transformer } from './core/transformer'
 import type { UnpluginStylexOptions } from './types'
+import { PLUGIN_NAME } from './utils'
 
 /**
  * The main unplugin factory.
  */
-export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined> = (rawOptions = {}) => {
-  const options = getOptions(rawOptions)
+export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined> = (rawOptions, meta) => {
+  const options = getOptions({ ...(rawOptions || {}), framework: meta.framework })
   const stylexRules = {}
   let viteConfig: { build: BuildOptions | undefined; base: string | undefined } | null = null
 
