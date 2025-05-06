@@ -22,10 +22,13 @@ function getAliasesFromTSConfig() {
     const tsConfig = JSON.parse(tsConfigContent)
     const paths = tsConfig?.compilerOptions?.paths || {}
 
-    const aliases = Object.entries(paths).reduce((acc, [key, value]) => {
-      acc[key] = Array.isArray(value) ? value.map(makePathAbsolute) : makePathAbsolute(value as string)
-      return acc
-    }, {} as Record<string, string | string[]>)
+    const aliases = Object.entries(paths).reduce(
+      (acc, [key, value]) => {
+        acc[key] = Array.isArray(value) ? value.map(makePathAbsolute) : makePathAbsolute(value as string)
+        return acc
+      },
+      {} as Record<string, string | string[]>,
+    )
 
     return Object.keys(aliases).length > 0 ? aliases : undefined
   } catch (error) {
@@ -35,8 +38,8 @@ function getAliasesFromTSConfig() {
 }
 
 function getAliasesFromViteConfig() {
-  const configFiles = EXTENSIONS.map(ext => `vite.config${ext}`)
-  const configPath = configFiles.find(file => fs.existsSync(path.resolve(process.cwd(), file)))
+  const configFiles = EXTENSIONS.map((ext) => `vite.config${ext}`)
+  const configPath = configFiles.find((file) => fs.existsSync(path.resolve(process.cwd(), file)))
 
   if (!configPath) {
     return {}
@@ -49,10 +52,13 @@ function getAliasesFromViteConfig() {
     const aliases = config?.resolve?.alias || {}
 
     // Convert aliases to absolute paths
-    return Object.entries(aliases).reduce((acc, [key, value]) => {
-      acc[key] = makePathAbsolute(value as string)
-      return acc
-    }, {} as Record<string, string>)
+    return Object.entries(aliases).reduce(
+      (acc, [key, value]) => {
+        acc[key] = makePathAbsolute(value as string)
+        return acc
+      },
+      {} as Record<string, string>,
+    )
   } catch (error) {
     // If file can't be read or parsed, return empty object
     return {}
@@ -110,10 +116,13 @@ function getAliasesFromRollupConfig() {
     const aliases = aliasPlugin?.options?.entries || {}
 
     // Convert aliases to absolute paths
-    return Object.entries(aliases).reduce((acc, [key, value]) => {
-      acc[key] = makePathAbsolute(value as string)
-      return acc
-    }, {} as Record<string, string>)
+    return Object.entries(aliases).reduce(
+      (acc, [key, value]) => {
+        acc[key] = makePathAbsolute(value as string)
+        return acc
+      },
+      {} as Record<string, string>,
+    )
   } catch (error) {
     // If file can't be read or parsed, return empty object
     return {}
@@ -134,10 +143,13 @@ function getAliasesFromRolldownConfig() {
     const aliases = config?.resolve?.alias || {}
 
     // Convert aliases to absolute paths
-    return Object.entries(aliases).reduce((acc, [key, value]) => {
-      acc[key] = makePathAbsolute(value as string)
-      return acc
-    }, {} as Record<string, string>)
+    return Object.entries(aliases).reduce(
+      (acc, [key, value]) => {
+        acc[key] = makePathAbsolute(value as string)
+        return acc
+      },
+      {} as Record<string, string>,
+    )
   } catch (error) {
     // If file can't be read or parsed, return empty object
     return {}
@@ -162,10 +174,13 @@ function getAliasesFromRspackConfig() {
     const aliases = config?.resolve?.alias || {}
 
     // Convert aliases to absolute paths
-    return Object.entries(aliases).reduce((acc, [key, value]) => {
-      acc[key] = makePathAbsolute(value as string)
-      return acc
-    }, {} as Record<string, string>)
+    return Object.entries(aliases).reduce(
+      (acc, [key, value]) => {
+        acc[key] = makePathAbsolute(value as string)
+        return acc
+      },
+      {} as Record<string, string>,
+    )
   } catch (error) {
     // If file can't be read or parsed, return empty object
     return {}
@@ -186,10 +201,13 @@ function getAliasesFromFarmConfig() {
     const aliases = config?.resolve?.alias || {}
 
     // Convert aliases to absolute paths
-    return Object.entries(aliases).reduce((acc, [key, value]) => {
-      acc[key] = makePathAbsolute(value as string)
-      return acc
-    }, {} as Record<string, string>)
+    return Object.entries(aliases).reduce(
+      (acc, [key, value]) => {
+        acc[key] = makePathAbsolute(value as string)
+        return acc
+      },
+      {} as Record<string, string>,
+    )
   } catch (error) {
     // If file can't be read or parsed, return empty object
     return {}
