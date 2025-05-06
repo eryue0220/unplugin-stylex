@@ -79,10 +79,13 @@ function getAliasesFromWebpackConfig() {
     const aliases = config?.resolve?.alias || {}
 
     // Convert aliases to absolute paths
-    return Object.entries(aliases).reduce((acc, [key, value]) => {
-      acc[key] = makePathAbsolute(value as string)
-      return acc
-    }, {} as Record<string, string>)
+    return Object.entries(aliases).reduce(
+      (acc, [key, value]) => {
+        acc[key] = makePathAbsolute(value as string)
+        return acc
+      },
+      {} as Record<string, string>,
+    )
   } catch (error) {
     // If file can't be read or parsed, return empty object
     return {}
@@ -102,7 +105,7 @@ function getAliasesFromRollupConfig() {
     const config = typeof configModule === 'function' ? configModule() : configModule.default || configModule
 
     // Look for @rollup/plugin-alias configuration
-    const aliasPlugin = config?.plugins?.find(plugin => {
+    const aliasPlugin = config?.plugins?.find((plugin) => {
       if (typeof plugin === 'object' && plugin !== null) {
         return plugin.name === '@rollup/plugin-alias'
       }
