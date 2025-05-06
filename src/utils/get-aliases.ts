@@ -66,8 +66,8 @@ function getAliasesFromViteConfig() {
 }
 
 function getAliasesFromWebpackConfig() {
-  const configFiles = EXTENSIONS.map(ext => `webpack.config${ext}`)
-  const configPath = configFiles.find(file => fs.existsSync(path.resolve(process.cwd(), file)))
+  const configFiles = EXTENSIONS.map((ext) => `webpack.config${ext}`)
+  const configPath = configFiles.find((file) => fs.existsSync(path.resolve(process.cwd(), file)))
 
   if (!configPath) {
     return {}
@@ -90,8 +90,8 @@ function getAliasesFromWebpackConfig() {
 }
 
 function getAliasesFromRollupConfig() {
-  const configFiles = EXTENSIONS.map(ext => `rollup.config${ext}`)
-  const configPath = configFiles.find(file => fs.existsSync(path.resolve(process.cwd(), file)))
+  const configFiles = EXTENSIONS.map((ext) => `rollup.config${ext}`)
+  const configPath = configFiles.find((file) => fs.existsSync(path.resolve(process.cwd(), file)))
 
   if (!configPath) {
     return {}
@@ -130,8 +130,8 @@ function getAliasesFromRollupConfig() {
 }
 
 function getAliasesFromRolldownConfig() {
-  const configFiles = EXTENSIONS.map(ext => `vite.config${ext}`)
-  const configPath = configFiles.find(file => fs.existsSync(path.resolve(process.cwd(), file)))
+  const configFiles = EXTENSIONS.map((ext) => `vite.config${ext}`)
+  const configPath = configFiles.find((file) => fs.existsSync(path.resolve(process.cwd(), file)))
 
   if (!configPath) {
     return {}
@@ -161,8 +161,8 @@ function getAliasesFromEsbuildConfig() {
 }
 
 function getAliasesFromRspackConfig() {
-  const configFiles = EXTENSIONS.map(ext => `rspack.config${ext}`)
-  const configPath = configFiles.find(file => fs.existsSync(path.resolve(process.cwd(), file)))
+  const configFiles = EXTENSIONS.map((ext) => `rspack.config${ext}`)
+  const configPath = configFiles.find((file) => fs.existsSync(path.resolve(process.cwd(), file)))
 
   if (!configPath) {
     return {}
@@ -188,8 +188,8 @@ function getAliasesFromRspackConfig() {
 }
 
 function getAliasesFromFarmConfig() {
-  const configFiles = EXTENSIONS.map(ext => `farm.config${ext}`)
-  const configPath = configFiles.find(file => fs.existsSync(path.resolve(process.cwd(), file)))
+  const configFiles = EXTENSIONS.map((ext) => `farm.config${ext}`)
+  const configPath = configFiles.find((file) => fs.existsSync(path.resolve(process.cwd(), file)))
 
   if (!configPath) {
     return {}
