@@ -1948,6 +1948,7 @@ packages:
 
   '@stylexjs/shared@0.12.0':
     resolution: {integrity: sha512-R698EHDuMo6OJCxcNg/tlA7ZCDQlrHeHaV7as78hDZ9WgP/IPhcg5HWmlF0H0kJ5WcC3jMEPGtsWWRxdWolZ1w==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   '@stylexjs/stylex@0.11.1':
     resolution: {integrity: sha512-1OofsiCP2DYV+Cw/iIuHYTAJRy34TtxQt0FDuQGTnNH915hb6NkPmX6iPa++9t4KP3HWR9oVRmAHkpP58BIYbw==}
