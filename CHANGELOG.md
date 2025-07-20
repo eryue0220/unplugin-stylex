@@ -1,5 +1,11 @@
 # unplugin-stylex
 
+## 0.5.4
+
+### Patch Changes
+
+- [#116](https://github.com/eryue0220/unplugin-stylex/pull/116) [`5986904`](https://github.com/eryue0220/unplugin-stylex/commit/5986904215a04fa5774167a5031c7ddc5de000f8) Thanks [@eryue0220](https://github.com/eryue0220)! - upgrade deps and add alias feature
+
 ## 0.5.3
 
 ### Patch Changes
