@@ -11,5 +11,10 @@
     "./vite": "./src/vite.ts",
     "./webpack": "./src/webpack.ts"
   },
+  "imports": {
+    "@/types": "./src/types.ts",
+    "@/utils": "./src/utils/index.ts",
+    "@/utils/*": "./src/utils/*"
+  },
   "exclude": [".eslintrc.json", ".eslintignore", "test", "examples", "pnpm-lock.yaml", "pnpm-workspace.yaml"]
 }
