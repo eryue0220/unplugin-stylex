@@ -8,12 +8,12 @@
   },
   "dependencies": {
     "@stylexjs/open-props": "^0.11.1",
-    "@stylexjs/stylex": "^0.12.0",
+    "@stylexjs/stylex": "^0.14.2",
     "solid-js": "^1.9.6"
   },
   "devDependencies": {
     "unplugin-stylex": "workspace:*",
-    "vite": "^5.4.19",
-    "vite-plugin-solid": "^2.11.6"
+    "vite": "^7.0.5",
+    "vite-plugin-solid": "^2.11.7"
   }
 }
