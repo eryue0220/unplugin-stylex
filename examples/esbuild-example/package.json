@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@stylexjs/open-props": "^0.11.1",
-    "@stylexjs/stylex": "^0.12.0",
+    "@stylexjs/stylex": "^0.14.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "unplugin-stylex": "workspace:*"
@@ -15,6 +15,6 @@
   "devDependencies": {
     "@types/react": "^18.3.20",
     "@types/react-dom": "^18.3.7",
-    "esbuild": "^0.25.3"
+    "esbuild": "^0.25.8"
   }
 }
