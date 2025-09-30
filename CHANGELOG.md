@@ -1,5 +1,11 @@
 # unplugin-stylex
 
+## 0.5.5
+
+### Patch Changes
+
+- [#119](https://github.com/eryue0220/unplugin-stylex/pull/119) [`9bb6f3c`](https://github.com/eryue0220/unplugin-stylex/commit/9bb6f3c5936fb50e950bb84e7d614f5e9665f817) Thanks [@sfc-gh-alisowski](https://github.com/sfc-gh-alisowski)! - Upgrade stylex
+
 ## 0.5.4
 
 ### Patch Changes

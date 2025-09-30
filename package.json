@@ -1,6 +1,6 @@
 {
   "name": "unplugin-stylex",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "packageManager": "pnpm@9.12.2",
   "description": "Unplugin for stylex",
   "repository": "https://github.com/eryue0220/unplugin-stylex",
