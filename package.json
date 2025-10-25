@@ -98,13 +98,13 @@
     "@rollup/pluginutils": "^5.1.4",
     "@stylexjs/babel-plugin": "^0.16.0",
     "@types/node": "^24.0.15",
-    "@vitest/coverage-v8": "^3.2.4",
     "unplugin": "^1.16.1"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@changesets/changelog-github": "^0.5.1",
     "@changesets/cli": "^2.29.2",
+    "@vitest/coverage-v8": "^3.2.4",
     "babel-plugin-syntax-hermes-parser": "^0.19.2",
     "jsr": "^0.13.4",
     "tsup": "^8.4.0",
