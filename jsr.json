@@ -16,12 +16,5 @@
     "@/utils": "./src/utils/index.ts",
     "@/utils/*": "./src/utils/*"
   },
-  "exclude": [
-    ".eslintrc.json",
-    ".eslintignore",
-    "test",
-    "examples",
-    "pnpm-lock.yaml",
-    "pnpm-workspace.yaml"
-  ]
+  "exclude": [".eslintrc.json", ".eslintignore", "test", "examples", "pnpm-lock.yaml", "pnpm-workspace.yaml"]
 }
