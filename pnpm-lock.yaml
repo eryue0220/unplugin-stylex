@@ -32,9 +32,6 @@ importers:
       '@types/node':
         specifier: ^24.0.15
         version: 24.0.15
-      '@vitest/coverage-v8':
-        specifier: ^3.2.4
-        version: 3.2.4(vitest@3.2.4(@types/node@24.0.15)(jiti@2.4.2)(terser@5.39.0))
       unplugin:
         specifier: ^1.16.1
         version: 1.16.1
@@ -48,6 +45,9 @@ importers:
       '@changesets/cli':
         specifier: ^2.29.2
         version: 2.29.2
+      '@vitest/coverage-v8':
+        specifier: ^3.2.4
+        version: 3.2.4(vitest@3.2.4(@types/node@24.0.15)(jiti@2.4.2)(terser@5.39.0))
       babel-plugin-syntax-hermes-parser:
         specifier: ^0.19.2
         version: 0.19.2
