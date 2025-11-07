@@ -24,17 +24,11 @@
       fontFamily: fonts.mono,
     },
   })
-
-  const mainProps = stylex.props(styles.main)
-  const cardProps = stylex.props(styles.card)
-
-  const toStyleString = (style?: Readonly<Record<string, string | number>>) =>
-    style ? Object.entries(style).map(([key, value]) => `${key}: ${value}`).join('; ') : undefined
 </script>
 
 <main>
-  <div class={mainProps.className} style={toStyleString(mainProps.style)}>
-    <div class={cardProps.className} style={toStyleString(cardProps.style)}>
+  <div class={stylex.props(styles.main).className}>
+    <div class={stylex.props(styles.card).className}>
       <span>Blue rounded rectangle</span>
     </div>
   </div>
