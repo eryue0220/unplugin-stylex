@@ -26,7 +26,7 @@ pnpm i unplugin-stylex --save-dev
 ## Configuration
 
 <details>
-<summary>Vite</summary><br>
+<summary>vite</summary><br>
 
 ```js
 // vite.config.js
@@ -88,6 +88,23 @@ module.exports = {
   // other rspack config
   plugins: [
     stylexPlugin({ /* options */}),
+  ],
+}
+```
+
+</br></details>
+
+<details>
+<summary>rolldown(⚠️ experimental)</summary><br>
+
+```js
+// rolldown.config.js
+import stylexRolldownPlugin from 'unplugin-stylex/rolldown'
+
+export default {
+  // other rolldown config
+  plugins: [
+    stylexRolldownPlugin({ /* options */}),
   ],
 }
 ```

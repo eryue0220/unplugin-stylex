@@ -4,23 +4,26 @@ import stylexFarmPlugin from 'unplugin-stylex/farm'
 export default defineConfig({
   compilation: {
     input: {
-      index: './index.html'
+      index: './index.html',
     },
     output: {
       path: 'dist',
       publicPath: '/',
-      targetEnv: 'browser'
+      targetEnv: 'browser',
     },
   },
   server: {
     hmr: true,
   },
   plugins: [
-    ['@farmfe/plugin-react', {
-      refresh: true,
-      development: true,
-      runtime: 'automatic',
-    }],
+    [
+      '@farmfe/plugin-react',
+      {
+        refresh: true,
+        development: true,
+        runtime: 'automatic',
+      },
+    ],
     stylexFarmPlugin({
       dev: true,
       stylex: {

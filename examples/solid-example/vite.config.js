@@ -1,10 +1,10 @@
+import stylexVitePlugin from 'unplugin-stylex/vite'
 import { defineConfig } from 'vite'
 import solid from 'vite-plugin-solid'
-import stylexVitePlugin from 'unplugin-stylex/vite'
 
 export default defineConfig({
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
   },
   plugins: [
     solid(),

@@ -6,20 +6,16 @@
     "build": "vue-tsc && vite build"
   },
   "dependencies": {
-    "@stylexjs/open-props": "^0.6.0",
-    "@stylexjs/stylex": "^0.6.0",
-    "esbuild-example": "workspace:^",
-    "rollup-example": "^1.0.0",
-    "rspack-example": "workspace:^",
-    "vite-example": "^1.0.39",
-    "vue": "^3.4.23"
+    "@stylexjs/open-props": "^0.11.1",
+    "@stylexjs/stylex": "^0.16.0",
+    "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.6.2",
-    "@vitejs/plugin-vue-jsx": "^3.1.0",
-    "typescript": "^5.4.5",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vitejs/plugin-vue-jsx": "^5.0.1",
+    "typescript": "^5.8.3",
     "unplugin-stylex": "workspace:*",
-    "vite": "^5.2.9",
-    "vue-tsc": "^1.8.27"
+    "vite": "^7.0.5",
+    "vue-tsc": "^2.2.10"
   }
 }

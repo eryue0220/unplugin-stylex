@@ -1,6 +1,7 @@
 /**
  * This entry file is for main unplugin.
- * 
+ *
+ *
  * @module
  */
 
@@ -11,30 +12,29 @@ import type { UnpluginFactory, UnpluginInstance } from 'unplugin'
 import type { BuildOptions } from 'vite'
 
 import { buildStylexRules } from './core/build'
-import { PLUGIN_NAME } from './core/constants'
 import { getOptions } from './core/options'
 import { transformer } from './core/transformer'
 import type { UnpluginStylexOptions } from './types'
+import { PLUGIN_NAME } from './utils'
 
 /**
  * The main unplugin factory.
  */
-export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined> = (rawOptions = {}) => {
-  const options = getOptions(rawOptions)
+export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined> = (rawOptions, meta) => {
+  const options = getOptions({ ...(rawOptions || {}), framework: meta.framework })
   const stylexRules = {}
-  let viteConfig: { build: BuildOptions | undefined; base: string | undefined; } | null = null
+  let viteConfig: { build: BuildOptions | undefined; base: string | undefined } | null = null
 
   return {
     name: PLUGIN_NAME,
 
     transformInclude(id) {
-      // webpack will contain these files, which will occur errors
-      const invalidExts = options.invalidExts
+      const validExts = options.validExts
       const extname = path.extname(id)
       // for handle vite
       const questionMarkIndex = extname.indexOf('?')
       const validExtName = questionMarkIndex > -1 ? extname.slice(0, questionMarkIndex) : extname
-      return !invalidExts.includes(validExtName)
+      return validExts instanceof RegExp ? validExts.test(validExtName) : validExts.includes(validExtName)
     },
 
     async transform(code, id) {
@@ -56,7 +56,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       try {
         const result = await transformer(context)
 
-        if (result.stylexRules && result.stylexRules[id]) {
+        if (result.stylexRules?.[id]) {
           stylexRules[id] = result.stylexRules[id]
         }
 
@@ -94,7 +94,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       },
 
       buildEnd() {
-        const fileName = `${viteConfig!.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
+        const fileName = `${viteConfig?.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
         const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
 
         if (!collectedCSS) return
@@ -107,17 +107,14 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       },
 
       transformIndexHtml(html, ctx) {
-        const fileName = `${viteConfig!.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
+        const fileName = `${viteConfig?.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
         const css = ctx.bundle?.[fileName]
 
         if (!css) {
           return html
         }
 
-        const publicPath = path.posix.join(
-          viteConfig!.base ?? '/',
-          fileName.replace(/\\/g, '/')
-        )
+        const publicPath = path.posix.join(viteConfig?.base ?? '/', fileName.replace(/\\/g, '/'))
 
         return [
           {

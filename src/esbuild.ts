@@ -11,7 +11,6 @@ import type { UnpluginStylexInstance } from './types'
 
 const esbuildPlugin: UnpluginStylexInstance<EsbuildPlugin | EsbuildPlugin[]> = createEsbuildPlugin(unpluginFactory)
 
-
 /**
  * Esbuild plugin
  *

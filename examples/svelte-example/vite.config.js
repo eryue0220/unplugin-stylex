@@ -1,6 +1,23 @@
-import { sveltekit } from '@sveltejs/kit/vite'
+import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { defineConfig } from 'vite'
+import stylexVitePlugin from 'unplugin-stylex/vite'
 
 export default defineConfig({
-	plugins: [sveltekit()]
+	build: {
+		outDir: 'dist',
+	},
+	ssr: {
+		noExternal: ['@stylexjs/open-props', '@stylexjs/stylex'],
+	},
+	plugins: [
+		svelte(),
+		stylexVitePlugin({
+			dev: true,
+			stylex: {
+				useCSSLayers: true,
+				genConditionalClasses: true,
+				treeshakeCompensation: true,
+			},
+		}),
+	],
 })

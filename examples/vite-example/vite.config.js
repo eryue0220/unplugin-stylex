@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import stylexVitePlugin from 'unplugin-stylex/vite'
+import { defineConfig } from 'vite'
 
 export default defineConfig({
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
   },
   plugins: [
     react(),

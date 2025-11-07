@@ -3,9 +3,7 @@ import { pluginReact } from '@rsbuild/plugin-react'
 import stylexPlugin from 'unplugin-stylex/rspack'
 
 export default defineConfig({
-  plugins: [
-    pluginReact(),
-  ],
+  plugins: [pluginReact()],
   html: {
     template: './public/index.html',
   },

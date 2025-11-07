@@ -1,0 +1,19 @@
+{
+  "name": "rolldown-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "rolldown -w",
+    "build": "rolldown -c rolldown.config.mjs"
+  },
+  "dependencies": {
+    "@stylexjs/open-props": "^0.11.1",
+    "@stylexjs/stylex": "^0.16.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "rolldown": "1.0.0-beta.28",
+    "unplugin-stylex": "workspace:*"
+  }
+}

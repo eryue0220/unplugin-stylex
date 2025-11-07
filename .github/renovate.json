@@ -1,7 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
-  "lockFileMaintenance": {"enabled": true, "automerge": false},
+  "timezone": "Asia/Shanghai",
+  "schedule": ["before 10am on monday"],
+  "automerge": true,
+  "automergeType": "branch",
+  "lockFileMaintenance": {
+    "enabled": false
+  },
   "rangeStrategy": "replace",
   "postUpdateOptions": ["pnpmDedupe"],
   "packageRules": [
@@ -18,10 +23,17 @@
       ],
       "groupName": "babel"
     },
-
     {
       "matchPackageNames": ["@stylexjs/stylex", "@stylexjs/babel-plugin"],
       "groupName": "stylex"
+    },
+    {
+      "matchPackageNames": ["unplugin"],
+      "groupName": "unplugin"
+    },
+    {
+      "matchPackageNames": ["vite"],
+      "groupName": "vite"
     }
   ]
 }
