@@ -35,8 +35,8 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <div {...stylex.props(styles.main)}>
-          <div {...stylex.props(styles.card)}>
+        <div className={stylex.props(styles.main).className}>
+          <div className={stylex.props(styles.card).className}>
             <span>Blue rounded rectangle</span>
           </div>
         </div>

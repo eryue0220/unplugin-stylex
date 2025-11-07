@@ -14,15 +14,18 @@ export default defineConfig({
     noExternal: ['@stylexjs/open-props'],
   },
   plugins: [
+    {
+      ...stylexVitePlugin({
+        dev: true,
+        stylex: {
+          useCSSLayers: true,
+          genConditionalClasses: true,
+          treeshakeCompensation: true,
+        },
+      }),
+      enforce: 'pre',
+    },
     remix(),
     tsconfigPaths(),
-    stylexVitePlugin({
-      dev: true,
-      stylex: {
-        useCSSLayers: true,
-        genConditionalClasses: true,
-        treeshakeCompensation: true,
-      },
-    }),
   ],
 })
