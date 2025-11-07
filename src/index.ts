@@ -56,7 +56,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
             stylexRules[id] = result.stylexRules[id]
           }
 
-          return result;
+          return result
         } catch (error) {
           console.error('transform::error::', error)
           this.error(error)
