@@ -24,11 +24,14 @@
       fontFamily: fonts.mono,
     },
   })
+
+  const mainClasses = stylex.props(styles.main).className
+  const cardClasses = stylex.props(styles.card).className
 </script>
 
 <main>
-  <div class={stylex.props(styles.main).className}>
-    <div class={stylex.props(styles.card).className}>
+  <div class={mainClasses}>
+    <div class={cardClasses}>
       <span>Blue rounded rectangle</span>
     </div>
   </div>

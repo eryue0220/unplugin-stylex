@@ -13,7 +13,7 @@ import type { BuildOptions } from 'vite'
 
 import { buildStylexRules } from './core/build'
 import { getOptions } from './core/options'
-import { transformer } from './core/transformer'
+import { transformer, transformerSvelte } from './core/transformer'
 import type { UnpluginStylexOptions } from './types'
 import { PLUGIN_NAME } from './utils'
 
@@ -41,8 +41,26 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       const dir = path.dirname(id)
       const basename = path.basename(id)
       const file = path.join(dir, basename.includes('?') ? basename.split('?')[0] : basename)
+      const extname = path.extname(file)
 
       if (!options.stylex.stylexImports.some((importName) => code.includes(importName))) {
+        return
+      }
+
+      // Handle Svelte files
+      if (extname === '.svelte') {
+        try {
+          const result = await transformerSvelte(code, id, options)
+
+          if (result.stylexRules?.[id]) {
+            stylexRules[id] = result.stylexRules[id]
+          }
+
+          return result;
+        } catch (error) {
+          console.error('transform::error::', error)
+          this.error(error)
+        }
         return
       }
 
