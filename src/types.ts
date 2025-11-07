@@ -6,7 +6,7 @@ export type BabelConfig = {
 
 export type StylexOptions = {
   filename?: string
-  aliases?: string[]
+  aliases?: Record<string, string | string[]>
   stylexImports?: string[]
   classNamePrefix?: string
   unstable_moduleResolution?: {
@@ -14,7 +14,7 @@ export type StylexOptions = {
     rootDir: string
   }
   babelConfig?: BabelConfig
-  useCSSLayers?:  boolean
+  useCSSLayers?: boolean
   genConditionalClasses?: boolean
   treeshakeCompensation?: boolean
   runtimeInjection?: boolean
@@ -22,7 +22,6 @@ export type StylexOptions = {
 
 export type UnpluginStylexOptions = {
   // compiler?: string
-  invalidExts?: string[]
   validExts?: RegExp | string[]
   dev?: boolean
   // enforce?: 'post' | 'pre'

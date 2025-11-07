@@ -1,10 +1,29 @@
-import {
-  Form,
-  Links,
-  Meta,
-  Scripts,
-  ScrollRestoration,
-} from '@remix-run/react'
+import { Links, Meta } from '@remix-run/react'
+import { colors } from '@stylexjs/open-props/lib/colors.stylex'
+import { fonts } from '@stylexjs/open-props/lib/fonts.stylex'
+import { sizes } from '@stylexjs/open-props/lib/sizes.stylex'
+import * as stylex from '@stylexjs/stylex'
+
+const styles = stylex.create({
+  main: {
+    width: '100vw',
+    height: '100vh',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: colors.pink7,
+  },
+  card: {
+    backgroundColor: colors.blue9,
+    padding: sizes.spacing5,
+    borderRadius: sizes.spacing2,
+    justifyContent: 'center',
+    display: 'flex',
+    alignItems: 'center',
+    color: colors.gray0,
+    fontFamily: fonts.mono,
+  },
+})
 
 export default function App() {
   return (
@@ -19,31 +38,11 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <div id="sidebar">
-          <h1>Remix Contacts</h1>
-          <div>
-            <Form id="search-form" role="search">
-              <input
-                aria-label="Search contacts"
-                id="q"
-                name="q"
-                placeholder="Search"
-                type="search"
-              />
-              <div
-                aria-hidden
-                hidden={true}
-                id="search-spinner"
-              />
-            </Form>
-            <Form method="post">
-              <button type="submit">New</button>
-            </Form>
+        <div {...stylex.props(styles.main)}>
+          <div {...stylex.props(styles.card)}>
+            <span>Blue rounded rectangle</span>
           </div>
         </div>
-
-        <ScrollRestoration />
-        <Scripts />
       </body>
     </html>
   )

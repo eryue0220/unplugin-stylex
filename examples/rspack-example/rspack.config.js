@@ -1,6 +1,4 @@
-'use strict'
-
-const path = require('path')
+const path = require('node:path')
 const rspack = require('@rspack/core')
 const { default: stylexRspackPlugin } = require('unplugin-stylex/rspack')
 
@@ -52,7 +50,7 @@ module.exports = {
       dev: isDev,
       stylex: {
         useCSSLayers: true,
-      }
+      },
     }),
     new rspack.HtmlRspackPlugin({
       template: 'public/index.html',

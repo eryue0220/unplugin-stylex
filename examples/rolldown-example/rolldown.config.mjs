@@ -1,14 +1,13 @@
-import stylexVitePlugin from 'unplugin-stylex/vite'
-import { defineConfig } from 'vite'
-import solid from 'vite-plugin-solid'
+import { defineConfig } from 'rolldown'
+import stylexRolldownPlugin from 'unplugin-stylex/rolldown'
 
 export default defineConfig({
+  input: 'src/index.jsx',
   build: {
     outDir: 'dist',
   },
   plugins: [
-    solid(),
-    stylexVitePlugin({
+    stylexRolldownPlugin({
       dev: true,
       stylex: {
         useCSSLayers: true,

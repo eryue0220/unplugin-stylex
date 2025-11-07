@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import stylexVitePlugin from 'unplugin-stylex/vite'
+import { defineConfig } from 'vite'
 
 export default defineConfig({
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
   },
   plugins: [
     vue(),

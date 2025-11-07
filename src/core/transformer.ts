@@ -24,15 +24,12 @@ export async function transformer(context) {
     stylexBabelPlugin.withOptions(stylexBabelPluginOptions),
   ]
 
-  const { code, map, metadata } = await transformAsync(
-    inputCode,
-    {
-      babelrc: stylex.babelConfig?.babelrc,
-      filename: id,
-      presets: stylex.babelConfig?.presets,
-      plugins,
-    }
-  )
+  const { code, map, metadata } = await transformAsync(inputCode, {
+    babelrc: stylex.babelConfig?.babelrc,
+    filename: id,
+    presets: stylex.babelConfig?.presets,
+    plugins,
+  })
 
   if (metadata.stylex && metadata.stylex.length > 0) {
     stylexRules[id] = metadata.stylex
