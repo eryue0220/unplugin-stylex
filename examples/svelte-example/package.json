@@ -1,0 +1,22 @@
+{
+  "name": "svelte-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@sveltejs/kit": "^2.48.4",
+    "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "@types/node": "^20.14.10",
+    "svelte-preprocess": "^6.0.3",
+    "unplugin-stylex": "workspace:*",
+    "vite": "^7.0.5"
+  },
+  "dependencies": {
+    "@stylexjs/open-props": "^0.11.1",
+    "@stylexjs/stylex": "^0.16.0",
+    "svelte": "^5.43.4"
+  }
+}
