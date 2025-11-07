@@ -3,8 +3,8 @@ import { transformAsync } from '@babel/core'
 import jsxSyntaxPlugin from '@babel/plugin-syntax-jsx'
 import stylexBabelPlugin from '@stylexjs/babel-plugin'
 
+import type { UnpluginStylexOptions } from '@/types'
 import { getSyntaxPlugins } from './plugins'
-import { UnpluginStylexOptions } from '@/types'
 
 export async function transformer(context) {
   const { id, inputCode, options } = context
