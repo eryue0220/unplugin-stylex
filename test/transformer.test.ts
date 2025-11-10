@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { transformer } from '../src/core/transformer'
+import { transformers } from '../src/core/transformers'
 
 for (const name of ['javascript', 'typescript']) {
   describe(name, () => {
@@ -13,7 +13,7 @@ for (const name of ['javascript', 'typescript']) {
         },
       }
 
-      const { code } = await transformer(context)
+      const { code } = await transformers.default(context)
       expect(code).toMatchSnapshot()
     })
 
@@ -31,7 +31,7 @@ for (const name of ['javascript', 'typescript']) {
         },
       }
 
-      const { code } = await transformer(context)
+      const { code } = await transformers.default(context)
       expect(code).toMatchSnapshot()
     })
   })

@@ -1,3 +1,4 @@
+import type { LinksFunction } from '@remix-run/node'
 import { Links, Meta } from '@remix-run/react'
 import { colors } from '@stylexjs/open-props/lib/colors.stylex'
 import { fonts } from '@stylexjs/open-props/lib/fonts.stylex'
@@ -25,16 +26,27 @@ const styles = stylex.create({
   },
 })
 
+// Export links function to include StyleX CSS
+// This is needed because Remix doesn't use index.html, so transformIndexHtml is never called
+export const links: LinksFunction = () => {
+  return [
+    {
+      rel: 'stylesheet',
+      href: '/assets/stylex.css',
+    },
+  ]
+}
+
 export default function App() {
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Meta />
         <Links />
+        <Meta />
       </head>
-      <body>
+      <body style={{ boxSizing: 'border-box', padding: 0, margin: 0 }}>
         <div className={stylex.props(styles.main).className}>
           <div className={stylex.props(styles.card).className}>
             <span>Blue rounded rectangle</span>
