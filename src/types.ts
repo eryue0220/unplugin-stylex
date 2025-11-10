@@ -1,3 +1,6 @@
+import type { SourceMap } from '@babel/core'
+import type { Rule } from '@stylexjs/babel-plugin'
+
 export type BabelConfig = {
   plugins: unknown[]
   presets: unknown[]
@@ -29,3 +32,14 @@ export type UnpluginStylexOptions = {
 }
 
 export type UnpluginStylexInstance<T> = (options?: UnpluginStylexOptions) => T
+
+export type UnpluginStylexTransformer = (context: {
+  inputCode: string
+  id: string
+  options: UnpluginStylexOptions
+  pluginContext: unknown
+}) => Promise<{
+  code: string
+  map?: SourceMap | null
+  stylexRules: Record<string, Rule[]>
+}>
