@@ -7,11 +7,8 @@ export default defineConfig({
   build: {
     outDir: 'dist'
   },
-  optimizeDeps: {
-    exclude: ['@stylexjs/open-props'],
-  },
   ssr: {
-    noExternal: ['@stylexjs/open-props'],
+    noExternal: ['@stylexjs/open-props', '@stylexjs/stylex'],
   },
   plugins: [
     {

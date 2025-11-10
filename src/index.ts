@@ -13,16 +13,21 @@ import type { BuildOptions } from 'vite'
 
 import { buildStylexRules } from './core/build'
 import { getOptions } from './core/options'
-import { transformer, transformerSvelte } from './core/transformer'
+import { transformers } from './core/transformers'
 import type { UnpluginStylexOptions } from './types'
-import { PLUGIN_NAME } from './utils'
+import { PLUGIN_NAME, STORE_KEY, stylexRulesStore } from './utils'
 
 /**
  * The main unplugin factory.
  */
 export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined> = (rawOptions, meta) => {
   const options = getOptions({ ...(rawOptions || {}), framework: meta.framework })
-  const stylexRules = {}
+
+  if (!stylexRulesStore.has(STORE_KEY)) {
+    stylexRulesStore.set(STORE_KEY, {})
+  }
+
+  const stylexRules = stylexRulesStore.get(STORE_KEY)
   let viteConfig: { build: BuildOptions | undefined; base: string | undefined } | null = null
 
   return {
@@ -41,26 +46,9 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       const dir = path.dirname(id)
       const basename = path.basename(id)
       const file = path.join(dir, basename.includes('?') ? basename.split('?')[0] : basename)
-      const extname = path.extname(file)
+      const extname = path.extname(file).slice(1)
 
       if (!options.stylex.stylexImports.some((importName) => code.includes(importName))) {
-        return
-      }
-
-      // Handle Svelte files
-      if (extname === '.svelte') {
-        try {
-          const result = await transformerSvelte(code, id, options)
-
-          if (result.stylexRules?.[id]) {
-            stylexRules[id] = result.stylexRules[id]
-          }
-
-          return result
-        } catch (error) {
-          console.error('transform::error::', error)
-          this.error(error)
-        }
         return
       }
 
@@ -72,6 +60,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       }
 
       try {
+        const transformer = transformers[extname] ?? transformers.default
         const result = await transformer(context)
 
         if (result.stylexRules?.[id]) {
