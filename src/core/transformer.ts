@@ -3,6 +3,7 @@ import { transformAsync } from '@babel/core'
 import jsxSyntaxPlugin from '@babel/plugin-syntax-jsx'
 import stylexBabelPlugin from '@stylexjs/babel-plugin'
 
+import type { UnpluginStylexOptions } from '@/types'
 import { getSyntaxPlugins } from './plugins'
 
 export async function transformer(context) {
@@ -45,4 +46,33 @@ export async function transformer(context) {
   }
 
   return { code, stylexRules }
+}
+
+export async function transformerSvelte(code: string, id: string, options: UnpluginStylexOptions) {
+  const scriptMatch = code.match(/<script([^>]*)>([\s\S]*?)<\/script>/i)
+  if (!scriptMatch) {
+    return
+  }
+
+  const scriptAttrs = scriptMatch[1]
+  const scriptContent = scriptMatch[2]
+  const fullScriptTag = scriptMatch[0]
+
+  // Transform only the script content
+  const context = {
+    id,
+    inputCode: scriptContent,
+    pluginContext: this,
+    options,
+  }
+
+  const result = await transformer(context)
+  const transformedScriptTag = `<script${scriptAttrs}>${result.code}</script>`
+  const transformedCode = code.replace(fullScriptTag, transformedScriptTag)
+
+  return {
+    code: transformedCode,
+    map: result.map,
+    stylexRules: result.stylexRules,
+  }
 }
