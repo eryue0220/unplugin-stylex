@@ -9,8 +9,8 @@ export function getOptions(options: UnpluginStylexOptions & { framework: string 
   return {
     ...options,
     dev: isDev,
-    // .js, .jsx, .mjs, .cjs, .ts, .tsx, .mts, .cts, .svelte
-    validExts: options.validExts ?? /\.[mc]?[jt]sx?$|\.svelte$/,
+    // .js, .jsx, .mjs, .cjs, .ts, .tsx, .mts, .cts, .svelte, .vue
+    validExts: options.validExts ?? /\.[mc]?[jt]sx?$|\.svelte$|\.vue$/,
     stylex: {
       filename: stylex.filename || 'stylex.css',
       stylexImports: stylex.stylexImports || ['@stylexjs/stylex'],

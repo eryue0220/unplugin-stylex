@@ -1,0 +1,49 @@
+import { extname as pathExtname } from 'node:path'
+import { transformAsync } from '@babel/core'
+import jsxSyntaxPlugin from '@babel/plugin-syntax-jsx'
+import stylexBabelPlugin from '@stylexjs/babel-plugin'
+
+import type { UnpluginStylexTransformer } from '@/types'
+import { getSyntaxPlugins } from '../plugins'
+
+export const defaultTransformer: UnpluginStylexTransformer = async (context) => {
+  const { inputCode, id, options } = context
+  const stylex = options.stylex ?? {}
+  const extname = pathExtname(id)
+  const stylexRules = {}
+
+  const stylexBabelPluginOptions = {
+    dev: options.dev,
+    importSources: stylex.stylexImports,
+    ...stylex,
+  }
+
+  const plugins = [
+    ...(stylex.babelConfig?.plugins || []),
+    ...getSyntaxPlugins(extname),
+    jsxSyntaxPlugin,
+    stylexBabelPlugin.withOptions(stylexBabelPluginOptions),
+  ]
+
+  const { code, map, metadata } = await transformAsync(inputCode, {
+    babelrc: stylex.babelConfig?.babelrc,
+    filename: id,
+    presets: stylex.babelConfig?.presets,
+    plugins,
+  })
+
+  if (metadata.stylex && metadata.stylex.length > 0) {
+    stylexRules[id] = metadata.stylex
+  }
+
+  if (!stylex.babelConfig?.babelrc) {
+    return {
+      code,
+      // compatible for farm, null will occur an error
+      map: map || undefined,
+      stylexRules,
+    }
+  }
+
+  return { code, stylexRules }
+}
