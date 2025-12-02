@@ -9,7 +9,7 @@ export default defineConfig({
   },
   test: {
     coverage: {
-      exclude: ['examples/**', 'test/**'],
+      exclude: ['examples/**'],
       reporter: ['text', 'json', 'html'],
     },
   },

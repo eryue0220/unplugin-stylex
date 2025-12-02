@@ -43,7 +43,7 @@ describe('defaultTransformer', () => {
       metadata: {
         stylex: mockMetadata.stylex,
       },
-    } as any)
+    })
 
     const context = {
       id: 'test.tsx',
@@ -69,7 +69,7 @@ describe('defaultTransformer', () => {
       code: 'const x = 1',
       map: null,
       metadata: {},
-    } as any)
+    })
 
     const context = {
       id: 'test.ts',
@@ -94,7 +94,7 @@ describe('defaultTransformer', () => {
       code: 'transformed',
       map: null,
       metadata: {},
-    } as any)
+    })
 
     const context = {
       id: 'test.ts',
@@ -125,7 +125,7 @@ describe('defaultTransformer', () => {
       code: 'transformed',
       map: mockMap,
       metadata: {},
-    } as any)
+    })
 
     const context = {
       id: 'test.ts',
@@ -154,7 +154,7 @@ describe('defaultTransformer', () => {
       code: 'transformed',
       map: null,
       metadata: {},
-    } as any)
+    })
 
     const context = {
       id: 'test.ts',
