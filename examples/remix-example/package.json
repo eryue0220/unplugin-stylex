@@ -23,7 +23,7 @@
     "@types/react-dom": "^19.2.3",
     "typescript": "^5.5.4",
     "unplugin-stylex": "workspace:*",
-    "vite": "^7.0.5",
+    "vite": "^7.2.6",
     "vite-tsconfig-paths": "^5.0.1"
   }
 }
