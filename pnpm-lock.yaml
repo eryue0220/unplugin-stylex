@@ -24,8 +24,8 @@ importers:
         specifier: ^5.1.4
         version: 5.1.4(rollup@4.40.1)
       '@stylexjs/babel-plugin':
-        specifier: ^0.16.0
-        version: 0.16.3
+        specifier: ^0.17.2
+        version: 0.17.2
       '@stylexjs/stylex':
         specifier: 0.x
         version: 0.12.0
@@ -73,8 +73,8 @@ importers:
         specifier: ^0.11.1
         version: 0.11.1
       '@stylexjs/stylex':
-        specifier: ^0.16.0
-        version: 0.16.3
+        specifier: ^0.17.2
+        version: 0.17.2
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -104,8 +104,8 @@ importers:
         specifier: ^0.11.1
         version: 0.11.1
       '@stylexjs/stylex':
-        specifier: ^0.16.0
-        version: 0.16.3
+        specifier: ^0.17.2
+        version: 0.17.2
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -132,8 +132,8 @@ importers:
         specifier: ^0.11.1
         version: 0.11.1
       '@stylexjs/stylex':
-        specifier: ^0.16.0
-        version: 0.16.3
+        specifier: ^0.17.2
+        version: 0.17.2
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -178,8 +178,8 @@ importers:
         specifier: ^0.11.1
         version: 0.11.1
       '@stylexjs/stylex':
-        specifier: ^0.16.0
-        version: 0.16.3
+        specifier: ^0.17.2
+        version: 0.17.2
       isbot:
         specifier: ^4.4.0
         version: 4.4.0
@@ -218,8 +218,8 @@ importers:
         specifier: ^0.11.1
         version: 0.11.1
       '@stylexjs/stylex':
-        specifier: ^0.16.0
-        version: 0.16.3
+        specifier: ^0.17.2
+        version: 0.17.2
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -240,8 +240,8 @@ importers:
         specifier: ^0.11.1
         version: 0.11.1
       '@stylexjs/stylex':
-        specifier: ^0.16.0
-        version: 0.16.3
+        specifier: ^0.17.2
+        version: 0.17.2
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -289,8 +289,8 @@ importers:
         specifier: ^0.11.1
         version: 0.11.1
       '@stylexjs/stylex':
-        specifier: ^0.16.0
-        version: 0.16.3
+        specifier: ^0.17.2
+        version: 0.17.2
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -323,8 +323,8 @@ importers:
         specifier: ^0.11.1
         version: 0.11.1
       '@stylexjs/stylex':
-        specifier: ^0.16.0
-        version: 0.16.3
+        specifier: ^0.17.2
+        version: 0.17.2
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -357,8 +357,8 @@ importers:
         specifier: ^0.11.1
         version: 0.11.1
       '@stylexjs/stylex':
-        specifier: ^0.16.0
-        version: 0.16.3
+        specifier: ^0.17.2
+        version: 0.17.2
       solid-js:
         specifier: ^1.9.10
         version: 1.9.10
@@ -379,8 +379,8 @@ importers:
         specifier: ^0.11.1
         version: 0.11.1
       '@stylexjs/stylex':
-        specifier: ^0.16.0
-        version: 0.16.3
+        specifier: ^0.17.2
+        version: 0.17.2
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -407,8 +407,8 @@ importers:
         specifier: ^0.11.1
         version: 0.11.1
       '@stylexjs/stylex':
-        specifier: ^0.16.0
-        version: 0.16.3
+        specifier: ^0.17.2
+        version: 0.17.2
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.8.3)
@@ -438,8 +438,8 @@ importers:
         specifier: ^0.11.1
         version: 0.11.1
       '@stylexjs/stylex':
-        specifier: ^0.16.0
-        version: 0.16.3
+        specifier: ^0.17.2
+        version: 0.17.2
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -1294,8 +1294,8 @@ packages:
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
     engines: {node: '>=10.0.0'}
 
-  '@dual-bundle/import-meta-resolve@4.1.0':
-    resolution: {integrity: sha512-+nxncfwHM5SgAtrVzgpzJOI1ol0PkumhVo469KCf9lUi21IGcY90G98VuHm9VRrUypmAzawAHO9bs6hqeADaVg==}
+  '@dual-bundle/import-meta-resolve@4.2.1':
+    resolution: {integrity: sha512-id+7YRUgoUX6CgV0DtuhirQWodeeA7Lf4i2x71JS/vtA5pRb/hIGWlw+G6MeXvsM+MXrz0VAydTGElX1rAfgPg==}
 
   '@emnapi/core@1.4.3':
     resolution: {integrity: sha512-4m62DuCE07lw01soJwPiBGC0nAww0Q+RY70VZ+n49yDIO13yyinhbWCeNnaob0lakDtWQzSdtNWzJeOJt2ma+g==}
@@ -2785,12 +2785,15 @@ packages:
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
 
-  '@stylexjs/babel-plugin@0.16.3':
-    resolution: {integrity: sha512-TTcqqiQ3Im3MYBE70GKrEp4n6NEdYnHi7lrp1lAzz6qKt1SfphPmKk+qZodSxc9DUucQ7lssfjvPlzQdIdbS/A==}
+  '@stylexjs/babel-plugin@0.17.2':
+    resolution: {integrity: sha512-eSiuJ+ulTgF+8UvGumAQZeWvyLpim4zvoN8pKRgDoCeGpoBiE8SmPogPSpv+PmPSB37gJKiJY+L6JENjtBG83A==}
 
   '@stylexjs/open-props@0.11.1':
     resolution: {integrity: sha512-UYeJV34LOmDZ1igQknB+iM3JMg+lbncHr/zG7i1tBwwQslNNWOMM7iR4hwSUvczQYcW5G8vMAorP/2j4T8XBjA==}
     deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+
+  '@stylexjs/shared@0.17.2':
+    resolution: {integrity: sha512-DBsIpSTQAMj3+KCgRAHcAa7QmRJMP4uDQ6zkdWBUcmiiG4lzHP2Lwues3h4dVXkGEagIXad0+lHMa/tBzabSGg==}
 
   '@stylexjs/stylex@0.11.1':
     resolution: {integrity: sha512-1OofsiCP2DYV+Cw/iIuHYTAJRy34TtxQt0FDuQGTnNH915hb6NkPmX6iPa++9t4KP3HWR9oVRmAHkpP58BIYbw==}
@@ -2798,8 +2801,8 @@ packages:
   '@stylexjs/stylex@0.12.0':
     resolution: {integrity: sha512-gvazVsoTNRTnXldvmV/IIa1bB6UStoWMmRpoH/O+/f05IWnq5xES5foWxaPKm0uZD1vQ2Ue5e820lwT5+YqnrQ==}
 
-  '@stylexjs/stylex@0.16.3':
-    resolution: {integrity: sha512-tJ3Wck4h391wNr92LxE4om9b3FxKPKFiYQlTcr1omMe+EUk+v14raP8YGy+isM4wHuA+Sg4Ca87og3xYVwLOXQ==}
+  '@stylexjs/stylex@0.17.2':
+    resolution: {integrity: sha512-aa10cV1khT/vb92a1RvF9+6FMWKcbE9Ka9RI1rN20xIaAIZaUFTUuymBpVmfAUM3wgAAz/1h7bdFM6PpP2e5gA==}
 
   '@swc/helpers@0.5.17':
     resolution: {integrity: sha512-5IKx/Y13RsYd+sauPb2x+U/xZikHjolzfuDgTAl/Tdf3Q8rslRvC19NKDLgAJQ6wsqADk10ntlv08nPFw/gO/A==}
@@ -3805,6 +3808,15 @@ packages:
 
   debug@4.4.1:
     resolution: {integrity: sha512-KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+
+  debug@4.4.3:
+    resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
     engines: {node: '>=6.0'}
     peerDependencies:
       supports-color: '*'
@@ -7639,7 +7651,7 @@ snapshots:
       '@babel/parser': 7.28.0
       '@babel/template': 7.27.2
       '@babel/traverse': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.5
       convert-source-map: 2.0.0
       debug: 4.4.0
       gensync: 1.0.0-beta.2
@@ -7658,8 +7670,8 @@ snapshots:
 
   '@babel/generator@7.28.0':
     dependencies:
-      '@babel/parser': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/parser': 7.28.5
+      '@babel/types': 7.28.5
       '@jridgewell/gen-mapping': 0.3.12
       '@jridgewell/trace-mapping': 0.3.29
       jsesc: 3.1.0
@@ -7674,11 +7686,11 @@ snapshots:
 
   '@babel/helper-annotate-as-pure@7.27.1':
     dependencies:
-      '@babel/types': 7.27.1
+      '@babel/types': 7.28.5
 
   '@babel/helper-annotate-as-pure@7.27.3':
     dependencies:
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.5
 
   '@babel/helper-compilation-targets@7.27.1':
     dependencies:
@@ -7704,7 +7716,7 @@ snapshots:
       '@babel/helper-optimise-call-expression': 7.27.1
       '@babel/helper-replace-supers': 7.27.1(@babel/core@7.27.1)
       '@babel/helper-skip-transparent-expression-wrappers': 7.27.1
-      '@babel/traverse': 7.27.1
+      '@babel/traverse': 7.28.5
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
@@ -7717,7 +7729,7 @@ snapshots:
       '@babel/helper-optimise-call-expression': 7.27.1
       '@babel/helper-replace-supers': 7.27.1(@babel/core@7.28.0)
       '@babel/helper-skip-transparent-expression-wrappers': 7.27.1
-      '@babel/traverse': 7.27.1
+      '@babel/traverse': 7.28.5
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
@@ -7747,7 +7759,7 @@ snapshots:
       '@babel/core': 7.27.1
       '@babel/helper-compilation-targets': 7.27.1
       '@babel/helper-plugin-utils': 7.27.1
-      debug: 4.4.0
+      debug: 4.4.3
       lodash.debounce: 4.0.8
       resolve: 1.22.10
     transitivePeerDependencies:
@@ -7757,8 +7769,8 @@ snapshots:
 
   '@babel/helper-member-expression-to-functions@7.27.1':
     dependencies:
-      '@babel/traverse': 7.27.1
-      '@babel/types': 7.27.1
+      '@babel/traverse': 7.28.5
+      '@babel/types': 7.28.5
     transitivePeerDependencies:
       - supports-color
 
@@ -7775,8 +7787,8 @@ snapshots:
 
   '@babel/helper-module-imports@7.27.1':
     dependencies:
-      '@babel/traverse': 7.27.1
-      '@babel/types': 7.27.1
+      '@babel/traverse': 7.28.5
+      '@babel/types': 7.28.5
     transitivePeerDependencies:
       - supports-color
 
@@ -7802,14 +7814,14 @@ snapshots:
     dependencies:
       '@babel/core': 7.28.0
       '@babel/helper-module-imports': 7.27.1
-      '@babel/helper-validator-identifier': 7.27.1
+      '@babel/helper-validator-identifier': 7.28.5
       '@babel/traverse': 7.28.0
     transitivePeerDependencies:
       - supports-color
 
   '@babel/helper-optimise-call-expression@7.27.1':
     dependencies:
-      '@babel/types': 7.27.1
+      '@babel/types': 7.28.5
 
   '@babel/helper-plugin-utils@7.27.1': {}
 
@@ -7818,7 +7830,7 @@ snapshots:
       '@babel/core': 7.27.1
       '@babel/helper-annotate-as-pure': 7.27.1
       '@babel/helper-wrap-function': 7.27.1
-      '@babel/traverse': 7.27.1
+      '@babel/traverse': 7.28.5
     transitivePeerDependencies:
       - supports-color
 
@@ -7827,7 +7839,7 @@ snapshots:
       '@babel/core': 7.27.1
       '@babel/helper-member-expression-to-functions': 7.27.1
       '@babel/helper-optimise-call-expression': 7.27.1
-      '@babel/traverse': 7.27.1
+      '@babel/traverse': 7.28.5
     transitivePeerDependencies:
       - supports-color
 
@@ -7836,14 +7848,14 @@ snapshots:
       '@babel/core': 7.28.0
       '@babel/helper-member-expression-to-functions': 7.27.1
       '@babel/helper-optimise-call-expression': 7.27.1
-      '@babel/traverse': 7.27.1
+      '@babel/traverse': 7.28.5
     transitivePeerDependencies:
       - supports-color
 
   '@babel/helper-skip-transparent-expression-wrappers@7.27.1':
     dependencies:
-      '@babel/traverse': 7.27.1
-      '@babel/types': 7.27.1
+      '@babel/traverse': 7.28.5
+      '@babel/types': 7.28.5
     transitivePeerDependencies:
       - supports-color
 
@@ -7857,9 +7869,9 @@ snapshots:
 
   '@babel/helper-wrap-function@7.27.1':
     dependencies:
-      '@babel/template': 7.27.1
-      '@babel/traverse': 7.27.1
-      '@babel/types': 7.27.1
+      '@babel/template': 7.27.2
+      '@babel/traverse': 7.28.5
+      '@babel/types': 7.28.5
     transitivePeerDependencies:
       - supports-color
 
@@ -7871,7 +7883,7 @@ snapshots:
   '@babel/helpers@7.27.6':
     dependencies:
       '@babel/template': 7.27.2
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.5
 
   '@babel/parser@7.27.1':
     dependencies:
@@ -7889,7 +7901,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.27.1
       '@babel/helper-plugin-utils': 7.27.1
-      '@babel/traverse': 7.27.1
+      '@babel/traverse': 7.28.5
     transitivePeerDependencies:
       - supports-color
 
@@ -7916,7 +7928,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.27.1
       '@babel/helper-plugin-utils': 7.27.1
-      '@babel/traverse': 7.27.1
+      '@babel/traverse': 7.28.5
     transitivePeerDependencies:
       - supports-color
 
@@ -7980,7 +7992,7 @@ snapshots:
       '@babel/core': 7.27.1
       '@babel/helper-plugin-utils': 7.27.1
       '@babel/helper-remap-async-to-generator': 7.27.1(@babel/core@7.27.1)
-      '@babel/traverse': 7.27.1
+      '@babel/traverse': 7.28.5
     transitivePeerDependencies:
       - supports-color
 
@@ -8026,7 +8038,7 @@ snapshots:
       '@babel/helper-compilation-targets': 7.27.1
       '@babel/helper-plugin-utils': 7.27.1
       '@babel/helper-replace-supers': 7.27.1(@babel/core@7.27.1)
-      '@babel/traverse': 7.27.1
+      '@babel/traverse': 7.28.5
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -8087,7 +8099,7 @@ snapshots:
       '@babel/core': 7.27.1
       '@babel/helper-compilation-targets': 7.27.1
       '@babel/helper-plugin-utils': 7.27.1
-      '@babel/traverse': 7.27.1
+      '@babel/traverse': 7.28.5
     transitivePeerDependencies:
       - supports-color
 
@@ -8141,7 +8153,7 @@ snapshots:
       '@babel/helper-module-transforms': 7.27.1(@babel/core@7.27.1)
       '@babel/helper-plugin-utils': 7.27.1
       '@babel/helper-validator-identifier': 7.27.1
-      '@babel/traverse': 7.27.1
+      '@babel/traverse': 7.28.5
     transitivePeerDependencies:
       - supports-color
 
@@ -8258,7 +8270,7 @@ snapshots:
       '@babel/helper-module-imports': 7.27.1
       '@babel/helper-plugin-utils': 7.27.1
       '@babel/plugin-syntax-jsx': 7.27.1(@babel/core@7.27.1)
-      '@babel/types': 7.27.1
+      '@babel/types': 7.28.5
     transitivePeerDependencies:
       - supports-color
 
@@ -8436,7 +8448,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.27.1
       '@babel/helper-plugin-utils': 7.27.1
-      '@babel/types': 7.27.1
+      '@babel/types': 7.28.5
       esutils: 2.0.3
 
   '@babel/preset-react@7.27.1(@babel/core@7.27.1)':
@@ -8473,8 +8485,8 @@ snapshots:
   '@babel/template@7.27.2':
     dependencies:
       '@babel/code-frame': 7.27.1
-      '@babel/parser': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/parser': 7.28.5
+      '@babel/types': 7.28.5
 
   '@babel/traverse@7.27.1':
     dependencies:
@@ -8495,7 +8507,7 @@ snapshots:
       '@babel/helper-globals': 7.28.0
       '@babel/parser': 7.28.0
       '@babel/template': 7.27.2
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.5
       debug: 4.4.1
     transitivePeerDependencies:
       - supports-color
@@ -8508,7 +8520,7 @@ snapshots:
       '@babel/parser': 7.28.5
       '@babel/template': 7.27.2
       '@babel/types': 7.28.5
-      debug: 4.4.1
+      debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
@@ -8727,7 +8739,7 @@ snapshots:
 
   '@discoveryjs/json-ext@0.5.7': {}
 
-  '@dual-bundle/import-meta-resolve@4.1.0': {}
+  '@dual-bundle/import-meta-resolve@4.2.1': {}
 
   '@emnapi/core@1.4.3':
     dependencies:
@@ -9985,14 +9997,15 @@ snapshots:
 
   '@shikijs/vscode-textmate@10.0.2': {}
 
-  '@stylexjs/babel-plugin@0.16.3':
+  '@stylexjs/babel-plugin@0.17.2':
     dependencies:
-      '@babel/core': 7.28.0
+      '@babel/core': 7.27.1
       '@babel/helper-module-imports': 7.27.1
-      '@babel/traverse': 7.28.0
-      '@babel/types': 7.28.1
-      '@dual-bundle/import-meta-resolve': 4.1.0
-      '@stylexjs/stylex': 0.16.3
+      '@babel/traverse': 7.28.5
+      '@babel/types': 7.28.5
+      '@dual-bundle/import-meta-resolve': 4.2.1
+      '@stylexjs/shared': 0.17.2
+      '@stylexjs/stylex': 0.17.2
       postcss-value-parser: 4.2.0
     transitivePeerDependencies:
       - supports-color
@@ -10000,6 +10013,8 @@ snapshots:
   '@stylexjs/open-props@0.11.1':
     dependencies:
       '@stylexjs/stylex': 0.11.1
+
+  '@stylexjs/shared@0.17.2': {}
 
   '@stylexjs/stylex@0.11.1':
     dependencies:
@@ -10013,7 +10028,7 @@ snapshots:
       invariant: 2.2.4
       styleq: 0.2.1
 
-  '@stylexjs/stylex@0.16.3':
+  '@stylexjs/stylex@0.17.2':
     dependencies:
       css-mediaquery: 0.1.2
       invariant: 2.2.4
@@ -10040,23 +10055,23 @@ snapshots:
   '@types/babel__core@7.20.5':
     dependencies:
       '@babel/parser': 7.27.1
-      '@babel/types': 7.27.1
+      '@babel/types': 7.28.5
       '@types/babel__generator': 7.27.0
       '@types/babel__template': 7.4.4
       '@types/babel__traverse': 7.20.7
 
   '@types/babel__generator@7.27.0':
     dependencies:
-      '@babel/types': 7.27.1
+      '@babel/types': 7.28.5
 
   '@types/babel__template@7.4.4':
     dependencies:
       '@babel/parser': 7.27.1
-      '@babel/types': 7.27.1
+      '@babel/types': 7.28.5
 
   '@types/babel__traverse@7.20.7':
     dependencies:
-      '@babel/types': 7.27.1
+      '@babel/types': 7.28.5
 
   '@types/body-parser@1.19.5':
     dependencies:
@@ -10402,8 +10417,8 @@ snapshots:
       '@babel/helper-plugin-utils': 7.27.1
       '@babel/plugin-syntax-jsx': 7.27.1(@babel/core@7.28.0)
       '@babel/template': 7.27.2
-      '@babel/traverse': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/traverse': 7.28.5
+      '@babel/types': 7.28.5
       '@vue/babel-helper-vue-transform-on': 1.4.0
       '@vue/babel-plugin-resolve-type': 1.4.0(@babel/core@7.28.0)
       '@vue/shared': 3.5.13
@@ -10418,14 +10433,14 @@ snapshots:
       '@babel/core': 7.28.0
       '@babel/helper-module-imports': 7.27.1
       '@babel/helper-plugin-utils': 7.27.1
-      '@babel/parser': 7.28.0
+      '@babel/parser': 7.28.5
       '@vue/compiler-sfc': 3.5.13
     transitivePeerDependencies:
       - supports-color
 
   '@vue/compiler-core@3.5.13':
     dependencies:
-      '@babel/parser': 7.27.1
+      '@babel/parser': 7.28.5
       '@vue/shared': 3.5.13
       entities: 4.5.0
       estree-walker: 2.0.2
@@ -11264,6 +11279,10 @@ snapshots:
       ms: 2.1.3
 
   debug@4.4.1:
+    dependencies:
+      ms: 2.1.3
+
+  debug@4.4.3:
     dependencies:
       ms: 2.1.3
 
@@ -12610,7 +12629,7 @@ snapshots:
 
   koa-send@5.0.1:
     dependencies:
-      debug: 4.4.0
+      debug: 4.4.3
       http-errors: 1.8.1
       resolve-path: 1.4.0
     transitivePeerDependencies:
@@ -13366,7 +13385,7 @@ snapshots:
   micromark@3.2.0:
     dependencies:
       '@types/debug': 4.1.12
-      debug: 4.4.1
+      debug: 4.4.3
       decode-named-character-reference: 1.2.0
       micromark-core-commonmark: 1.1.0
       micromark-factory-space: 1.1.0
@@ -15174,7 +15193,7 @@ snapshots:
   vite-node@1.6.1(@types/node@24.10.1)(terser@5.44.1):
     dependencies:
       cac: 6.7.14
-      debug: 4.4.1
+      debug: 4.4.3
       pathe: 1.1.2
       picocolors: 1.1.1
       vite: 5.4.21(@types/node@24.10.1)(terser@5.44.1)
