@@ -1,0 +1,49 @@
+version: 2
+
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    groups:
+      actions:
+        patterns:
+          - "*"
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+
+    open-pull-requests-limit: 10
+
+    versioning-strategy: increase
+
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+    groups:
+      typescript:
+        patterns:
+          - "typescript"
+          - "@tsd/typescript"
+      babel:
+        patterns:
+          - "@babel/*"
+      stylex:
+        patterns:
+          - "@stylexjs/*"
+      unplugin:
+        patterns:
+          - "unplugin"
+      vite:
+        patterns:
+          - "vite"
+
+    ignore:
+      - dependency-name: "@stylexjs/stylex"
+        update-types: ["version-update:semver-major"]
