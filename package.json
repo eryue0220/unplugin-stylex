@@ -103,7 +103,7 @@
     "@rollup/pluginutils": "^5.1.4",
     "@stylexjs/babel-plugin": "^0.17.2",
     "@types/node": "^24.0.15",
-    "unplugin": "^1.16.1"
+    "unplugin": "^2.3.11"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
