@@ -12,18 +12,18 @@
     "@remix-run/react": "^2.17.2",
     "@remix-run/serve": "^2.17.2",
     "@stylexjs/open-props": "^0.11.1",
-    "@stylexjs/stylex": "^0.16.0",
+    "@stylexjs/stylex": "^0.17.2",
     "isbot": "^4.4.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.17.2",
-    "@types/react": "^18.2.79",
-    "@types/react-dom": "^18.2.25",
-    "typescript": "^5.5.4",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3",
     "unplugin-stylex": "workspace:*",
-    "vite": "^7.0.5",
+    "vite": "^7.2.6",
     "vite-tsconfig-paths": "^5.0.1"
   }
 }
