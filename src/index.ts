@@ -100,6 +100,42 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
         config.optimizeDeps.exclude.push('@stylexjs/open-props')
       },
 
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          if (!req.url) {
+            next()
+            return
+          }
+
+          const fileName = `${viteConfig?.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
+          const cssPath = path.posix.join(viteConfig?.base ?? '/', fileName.replace(/\\/g, '/')).replace(/\/+/g, '/')
+          const basePath = (viteConfig?.base ?? '/').replace(/\/+$/, '') || '/'
+          const filename = options.stylex.filename
+
+          // Check if the request is for the CSS file
+          // Match various path formats: /assets/stylex.css, /stylex.css, assets/stylex.css
+          const normalizedUrl = req.url.split('?')[0] // Remove query params
+          const isCSSRequest =
+            normalizedUrl === cssPath ||
+            normalizedUrl === `${basePath}/${filename}` ||
+            normalizedUrl === `/${filename}` ||
+            normalizedUrl.endsWith(`/${filename}`) ||
+            normalizedUrl === filename
+
+          if (isCSSRequest) {
+            const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
+
+            res.setHeader('Content-Type', 'text/css')
+            res.setHeader('Cache-Control', 'no-cache')
+            res.end(collectedCSS || '')
+
+            return
+          }
+
+          next()
+        })
+      },
+
       buildEnd() {
         const fileName = `${viteConfig?.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
         const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
