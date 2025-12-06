@@ -1,8 +1,5 @@
 # unplugin-stylex &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/eryue0220/unplugin-stylex/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/unplugin-stylex.svg?style=flat)](https://www.npmjs.com/package/unplugin-stylex)
 
-> [!WARNING]  
-> This plugin is in early development and may not work as expected. Please report any issues you find.
-
 ## Installation
 
 Install the package from the following command
