@@ -7,6 +7,10 @@
 .eslintrc.json
 .eslintcache
 .github
+.astro/
+.svelte-kit/
+.vite/
+.turbo/
 
 typos.toml
 vitest.config.ts
@@ -16,3 +20,4 @@ vitest.config.ts
 /src
 /test
 /coverage
+/build

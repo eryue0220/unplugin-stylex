@@ -1,16 +1,13 @@
-import { svelte } from '@sveltejs/vite-plugin-svelte'
+import { vitePlugin as remix } from '@remix-run/dev'
 import stylexVitePlugin from 'unplugin-stylex/vite'
 import { defineConfig } from 'vite'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
-  build: {
-    outDir: 'dist',
-  },
   ssr: {
     noExternal: ['@stylexjs/open-props', '@stylexjs/stylex'],
   },
   plugins: [
-    svelte(),
     {
       ...stylexVitePlugin({
         dev: true,
@@ -22,5 +19,7 @@ export default defineConfig({
       }),
       enforce: 'pre',
     },
+    remix(),
+    tsconfigPaths(),
   ],
 })
