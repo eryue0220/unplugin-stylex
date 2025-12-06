@@ -13,7 +13,7 @@
     "@remix-run/serve": "^2.17.2",
     "@stylexjs/open-props": "^0.11.1",
     "@stylexjs/stylex": "^0.17.2",
-    "isbot": "^4.4.0",
+    "isbot": "^5.1.32",
     "react": "^18.2.0",
     "react-dom": "^19.2.1"
   },
