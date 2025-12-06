@@ -43,7 +43,12 @@ updates:
       vite:
         patterns:
           - "vite"
-
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
     ignore:
       - dependency-name: "@stylexjs/stylex"
         update-types: ["version-update:semver-major"]
