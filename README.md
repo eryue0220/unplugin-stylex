@@ -92,7 +92,7 @@ module.exports = {
 </br></details>
 
 <details>
-<summary>rolldown(⚠️ experimental)</summary><br>
+<summary>rolldown</summary><br>
 
 ```js
 // rolldown.config.js
