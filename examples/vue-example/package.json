@@ -12,10 +12,10 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.0",
-    "@vitejs/plugin-vue-jsx": "^5.0.1",
+    "@vitejs/plugin-vue-jsx": "^5.1.2",
     "typescript": "^5.9.3",
     "unplugin-stylex": "workspace:*",
     "vite": "^7.2.6",
-    "vue-tsc": "^2.2.10"
+    "vue-tsc": "^3.1.7"
   }
 }
