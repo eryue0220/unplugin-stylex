@@ -18,7 +18,7 @@
     "@farmfe/plugin-react": "^1.2.6",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "react-refresh": "^0.14.2",
+    "react-refresh": "^0.18.0",
     "unplugin-stylex": "workspace:*"
   }
 }
