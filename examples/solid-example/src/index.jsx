@@ -1,6 +1,3 @@
-import { colors } from '@stylexjs/open-props/lib/colors.stylex'
-import { fonts } from '@stylexjs/open-props/lib/fonts.stylex'
-import { sizes } from '@stylexjs/open-props/lib/sizes.stylex'
 import * as stylex from '@stylexjs/stylex'
 import { render } from 'solid-js/web'
 
@@ -11,17 +8,17 @@ const styles = stylex.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.pink7,
+    backgroundColor: '#d6336c',
   },
   card: {
-    backgroundColor: colors.blue9,
-    padding: sizes.spacing5,
-    borderRadius: sizes.spacing2,
-    justifyContent: 'center',
     display: 'flex',
+    justifyContent: 'center',
     alignItems: 'center',
-    color: colors.gray0,
-    fontFamily: fonts.mono,
+    backgroundColor: '#1864ab',
+    padding: '1.5rem',
+    borderRadius: '.5rem',
+    color: '#f8f9fa',
+    fontFamily: 'Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace',
   },
 })
 

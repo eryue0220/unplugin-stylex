@@ -95,11 +95,6 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
         }
       },
 
-      configResolved(config) {
-        config.optimizeDeps.exclude = config.optimizeDeps.exclude || []
-        config.optimizeDeps.exclude.push('@stylexjs/open-props')
-      },
-
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
           if (!req.url) {

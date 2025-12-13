@@ -69,9 +69,6 @@ importers:
 
   examples/astro-example:
     dependencies:
-      '@stylexjs/open-props':
-        specifier: ^0.11.1
-        version: 0.11.1
       '@stylexjs/stylex':
         specifier: ^0.17.2
         version: 0.17.3
@@ -100,9 +97,6 @@ importers:
 
   examples/esbuild-example:
     dependencies:
-      '@stylexjs/open-props':
-        specifier: ^0.11.1
-        version: 0.11.1
       '@stylexjs/stylex':
         specifier: ^0.17.2
         version: 0.17.3
@@ -128,9 +122,6 @@ importers:
 
   examples/farm-example:
     dependencies:
-      '@stylexjs/open-props':
-        specifier: ^0.11.1
-        version: 0.11.1
       '@stylexjs/stylex':
         specifier: ^0.17.2
         version: 0.17.3
@@ -174,9 +165,6 @@ importers:
       '@remix-run/serve':
         specifier: ^2.17.2
         version: 2.17.2(typescript@5.9.3)
-      '@stylexjs/open-props':
-        specifier: ^0.11.1
-        version: 0.11.1
       '@stylexjs/stylex':
         specifier: ^0.17.2
         version: 0.17.3
@@ -214,9 +202,6 @@ importers:
 
   examples/rolldown-example:
     dependencies:
-      '@stylexjs/open-props':
-        specifier: ^0.11.1
-        version: 0.11.1
       '@stylexjs/stylex':
         specifier: ^0.17.2
         version: 0.17.3
@@ -236,9 +221,6 @@ importers:
 
   examples/rollup-example:
     dependencies:
-      '@stylexjs/open-props':
-        specifier: ^0.11.1
-        version: 0.11.1
       '@stylexjs/stylex':
         specifier: ^0.17.2
         version: 0.17.3
@@ -285,9 +267,6 @@ importers:
 
   examples/rsbuild-example:
     dependencies:
-      '@stylexjs/open-props':
-        specifier: ^0.11.1
-        version: 0.11.1
       '@stylexjs/stylex':
         specifier: ^0.17.2
         version: 0.17.3
@@ -319,9 +298,6 @@ importers:
 
   examples/rspack-example:
     dependencies:
-      '@stylexjs/open-props':
-        specifier: ^0.11.1
-        version: 0.11.1
       '@stylexjs/stylex':
         specifier: ^0.17.2
         version: 0.17.3
@@ -353,9 +329,6 @@ importers:
 
   examples/solid-example:
     dependencies:
-      '@stylexjs/open-props':
-        specifier: ^0.11.1
-        version: 0.11.1
       '@stylexjs/stylex':
         specifier: ^0.17.2
         version: 0.17.3
@@ -375,9 +348,6 @@ importers:
 
   examples/vite-example:
     dependencies:
-      '@stylexjs/open-props':
-        specifier: ^0.11.1
-        version: 0.11.1
       '@stylexjs/stylex':
         specifier: ^0.17.2
         version: 0.17.3
@@ -403,9 +373,6 @@ importers:
 
   examples/vue-example:
     dependencies:
-      '@stylexjs/open-props':
-        specifier: ^0.11.1
-        version: 0.11.1
       '@stylexjs/stylex':
         specifier: ^0.17.2
         version: 0.17.3
@@ -434,9 +401,6 @@ importers:
 
   examples/webpack-example:
     dependencies:
-      '@stylexjs/open-props':
-        specifier: ^0.11.1
-        version: 0.11.1
       '@stylexjs/stylex':
         specifier: ^0.17.2
         version: 0.17.3
@@ -473,7 +437,7 @@ importers:
         version: link:../..
       webpack:
         specifier: ^5.103.0
-        version: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
+        version: 5.103.0(webpack-cli@6.0.1)
       webpack-cli:
         specifier: ^6.0.1
         version: 6.0.1(webpack-dev-server@5.2.2)(webpack@5.103.0)
@@ -2704,15 +2668,8 @@ packages:
   '@stylexjs/babel-plugin@0.17.3':
     resolution: {integrity: sha512-C9KOQUa+PS7Ef6KGLfEuevzP5lA183g5iu+xito14tN1Tx4OfQe5oEo6O+ntHSVdyZGsnLj6aCr9elVg3yLoOQ==}
 
-  '@stylexjs/open-props@0.11.1':
-    resolution: {integrity: sha512-UYeJV34LOmDZ1igQknB+iM3JMg+lbncHr/zG7i1tBwwQslNNWOMM7iR4hwSUvczQYcW5G8vMAorP/2j4T8XBjA==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
-
   '@stylexjs/shared@0.17.3':
     resolution: {integrity: sha512-cnGYrskfEa8QGFFJG1JYCqPAstxFqe/aU7xuTDIIbL+38DQ4MDqSJOQFOWrqqma72UZXuGHAcJ7NqqnCVTKXTA==}
-
-  '@stylexjs/stylex@0.11.1':
-    resolution: {integrity: sha512-1OofsiCP2DYV+Cw/iIuHYTAJRy34TtxQt0FDuQGTnNH915hb6NkPmX6iPa++9t4KP3HWR9oVRmAHkpP58BIYbw==}
 
   '@stylexjs/stylex@0.17.3':
     resolution: {integrity: sha512-uJKi6sWvsZo7A0Hku0SjnnxsYkQVyi/e1g34/Uik3PXLBVnGMZ+6N9NiwVGdfGQ+/ulqUqEHktROG02279Ug0Q==}
@@ -9638,17 +9595,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@stylexjs/open-props@0.11.1':
-    dependencies:
-      '@stylexjs/stylex': 0.11.1
-
   '@stylexjs/shared@0.17.3': {}
-
-  '@stylexjs/stylex@0.11.1':
-    dependencies:
-      css-mediaquery: 0.1.2
-      invariant: 2.2.4
-      styleq: 0.2.1
 
   '@stylexjs/stylex@0.17.3':
     dependencies:
@@ -10193,17 +10140,17 @@ snapshots:
 
   '@webpack-cli/configtest@3.0.1(webpack-cli@6.0.1)(webpack@5.103.0)':
     dependencies:
-      webpack: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
+      webpack: 5.103.0(webpack-cli@6.0.1)
       webpack-cli: 6.0.1(webpack-dev-server@5.2.2)(webpack@5.103.0)
 
   '@webpack-cli/info@3.0.1(webpack-cli@6.0.1)(webpack@5.103.0)':
     dependencies:
-      webpack: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
+      webpack: 5.103.0(webpack-cli@6.0.1)
       webpack-cli: 6.0.1(webpack-dev-server@5.2.2)(webpack@5.103.0)
 
   '@webpack-cli/serve@3.0.1(webpack-cli@6.0.1)(webpack-dev-server@5.2.2)(webpack@5.103.0)':
     dependencies:
-      webpack: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
+      webpack: 5.103.0(webpack-cli@6.0.1)
       webpack-cli: 6.0.1(webpack-dev-server@5.2.2)(webpack@5.103.0)
     optionalDependencies:
       webpack-dev-server: 5.2.2(webpack-cli@6.0.1)(webpack@5.103.0)
@@ -10429,7 +10376,7 @@ snapshots:
       '@babel/core': 7.28.5
       find-cache-dir: 4.0.0
       schema-utils: 4.3.3
-      webpack: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
+      webpack: 5.103.0(webpack-cli@6.0.1)
 
   babel-plugin-jsx-dom-expressions@0.40.3(@babel/core@7.28.5):
     dependencies:
@@ -11484,6 +11431,8 @@ snapshots:
 
   flattie@1.1.1: {}
 
+  follow-redirects@1.15.11: {}
+
   follow-redirects@1.15.11(debug@4.4.3):
     optionalDependencies:
       debug: 4.4.3
@@ -11848,7 +11797,7 @@ snapshots:
       tapable: 2.3.0
     optionalDependencies:
       '@rspack/core': 1.6.7(@swc/helpers@0.5.17)
-      webpack: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
+      webpack: 5.103.0(webpack-cli@6.0.1)
 
   htmlparser2@6.1.0:
     dependencies:
@@ -11902,7 +11851,7 @@ snapshots:
   http-proxy-middleware@2.0.9(@types/express@4.17.25):
     dependencies:
       '@types/http-proxy': 1.17.17
-      http-proxy: 1.18.1(debug@4.4.3)
+      http-proxy: 1.18.1
       is-glob: 4.0.3
       is-plain-obj: 3.0.0
       micromatch: 4.0.8
@@ -11921,6 +11870,14 @@ snapshots:
       micromatch: 4.0.8
     transitivePeerDependencies:
       - supports-color
+
+  http-proxy@1.18.1:
+    dependencies:
+      eventemitter3: 4.0.7
+      follow-redirects: 1.15.11
+      requires-port: 1.0.0
+    transitivePeerDependencies:
+      - debug
 
   http-proxy@1.18.1(debug@4.4.3):
     dependencies:
@@ -14390,16 +14347,14 @@ snapshots:
       esbuild: 0.27.1
     optional: true
 
-  terser-webpack-plugin@5.3.16(esbuild@0.27.1)(webpack@5.103.0):
+  terser-webpack-plugin@5.3.16(webpack@5.103.0):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       jest-worker: 27.5.1
       schema-utils: 4.3.3
       serialize-javascript: 6.0.2
       terser: 5.44.1
-      webpack: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
-    optionalDependencies:
-      esbuild: 0.27.1
+      webpack: 5.103.0(webpack-cli@6.0.1)
 
   terser@5.44.1:
     dependencies:
@@ -14990,7 +14945,7 @@ snapshots:
       import-local: 3.2.0
       interpret: 3.1.1
       rechoir: 0.8.0
-      webpack: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
+      webpack: 5.103.0(webpack-cli@6.0.1)
       webpack-merge: 6.0.1
     optionalDependencies:
       webpack-dev-server: 5.2.2(webpack-cli@6.0.1)(webpack@5.103.0)
@@ -15015,7 +14970,7 @@ snapshots:
       range-parser: 1.2.1
       schema-utils: 4.3.3
     optionalDependencies:
-      webpack: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
+      webpack: 5.103.0(webpack-cli@6.0.1)
 
   webpack-dev-server@5.2.2(webpack-cli@6.0.1)(webpack@5.103.0):
     dependencies:
@@ -15048,7 +15003,7 @@ snapshots:
       webpack-dev-middleware: 7.4.5(webpack@5.103.0)
       ws: 8.18.3
     optionalDependencies:
-      webpack: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
+      webpack: 5.103.0(webpack-cli@6.0.1)
       webpack-cli: 6.0.1(webpack-dev-server@5.2.2)(webpack@5.103.0)
     transitivePeerDependencies:
       - bufferutil
@@ -15137,7 +15092,7 @@ snapshots:
       - uglify-js
     optional: true
 
-  webpack@5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1):
+  webpack@5.103.0(webpack-cli@6.0.1):
     dependencies:
       '@types/eslint-scope': 3.7.7
       '@types/estree': 1.0.8
@@ -15161,7 +15116,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 4.3.3
       tapable: 2.3.0
-      terser-webpack-plugin: 5.3.16(esbuild@0.27.1)(webpack@5.103.0)
+      terser-webpack-plugin: 5.3.16(webpack@5.103.0)
       watchpack: 2.4.4
       webpack-sources: 3.3.3
     optionalDependencies:
