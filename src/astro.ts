@@ -75,10 +75,6 @@ export default function astro(options: UnpluginStylexOptions = {}) {
         const currentNoExternal = config.vite.ssr?.noExternal ?? []
         const noExternal = Array.isArray(currentNoExternal) ? [...currentNoExternal] : []
 
-        if (!noExternal.includes('@stylexjs/open-props')) {
-          noExternal.push('@stylexjs/open-props')
-        }
-
         if (!noExternal.includes('@stylexjs/stylex')) {
           noExternal.push('@stylexjs/stylex')
         }

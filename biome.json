@@ -1,10 +1,39 @@
 {
+  "html": {
+    "formatter": {
+      "enabled": true,
+      "indentScriptAndStyle": true,
+      "indentStyle": "space",
+      "indentWidth": 2
+    },
+    "parser": {
+      "interpolation": true
+    }
+  },
   "javascript": {
+    "formatter": {
+      "lineWidth": 120,
+      "indentWidth": 2,
+      "indentStyle": "space",
+      "quoteStyle": "single",
+      "semicolons": "asNeeded"
+    },
+    "linter": {
+      "enabled": false
+    },
     "jsxRuntime": "reactClassic"
+  },
+  "json": {
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space",
+      "indentWidth": 2
+    }
   },
   "files": {
     "includes": [
       "examples/**",
+      "!!**/.astro",
       "!examples/**/node_modules",
       "!examples/**/dist",
       "src/**",
@@ -12,12 +41,30 @@
     ]
   },
   "linter": {
-    "includes": [
-      "examples/**",
-      "!examples/**/node_modules",
-      "!examples/**/dist",
-      "src/**",
-      "test/**"
-    ]
-  }
+    "enabled": true
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.astro", "**/*.vue"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["examples/rollup-example/public/index.html"],
+      "html": {
+        "formatter": {
+          "enabled": false
+        },
+        "linter": {
+          "enabled": false
+        }
+      }
+    }
+  ]
 }

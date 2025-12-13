@@ -4,8 +4,8 @@
  * @module
  */
 
-import { createWebpackPlugin } from 'unplugin'
 import type { WebpackPluginInstance } from 'unplugin'
+import { createWebpackPlugin } from 'unplugin'
 import { unpluginFactory } from './index'
 import type { UnpluginStylexInstance } from './types'
 
