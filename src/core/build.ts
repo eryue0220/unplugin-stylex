@@ -1,5 +1,5 @@
-import stylex from '@stylexjs/babel-plugin'
 import type { Rule } from '@stylexjs/babel-plugin'
+import stylex from '@stylexjs/babel-plugin'
 
 export function buildStylexRules(stylexRules: { [key: string]: Rule[] }, useCSSLayers: boolean): string {
   const rules = Object.values(stylexRules).flat()

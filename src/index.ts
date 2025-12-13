@@ -7,8 +7,8 @@
 
 import * as path from 'node:path'
 
-import { createUnplugin } from 'unplugin'
 import type { UnpluginFactory, UnpluginInstance } from 'unplugin'
+import { createUnplugin } from 'unplugin'
 import type { BuildOptions } from 'vite'
 
 import { buildStylexRules } from './core/build'

@@ -18,9 +18,11 @@ const styles = stylex.create({
     padding: '1.5rem',
     borderRadius: '.5rem',
     color: '#f8f9fa',
-    fontFamily: 'Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace',
+    fontFamily:
+      'Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace',
   },
 })
+
 function App() {
   return (
     <div {...stylex.props(styles.main)}>

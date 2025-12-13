@@ -4,8 +4,8 @@
  * @module
  */
 
-import { createRolldownPlugin } from 'unplugin'
 import type { RolldownPlugin } from 'unplugin'
+import { createRolldownPlugin } from 'unplugin'
 import { unpluginFactory } from './index'
 import type { UnpluginStylexInstance } from './types'
 
