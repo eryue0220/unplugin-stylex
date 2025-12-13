@@ -1,18 +1,23 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "javascript": {
+    "jsxRuntime": "reactClassic"
+  },
   "files": {
-    "ignoreUnknown": false,
-    "ignore": [
-      ".astro/*",
-      ".github/*",
-      "biomejs.json",
-      "dist/*",
-      "node_modules/*",
-      "pnpm-lock.yaml",
-      "pnpm-workspace.yaml"
+    "includes": [
+      "examples/**",
+      "!examples/**/node_modules",
+      "!examples/**/dist",
+      "src/**",
+      "test/**"
     ]
   },
   "linter": {
-    "enabled": true
+    "includes": [
+      "examples/**",
+      "!examples/**/node_modules",
+      "!examples/**/dist",
+      "src/**",
+      "test/**"
+    ]
   }
 }

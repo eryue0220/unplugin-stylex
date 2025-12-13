@@ -56,7 +56,7 @@ const server = createServer((req, res) => {
       res.writeHead(404)
       res.end('Not Found')
     }
-  } catch (error) {
+  } catch {
     res.writeHead(404)
     res.end('Not Found')
   }
