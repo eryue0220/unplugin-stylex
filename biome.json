@@ -54,6 +54,17 @@
           }
         }
       }
+    },
+    {
+      "includes": ["examples/rollup-example/public/index.html"],
+      "html": {
+        "formatter": {
+          "enabled": false
+        },
+        "linter": {
+          "enabled": false
+        }
+      }
     }
   ]
 }
