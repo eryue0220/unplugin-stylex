@@ -1,4 +1,10 @@
 {
+  "html": {
+    "formatter": {
+      "enabled": true
+    },
+    "experimentalFullSupportEnabled": true
+  },
   "javascript": {
     "jsxRuntime": "reactClassic"
   },
@@ -19,5 +25,18 @@
       "src/**",
       "test/**"
     ]
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.astro", "**/*.vue"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
+          }
+        }
+      }
+    }
+  ]
 }
