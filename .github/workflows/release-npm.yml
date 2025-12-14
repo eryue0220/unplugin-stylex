@@ -48,5 +48,3 @@ jobs:
         env:
           NPM_CONFIG_PROVENANCE: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # OIDC authentication is handled automatically by setup-node@v6
-          # Make sure OIDC is configured in your npm account settings
