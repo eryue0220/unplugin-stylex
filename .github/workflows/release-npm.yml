@@ -23,12 +23,10 @@ jobs:
         uses: pnpm/action-setup@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org
-          scope: eryue0220
-          cache: "pnpm"
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Upgrade npm for OIDC support
         run: npm install -g npm@latest
@@ -50,6 +48,5 @@ jobs:
         env:
           NPM_CONFIG_PROVENANCE: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Needs access to publish to npm
-          # NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          # OIDC authentication is handled automatically by setup-node@v6
+          # Make sure OIDC is configured in your npm account settings
