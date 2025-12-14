@@ -1,5 +1,11 @@
 # unplugin-stylex
 
+## 0.6.0
+
+### Minor Changes
+
+- [#164](https://github.com/eryue0220/unplugin-stylex/pull/164) [`7d76bb1`](https://github.com/eryue0220/unplugin-stylex/commit/7d76bb1699af43a47a151e4ec80a633983544ac0) Thanks [@eryue0220](https://github.com/eryue0220)! - Fixed bug and support more frameworks
+
 ## 0.5.5
 
 ### Patch Changes
