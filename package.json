@@ -89,7 +89,7 @@
     "jsr": "pnpm dlx jsr publish",
     "changeset": "pnpm dlx @changesets/cli add",
     "changeset:version": "pnpm dlx @changesets/cli version && pnpm install",
-    "changeset:release": "pnpm run build && pnpm publish -r --no-git-checks --access public && pnpm exec changeset tag"
+    "changeset:release": "pnpm run build && pnpm dlx @changesets/cli publish"
   },
   "engines": {
     "node": ">=18"
