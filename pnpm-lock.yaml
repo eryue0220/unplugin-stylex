@@ -49,8 +49,8 @@ importers:
         specifier: ^4.0.15
         version: 4.0.15(vitest@4.0.15(@types/node@24.10.3)(jiti@2.6.1)(terser@5.44.1)(yaml@2.8.2))
       babel-plugin-syntax-hermes-parser:
-        specifier: ^0.32.1
-        version: 0.32.1
+        specifier: ^0.33.0
+        version: 0.33.0
       jsr:
         specifier: ^0.13.4
         version: 0.13.5
@@ -437,7 +437,7 @@ importers:
         version: link:../..
       webpack:
         specifier: ^5.103.0
-        version: 5.103.0(webpack-cli@6.0.1)
+        version: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
       webpack-cli:
         specifier: ^6.0.1
         version: 6.0.1(webpack-dev-server@5.2.2)(webpack@5.103.0)
@@ -3225,8 +3225,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
 
-  babel-plugin-syntax-hermes-parser@0.32.1:
-    resolution: {integrity: sha512-HgErPZTghW76Rkq9uqn5ESeiD97FbqpZ1V170T1RG2RDp+7pJVQV2pQJs7y5YzN0/gcT6GM5ci9apRnIwuyPdQ==}
+  babel-plugin-syntax-hermes-parser@0.33.0:
+    resolution: {integrity: sha512-EYGxJZyuahn5/ixNylm4uHw3+RcGKIP7ZOkhZlBZiYqrT89J62GMONCLsP13IO3mhV8ApTJAltNxGVunDIGUvQ==}
 
   babel-preset-solid@1.9.10:
     resolution: {integrity: sha512-HCelrgua/Y+kqO8RyL04JBWS/cVdrtUv/h45GntgQY+cJl4eBcKkCDV3TdMjtKx1nXwRaR9QXslM/Npm1dxdZQ==}
@@ -4400,11 +4400,11 @@ packages:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
 
-  hermes-estree@0.32.1:
-    resolution: {integrity: sha512-ne5hkuDxheNBAikDjqvCZCwihnz0vVu9YsBzAEO1puiyFR4F1+PAz/SiPHSsNTuOveCYGRMX8Xbx4LOubeC0Qg==}
+  hermes-estree@0.33.0:
+    resolution: {integrity: sha512-89JNrvMMBod7MWxqUeMQ8PQGrhAiU5SnY500s3PATzCao3CUxeDeOXXyh0XEtSpcsTKE7YXH0u8WWMf5mivtbw==}
 
-  hermes-parser@0.32.1:
-    resolution: {integrity: sha512-175dz634X/W5AiwrpLdoMl/MOb17poLHyIqgyExlE8D9zQ1OPnoORnGMB5ltRKnpvQzBjMYvT2rN/sHeIfZW5Q==}
+  hermes-parser@0.33.0:
+    resolution: {integrity: sha512-+0Jo4HznnLuvEBJK/SXRnZndZf3vCPaC+HWrfSc1LczqoEMSZ7aEby96mQEw+e6M9yAd99rwJzeyD4oD1XYwmw==}
 
   hosted-git-info@6.1.3:
     resolution: {integrity: sha512-HVJyzUrLIL1c0QmviVh5E8VGyUS7xCFPS6yydaVd1UegW+ibV/CohqTH9MkOLDp5o+rb82DMo77PTuc9F/8GKw==}
@@ -10140,17 +10140,17 @@ snapshots:
 
   '@webpack-cli/configtest@3.0.1(webpack-cli@6.0.1)(webpack@5.103.0)':
     dependencies:
-      webpack: 5.103.0(webpack-cli@6.0.1)
+      webpack: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
       webpack-cli: 6.0.1(webpack-dev-server@5.2.2)(webpack@5.103.0)
 
   '@webpack-cli/info@3.0.1(webpack-cli@6.0.1)(webpack@5.103.0)':
     dependencies:
-      webpack: 5.103.0(webpack-cli@6.0.1)
+      webpack: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
       webpack-cli: 6.0.1(webpack-dev-server@5.2.2)(webpack@5.103.0)
 
   '@webpack-cli/serve@3.0.1(webpack-cli@6.0.1)(webpack-dev-server@5.2.2)(webpack@5.103.0)':
     dependencies:
-      webpack: 5.103.0(webpack-cli@6.0.1)
+      webpack: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
       webpack-cli: 6.0.1(webpack-dev-server@5.2.2)(webpack@5.103.0)
     optionalDependencies:
       webpack-dev-server: 5.2.2(webpack-cli@6.0.1)(webpack@5.103.0)
@@ -10376,7 +10376,7 @@ snapshots:
       '@babel/core': 7.28.5
       find-cache-dir: 4.0.0
       schema-utils: 4.3.3
-      webpack: 5.103.0(webpack-cli@6.0.1)
+      webpack: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
 
   babel-plugin-jsx-dom-expressions@0.40.3(@babel/core@7.28.5):
     dependencies:
@@ -10411,9 +10411,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  babel-plugin-syntax-hermes-parser@0.32.1:
+  babel-plugin-syntax-hermes-parser@0.33.0:
     dependencies:
-      hermes-parser: 0.32.1
+      hermes-parser: 0.33.0
 
   babel-preset-solid@1.9.10(@babel/core@7.28.5)(solid-js@1.9.10):
     dependencies:
@@ -11431,8 +11431,6 @@ snapshots:
 
   flattie@1.1.1: {}
 
-  follow-redirects@1.15.11: {}
-
   follow-redirects@1.15.11(debug@4.4.3):
     optionalDependencies:
       debug: 4.4.3
@@ -11740,11 +11738,11 @@ snapshots:
 
   he@1.2.0: {}
 
-  hermes-estree@0.32.1: {}
+  hermes-estree@0.33.0: {}
 
-  hermes-parser@0.32.1:
+  hermes-parser@0.33.0:
     dependencies:
-      hermes-estree: 0.32.1
+      hermes-estree: 0.33.0
 
   hosted-git-info@6.1.3:
     dependencies:
@@ -11797,7 +11795,7 @@ snapshots:
       tapable: 2.3.0
     optionalDependencies:
       '@rspack/core': 1.6.7(@swc/helpers@0.5.17)
-      webpack: 5.103.0(webpack-cli@6.0.1)
+      webpack: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
 
   htmlparser2@6.1.0:
     dependencies:
@@ -11851,7 +11849,7 @@ snapshots:
   http-proxy-middleware@2.0.9(@types/express@4.17.25):
     dependencies:
       '@types/http-proxy': 1.17.17
-      http-proxy: 1.18.1
+      http-proxy: 1.18.1(debug@4.4.3)
       is-glob: 4.0.3
       is-plain-obj: 3.0.0
       micromatch: 4.0.8
@@ -11870,14 +11868,6 @@ snapshots:
       micromatch: 4.0.8
     transitivePeerDependencies:
       - supports-color
-
-  http-proxy@1.18.1:
-    dependencies:
-      eventemitter3: 4.0.7
-      follow-redirects: 1.15.11
-      requires-port: 1.0.0
-    transitivePeerDependencies:
-      - debug
 
   http-proxy@1.18.1(debug@4.4.3):
     dependencies:
@@ -14347,14 +14337,16 @@ snapshots:
       esbuild: 0.27.1
     optional: true
 
-  terser-webpack-plugin@5.3.16(webpack@5.103.0):
+  terser-webpack-plugin@5.3.16(esbuild@0.27.1)(webpack@5.103.0):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       jest-worker: 27.5.1
       schema-utils: 4.3.3
       serialize-javascript: 6.0.2
       terser: 5.44.1
-      webpack: 5.103.0(webpack-cli@6.0.1)
+      webpack: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
+    optionalDependencies:
+      esbuild: 0.27.1
 
   terser@5.44.1:
     dependencies:
@@ -14945,7 +14937,7 @@ snapshots:
       import-local: 3.2.0
       interpret: 3.1.1
       rechoir: 0.8.0
-      webpack: 5.103.0(webpack-cli@6.0.1)
+      webpack: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
       webpack-merge: 6.0.1
     optionalDependencies:
       webpack-dev-server: 5.2.2(webpack-cli@6.0.1)(webpack@5.103.0)
@@ -14970,7 +14962,7 @@ snapshots:
       range-parser: 1.2.1
       schema-utils: 4.3.3
     optionalDependencies:
-      webpack: 5.103.0(webpack-cli@6.0.1)
+      webpack: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
 
   webpack-dev-server@5.2.2(webpack-cli@6.0.1)(webpack@5.103.0):
     dependencies:
@@ -15003,7 +14995,7 @@ snapshots:
       webpack-dev-middleware: 7.4.5(webpack@5.103.0)
       ws: 8.18.3
     optionalDependencies:
-      webpack: 5.103.0(webpack-cli@6.0.1)
+      webpack: 5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1)
       webpack-cli: 6.0.1(webpack-dev-server@5.2.2)(webpack@5.103.0)
     transitivePeerDependencies:
       - bufferutil
@@ -15092,7 +15084,7 @@ snapshots:
       - uglify-js
     optional: true
 
-  webpack@5.103.0(webpack-cli@6.0.1):
+  webpack@5.103.0(esbuild@0.27.1)(webpack-cli@6.0.1):
     dependencies:
       '@types/eslint-scope': 3.7.7
       '@types/estree': 1.0.8
@@ -15116,7 +15108,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 4.3.3
       tapable: 2.3.0
-      terser-webpack-plugin: 5.3.16(webpack@5.103.0)
+      terser-webpack-plugin: 5.3.16(esbuild@0.27.1)(webpack@5.103.0)
       watchpack: 2.4.4
       webpack-sources: 3.3.3
     optionalDependencies:
