@@ -4,8 +4,8 @@
  * @module
  */
 
-import { createVitePlugin } from 'unplugin'
 import type { VitePlugin } from 'unplugin'
+import { createVitePlugin } from 'unplugin'
 import { unpluginFactory } from './index'
 import type { UnpluginStylexInstance } from './types'
 

@@ -25,11 +25,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
-          node-version: 18
+          node-version: 20
           registry-url: https://registry.npmjs.org
           scope: eryue0220
           cache: "pnpm"
 
+      - name: Upgrade npm for OIDC support
+        run: npm install -g npm@latest
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
@@ -45,7 +47,7 @@ jobs:
           title: "chore: Update version for release"
           publish: pnpm run changeset:release
         env:
-          NPM_CONFIG_PROVENANCE: false
+          NPM_CONFIG_PROVENANCE: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Needs access to publish to npm
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

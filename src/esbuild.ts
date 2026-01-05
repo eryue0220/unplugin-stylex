@@ -4,8 +4,8 @@
  * @module
  */
 
-import { createEsbuildPlugin } from 'unplugin'
 import type { EsbuildPlugin } from 'unplugin'
+import { createEsbuildPlugin } from 'unplugin'
 import { unpluginFactory } from './index'
 import type { UnpluginStylexInstance } from './types'
 

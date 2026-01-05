@@ -11,7 +11,6 @@
     "@remix-run/node": "^2.17.2",
     "@remix-run/react": "^2.17.2",
     "@remix-run/serve": "^2.17.2",
-    "@stylexjs/open-props": "^0.11.1",
     "@stylexjs/stylex": "^0.17.2",
     "isbot": "^5.1.32",
     "react": "^19.2.1",
@@ -23,7 +22,7 @@
     "@types/react-dom": "^19.2.3",
     "typescript": "^5.9.3",
     "unplugin-stylex": "workspace:*",
-    "vite": "^7.2.6",
-    "vite-tsconfig-paths": "^5.0.1"
+    "vite": "^7.3.0",
+    "vite-tsconfig-paths": "^6.0.1"
   }
 }

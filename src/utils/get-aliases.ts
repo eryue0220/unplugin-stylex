@@ -31,7 +31,7 @@ function getAliasesFromTSConfig() {
     )
 
     return Object.keys(aliases).length > 0 ? aliases : undefined
-  } catch (error) {
+  } catch {
     // If file doesn't exist or is invalid JSON, return null
     return undefined
   }
@@ -59,7 +59,7 @@ function getAliasesFromViteConfig() {
       },
       {} as Record<string, string>,
     )
-  } catch (error) {
+  } catch {
     // If file can't be read or parsed, return empty object
     return {}
   }
@@ -86,7 +86,7 @@ function getAliasesFromWebpackConfig() {
       },
       {} as Record<string, string>,
     )
-  } catch (error) {
+  } catch {
     // If file can't be read or parsed, return empty object
     return {}
   }
@@ -126,7 +126,7 @@ function getAliasesFromRollupConfig() {
       },
       {} as Record<string, string>,
     )
-  } catch (error) {
+  } catch {
     // If file can't be read or parsed, return empty object
     return {}
   }
@@ -153,7 +153,7 @@ function getAliasesFromRolldownConfig() {
       },
       {} as Record<string, string>,
     )
-  } catch (error) {
+  } catch {
     // If file can't be read or parsed, return empty object
     return {}
   }
@@ -184,7 +184,7 @@ function getAliasesFromRspackConfig() {
       },
       {} as Record<string, string>,
     )
-  } catch (error) {
+  } catch {
     // If file can't be read or parsed, return empty object
     return {}
   }
@@ -211,7 +211,7 @@ function getAliasesFromFarmConfig() {
       },
       {} as Record<string, string>,
     )
-  } catch (error) {
+  } catch {
     // If file can't be read or parsed, return empty object
     return {}
   }

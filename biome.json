@@ -1,18 +1,70 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "html": {
+    "formatter": {
+      "enabled": true,
+      "indentScriptAndStyle": true,
+      "indentStyle": "space",
+      "indentWidth": 2
+    },
+    "parser": {
+      "interpolation": true
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "lineWidth": 120,
+      "indentWidth": 2,
+      "indentStyle": "space",
+      "quoteStyle": "single",
+      "semicolons": "asNeeded"
+    },
+    "linter": {
+      "enabled": false
+    },
+    "jsxRuntime": "reactClassic"
+  },
+  "json": {
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space",
+      "indentWidth": 2
+    }
+  },
   "files": {
-    "ignoreUnknown": false,
-    "ignore": [
-      ".astro/*",
-      ".github/*",
-      "biomejs.json",
-      "dist/*",
-      "node_modules/*",
-      "pnpm-lock.yaml",
-      "pnpm-workspace.yaml"
+    "includes": [
+      "examples/**",
+      "!!**/.astro",
+      "!examples/**/node_modules",
+      "!examples/**/dist",
+      "src/**",
+      "test/**"
     ]
   },
   "linter": {
     "enabled": true
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.astro", "**/*.vue"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["examples/rollup-example/public/index.html"],
+      "html": {
+        "formatter": {
+          "enabled": false
+        },
+        "linter": {
+          "enabled": false
+        }
+      }
+    }
+  ]
 }

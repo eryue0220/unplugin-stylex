@@ -11,7 +11,7 @@
     "@babel/preset-react": "^7.28.5",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "babel-loader": "^9.2.1",
+    "babel-loader": "^10.0.0",
     "html-webpack-plugin": "^5.6.5",
     "unplugin-stylex": "workspace:*",
     "webpack": "^5.103.0",
@@ -19,7 +19,6 @@
     "webpack-dev-server": "^5.2.2"
   },
   "dependencies": {
-    "@stylexjs/open-props": "^0.11.1",
     "@stylexjs/stylex": "^0.17.2",
     "react": "^19.2.1",
     "react-dom": "^19.2.1"

@@ -7,7 +7,6 @@
     "build": "farm build"
   },
   "dependencies": {
-    "@stylexjs/open-props": "^0.11.1",
     "@stylexjs/stylex": "^0.17.2",
     "react": "^19.2.1",
     "react-dom": "^19.2.1"
@@ -18,7 +17,7 @@
     "@farmfe/plugin-react": "^1.2.6",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "react-refresh": "^0.14.2",
+    "react-refresh": "^0.18.0",
     "unplugin-stylex": "workspace:*"
   }
 }

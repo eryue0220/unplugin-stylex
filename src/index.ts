@@ -7,8 +7,8 @@
 
 import * as path from 'node:path'
 
-import { createUnplugin } from 'unplugin'
 import type { UnpluginFactory, UnpluginInstance } from 'unplugin'
+import { createUnplugin } from 'unplugin'
 import type { BuildOptions } from 'vite'
 
 import { buildStylexRules } from './core/build'
@@ -93,11 +93,6 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
           build: config.build,
           base: config.base,
         }
-      },
-
-      configResolved(config) {
-        config.optimizeDeps.exclude = config.optimizeDeps.exclude || []
-        config.optimizeDeps.exclude.push('@stylexjs/open-props')
       },
 
       configureServer(server) {

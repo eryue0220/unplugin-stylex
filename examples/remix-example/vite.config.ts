@@ -5,7 +5,7 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
   ssr: {
-    noExternal: ['@stylexjs/open-props', '@stylexjs/stylex'],
+    noExternal: ['@stylexjs/stylex'],
   },
   plugins: [
     {
