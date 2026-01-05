@@ -49,8 +49,8 @@ importers:
         specifier: ^4.0.15
         version: 4.0.15(vitest@4.0.15(@types/node@24.10.3)(jiti@2.6.1)(terser@5.44.1)(yaml@2.8.2))
       babel-plugin-syntax-hermes-parser:
-        specifier: ^0.32.1
-        version: 0.32.1
+        specifier: ^0.33.0
+        version: 0.33.0
       jsr:
         specifier: ^0.13.4
         version: 0.13.5
@@ -3335,8 +3335,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
 
-  babel-plugin-syntax-hermes-parser@0.32.1:
-    resolution: {integrity: sha512-HgErPZTghW76Rkq9uqn5ESeiD97FbqpZ1V170T1RG2RDp+7pJVQV2pQJs7y5YzN0/gcT6GM5ci9apRnIwuyPdQ==}
+  babel-plugin-syntax-hermes-parser@0.33.0:
+    resolution: {integrity: sha512-EYGxJZyuahn5/ixNylm4uHw3+RcGKIP7ZOkhZlBZiYqrT89J62GMONCLsP13IO3mhV8ApTJAltNxGVunDIGUvQ==}
 
   babel-preset-solid@1.9.10:
     resolution: {integrity: sha512-HCelrgua/Y+kqO8RyL04JBWS/cVdrtUv/h45GntgQY+cJl4eBcKkCDV3TdMjtKx1nXwRaR9QXslM/Npm1dxdZQ==}
@@ -4510,11 +4510,11 @@ packages:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
 
-  hermes-estree@0.32.1:
-    resolution: {integrity: sha512-ne5hkuDxheNBAikDjqvCZCwihnz0vVu9YsBzAEO1puiyFR4F1+PAz/SiPHSsNTuOveCYGRMX8Xbx4LOubeC0Qg==}
+  hermes-estree@0.33.0:
+    resolution: {integrity: sha512-89JNrvMMBod7MWxqUeMQ8PQGrhAiU5SnY500s3PATzCao3CUxeDeOXXyh0XEtSpcsTKE7YXH0u8WWMf5mivtbw==}
 
-  hermes-parser@0.32.1:
-    resolution: {integrity: sha512-175dz634X/W5AiwrpLdoMl/MOb17poLHyIqgyExlE8D9zQ1OPnoORnGMB5ltRKnpvQzBjMYvT2rN/sHeIfZW5Q==}
+  hermes-parser@0.33.0:
+    resolution: {integrity: sha512-+0Jo4HznnLuvEBJK/SXRnZndZf3vCPaC+HWrfSc1LczqoEMSZ7aEby96mQEw+e6M9yAd99rwJzeyD4oD1XYwmw==}
 
   hosted-git-info@6.1.3:
     resolution: {integrity: sha512-HVJyzUrLIL1c0QmviVh5E8VGyUS7xCFPS6yydaVd1UegW+ibV/CohqTH9MkOLDp5o+rb82DMo77PTuc9F/8GKw==}
@@ -10592,9 +10592,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  babel-plugin-syntax-hermes-parser@0.32.1:
+  babel-plugin-syntax-hermes-parser@0.33.0:
     dependencies:
-      hermes-parser: 0.32.1
+      hermes-parser: 0.33.0
 
   babel-preset-solid@1.9.10(@babel/core@7.28.5)(solid-js@1.9.10):
     dependencies:
@@ -11919,11 +11919,11 @@ snapshots:
 
   he@1.2.0: {}
 
-  hermes-estree@0.32.1: {}
+  hermes-estree@0.33.0: {}
 
-  hermes-parser@0.32.1:
+  hermes-parser@0.33.0:
     dependencies:
-      hermes-estree: 0.32.1
+      hermes-estree: 0.33.0
 
   hosted-git-info@6.1.3:
     dependencies:
