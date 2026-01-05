@@ -11,7 +11,7 @@
     "@babel/preset-react": "^7.28.5",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "babel-loader": "^9.2.1",
+    "babel-loader": "^10.0.0",
     "html-webpack-plugin": "^5.6.5",
     "unplugin-stylex": "workspace:*",
     "webpack": "^5.103.0",
