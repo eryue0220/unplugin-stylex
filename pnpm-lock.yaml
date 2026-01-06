@@ -309,8 +309,8 @@ importers:
         version: 19.2.3(react@19.2.3)
     devDependencies:
       '@rspack/cli':
-        specifier: ^1.4.8
-        version: 1.7.0(@rspack/core@1.6.7(@swc/helpers@0.5.18))(@types/express@4.17.25)(webpack@5.104.1(esbuild@0.27.2))
+        specifier: ^1.7.1
+        version: 1.7.1(@rspack/core@1.6.7(@swc/helpers@0.5.18))(@types/express@4.17.25)(webpack@5.104.1(esbuild@0.27.2))
       '@rspack/core':
         specifier: ^1.6.6
         version: 1.6.7(@swc/helpers@0.5.18)
@@ -2803,8 +2803,8 @@ packages:
   '@rspack/binding@1.7.0':
     resolution: {integrity: sha512-xO+pZKG2dvU9CuRTTi+DcCc4p+CZhBJlvuYikBja/0a62cTntQV2PWV+/xU1a6Vbo89yNz158LR05nvjtKVwTw==}
 
-  '@rspack/cli@1.7.0':
-    resolution: {integrity: sha512-4fGf1lvP9+JzpkVIljtZ+NrGn8JEsyVwNACDZPL4Heg1U2tStIde2RvzHLVs+0+NBVENu47v6tho5xMLcJPB7w==}
+  '@rspack/cli@1.7.1':
+    resolution: {integrity: sha512-Pb9GfVlvcmv83T+OG9M1yklNwyesDm5DAlMLGI/Iz8VQd9Q8a30nevE+GBdzTq4255hvgTlx52kNrmJiuGCC5A==}
     hasBin: true
     peerDependencies:
       '@rspack/core': ^1.0.0-alpha || ^1.x
@@ -7419,6 +7419,18 @@ packages:
       utf-8-validate:
         optional: true
 
+  ws@8.19.0:
+    resolution: {integrity: sha512-blAT2mjOEIi0ZzruJfIhb3nps74PRWTCz1IjglWEEpQl5XS/UNama6u2/rjFkDDouqr4L67ry+1aGIALViWjDg==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+
   wsl-utils@0.1.0:
     resolution: {integrity: sha512-h3Fbisa2nKGPxCpm89Hk33lBLsnaGBvctQopaBSOW/uIs6FTe1ATyAnKFJrzVs9vpGdsTe73WF3V4lIsk4Gacw==}
     engines: {node: '>=18'}
@@ -9817,7 +9829,7 @@ snapshots:
       '@rspack/binding-win32-ia32-msvc': 1.7.0
       '@rspack/binding-win32-x64-msvc': 1.7.0
 
-  '@rspack/cli@1.7.0(@rspack/core@1.6.7(@swc/helpers@0.5.18))(@types/express@4.17.25)(webpack@5.104.1(esbuild@0.27.2))':
+  '@rspack/cli@1.7.1(@rspack/core@1.6.7(@swc/helpers@0.5.18))(@types/express@4.17.25)(webpack@5.104.1(esbuild@0.27.2))':
     dependencies:
       '@discoveryjs/json-ext': 0.5.7
       '@rspack/core': 1.6.7(@swc/helpers@0.5.18)
@@ -9856,7 +9868,7 @@ snapshots:
       http-proxy-middleware: 2.0.9(@types/express@4.17.25)
       p-retry: 6.2.1
       webpack-dev-server: 5.2.2(webpack@5.104.1(esbuild@0.27.2))
-      ws: 8.18.3
+      ws: 8.19.0
     transitivePeerDependencies:
       - '@types/express'
       - bufferutil
@@ -15524,6 +15536,8 @@ snapshots:
   ws@7.5.10: {}
 
   ws@8.18.3: {}
+
+  ws@8.19.0: {}
 
   wsl-utils@0.1.0:
     dependencies:
