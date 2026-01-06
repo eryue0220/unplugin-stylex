@@ -24,8 +24,8 @@ importers:
         specifier: ^5.1.4
         version: 5.3.0(rollup@4.54.0)
       '@stylexjs/babel-plugin':
-        specifier: ^0.17.2
-        version: 0.17.3
+        specifier: ^0.17.4
+        version: 0.17.4
       '@stylexjs/stylex':
         specifier: 0.x
         version: 0.17.3
@@ -70,8 +70,8 @@ importers:
   examples/astro-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.2
-        version: 0.17.3
+        specifier: ^0.17.4
+        version: 0.17.4
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -98,8 +98,8 @@ importers:
   examples/esbuild-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.2
-        version: 0.17.3
+        specifier: ^0.17.4
+        version: 0.17.4
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -123,8 +123,8 @@ importers:
   examples/farm-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.2
-        version: 0.17.3
+        specifier: ^0.17.4
+        version: 0.17.4
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -166,8 +166,8 @@ importers:
         specifier: ^2.17.2
         version: 2.17.2(typescript@5.9.3)
       '@stylexjs/stylex':
-        specifier: ^0.17.2
-        version: 0.17.3
+        specifier: ^0.17.4
+        version: 0.17.4
       isbot:
         specifier: ^5.1.32
         version: 5.1.32
@@ -203,8 +203,8 @@ importers:
   examples/rolldown-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.2
-        version: 0.17.3
+        specifier: ^0.17.4
+        version: 0.17.4
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -222,8 +222,8 @@ importers:
   examples/rollup-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.2
-        version: 0.17.3
+        specifier: ^0.17.4
+        version: 0.17.4
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -268,8 +268,8 @@ importers:
   examples/rsbuild-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.2
-        version: 0.17.3
+        specifier: ^0.17.4
+        version: 0.17.4
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -299,8 +299,8 @@ importers:
   examples/rspack-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.2
-        version: 0.17.3
+        specifier: ^0.17.4
+        version: 0.17.4
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -330,8 +330,8 @@ importers:
   examples/solid-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.2
-        version: 0.17.3
+        specifier: ^0.17.4
+        version: 0.17.4
       solid-js:
         specifier: ^1.9.10
         version: 1.9.10
@@ -349,8 +349,8 @@ importers:
   examples/vite-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.2
-        version: 0.17.3
+        specifier: ^0.17.4
+        version: 0.17.4
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -374,8 +374,8 @@ importers:
   examples/vue-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.2
-        version: 0.17.3
+        specifier: ^0.17.4
+        version: 0.17.4
       vue:
         specifier: ^3.5.25
         version: 3.5.25(typescript@5.9.3)
@@ -402,8 +402,8 @@ importers:
   examples/webpack-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.2
-        version: 0.17.3
+        specifier: ^0.17.4
+        version: 0.17.4
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -2665,14 +2665,17 @@ packages:
   '@standard-schema/spec@1.0.0':
     resolution: {integrity: sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==}
 
-  '@stylexjs/babel-plugin@0.17.3':
-    resolution: {integrity: sha512-C9KOQUa+PS7Ef6KGLfEuevzP5lA183g5iu+xito14tN1Tx4OfQe5oEo6O+ntHSVdyZGsnLj6aCr9elVg3yLoOQ==}
+  '@stylexjs/babel-plugin@0.17.4':
+    resolution: {integrity: sha512-pNJLXpu36OOEKiig6jxCQWTVwZNsAYXlO9n0rv3+Dwo6dSEJDfs+CelHVtoO2uQsOB5q7e6paogwNEEe2bnNjQ==}
 
-  '@stylexjs/shared@0.17.3':
-    resolution: {integrity: sha512-cnGYrskfEa8QGFFJG1JYCqPAstxFqe/aU7xuTDIIbL+38DQ4MDqSJOQFOWrqqma72UZXuGHAcJ7NqqnCVTKXTA==}
+  '@stylexjs/shared@0.17.4':
+    resolution: {integrity: sha512-m9rvFg4x87DA35ZynkEm0yqiiAaCu18WkSSXaE6hL+DTF0LFi4S8OeOcAQqtNvRTwpQc+lqI8kQyIvXJuzs7dQ==}
 
   '@stylexjs/stylex@0.17.3':
     resolution: {integrity: sha512-uJKi6sWvsZo7A0Hku0SjnnxsYkQVyi/e1g34/Uik3PXLBVnGMZ+6N9NiwVGdfGQ+/ulqUqEHktROG02279Ug0Q==}
+
+  '@stylexjs/stylex@0.17.4':
+    resolution: {integrity: sha512-0ZppVdfMEO6JDBuW+nNYw+DSBIU7wCE+nBVvDOnLMihKvKRdAF4ViKfDQSBC4RnCNytabGj92FjsYCgIMSm4tw==}
 
   '@swc/helpers@0.5.17':
     resolution: {integrity: sha512-5IKx/Y13RsYd+sauPb2x+U/xZikHjolzfuDgTAl/Tdf3Q8rslRvC19NKDLgAJQ6wsqADk10ntlv08nPFw/gO/A==}
@@ -9536,22 +9539,28 @@ snapshots:
 
   '@standard-schema/spec@1.0.0': {}
 
-  '@stylexjs/babel-plugin@0.17.3':
+  '@stylexjs/babel-plugin@0.17.4':
     dependencies:
       '@babel/core': 7.28.5
       '@babel/helper-module-imports': 7.27.1
       '@babel/traverse': 7.28.5
       '@babel/types': 7.28.5
       '@dual-bundle/import-meta-resolve': 4.2.1
-      '@stylexjs/shared': 0.17.3
-      '@stylexjs/stylex': 0.17.3
+      '@stylexjs/shared': 0.17.4
+      '@stylexjs/stylex': 0.17.4
       postcss-value-parser: 4.2.0
     transitivePeerDependencies:
       - supports-color
 
-  '@stylexjs/shared@0.17.3': {}
+  '@stylexjs/shared@0.17.4': {}
 
   '@stylexjs/stylex@0.17.3':
+    dependencies:
+      css-mediaquery: 0.1.2
+      invariant: 2.2.4
+      styleq: 0.2.1
+
+  '@stylexjs/stylex@0.17.4':
     dependencies:
       css-mediaquery: 0.1.2
       invariant: 2.2.4
