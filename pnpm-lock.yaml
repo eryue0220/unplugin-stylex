@@ -396,8 +396,8 @@ importers:
         specifier: ^7.3.0
         version: 7.3.0(@types/node@25.0.3)(jiti@2.6.1)(terser@5.44.1)(yaml@2.8.2)
       vue-tsc:
-        specifier: ^3.1.7
-        version: 3.1.8(typescript@5.9.3)
+        specifier: ^3.2.2
+        version: 3.2.2(typescript@5.9.3)
 
   examples/webpack-example:
     dependencies:
@@ -2378,9 +2378,6 @@ packages:
   '@rolldown/pluginutils@1.0.0-beta.53':
     resolution: {integrity: sha512-vENRlFU4YbrwVqNDZ7fLvy+JR1CRkyr01jhSiDpE1u6py3OMzQfztQU2jxykW3ALNxO4kSlqIDeYyD0Y9RcQeQ==}
 
-  '@rolldown/pluginutils@1.0.0-beta.54':
-    resolution: {integrity: sha512-AHgcZ+w7RIRZ65ihSQL8YuoKcpD9Scew4sEeP1BBUT9QdTo6KjwHrZZXjID6nL10fhKessCH6OPany2QKwAwTQ==}
-
   '@rolldown/pluginutils@1.0.0-beta.58':
     resolution: {integrity: sha512-qWhDs6yFGR5xDfdrwiSa3CWGIHxD597uGE/A9xGqytBjANvh4rLCTTkq7szhMV4+Ygh+PMS90KVJ8xWG/TkX4w==}
 
@@ -2926,14 +2923,14 @@ packages:
   '@vitest/utils@4.0.15':
     resolution: {integrity: sha512-HXjPW2w5dxhTD0dLwtYHDnelK3j8sR8cWIaLxr22evTyY6q8pRCjZSmhRWVjBaOVXChQd6AwMzi9pucorXCPZA==}
 
-  '@volar/language-core@2.4.26':
-    resolution: {integrity: sha512-hH0SMitMxnB43OZpyF1IFPS9bgb2I3bpCh76m2WEK7BE0A0EzpYsRp0CCH2xNKshr7kacU5TQBLYn4zj7CG60A==}
+  '@volar/language-core@2.4.27':
+    resolution: {integrity: sha512-DjmjBWZ4tJKxfNC1F6HyYERNHPYS7L7OPFyCrestykNdUZMFYzI9WTyvwPcaNaHlrEUwESHYsfEw3isInncZxQ==}
 
-  '@volar/source-map@2.4.26':
-    resolution: {integrity: sha512-JJw0Tt/kSFsIRmgTQF4JSt81AUSI1aEye5Zl65EeZ8H35JHnTvFGmpDOBn5iOxd48fyGE+ZvZBp5FcgAy/1Qhw==}
+  '@volar/source-map@2.4.27':
+    resolution: {integrity: sha512-ynlcBReMgOZj2i6po+qVswtDUeeBRCTgDurjMGShbm8WYZgJ0PA4RmtebBJ0BCYol1qPv3GQF6jK7C9qoVc7lg==}
 
-  '@volar/typescript@2.4.26':
-    resolution: {integrity: sha512-N87ecLD48Sp6zV9zID/5yuS1+5foj0DfuYGdQ6KHj/IbKvyKv1zNX6VCmnKYwtmHadEO6mFc2EKISiu3RDPAvA==}
+  '@volar/typescript@2.4.27':
+    resolution: {integrity: sha512-eWaYCcl/uAPInSK2Lze6IqVWaBu/itVqR5InXcHXFyles4zO++Mglt3oxdgj75BDcv1Knr9Y93nowS8U3wqhxg==}
 
   '@vue/babel-helper-vue-transform-on@2.0.1':
     resolution: {integrity: sha512-uZ66EaFbnnZSYqYEyplWvn46GhZ1KuYSThdT68p+am7MgBNbQ3hphTL9L+xSIsWkdktwhPYLwPgVWqo96jDdRA==}
@@ -2975,13 +2972,8 @@ packages:
   '@vue/compiler-ssr@3.5.26':
     resolution: {integrity: sha512-lZT9/Y0nSIRUPVvapFJEVDbEXruZh2IYHMk2zTtEgJSlP5gVOqeWXH54xDKAaFS4rTnDeDBQUYDtxKyoW9FwDw==}
 
-  '@vue/language-core@3.1.8':
-    resolution: {integrity: sha512-PfwAW7BLopqaJbneChNL6cUOTL3GL+0l8paYP5shhgY5toBNidWnMXWM+qDwL7MC9+zDtzCF2enT8r6VPu64iw==}
-    peerDependencies:
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
+  '@vue/language-core@3.2.2':
+    resolution: {integrity: sha512-5DAuhxsxBN9kbriklh3Q5AMaJhyOCNiQJvCskN9/30XOpdLiqZU9Q+WvjArP17ubdGEyZtBzlIeG5nIjEbNOrQ==}
 
   '@vue/reactivity@3.5.25':
     resolution: {integrity: sha512-5xfAypCQepv4Jog1U4zn8cZIcbKKFka3AgWHEFQeK65OW+Ys4XybP6z2kKgws4YB43KGpqp5D/K3go2UPPunLA==}
@@ -3133,8 +3125,8 @@ packages:
   ajv@8.17.1:
     resolution: {integrity: sha512-B/gBuNg5SiMTrPkC+A2+cW0RszwxYmn6VYxB/inlBStS5nx6xHIt/ehKRhIMhqusl7a8LjQoZnjCs5vhwxOQ1g==}
 
-  alien-signals@3.1.1:
-    resolution: {integrity: sha512-ogkIWbVrLwKtHY6oOAXaYkAxP+cTH7V5FZ5+Tm4NZFd8VDZ6uNMDrfzqctTZ42eTMCSR3ne3otpcxmqSnFfPYA==}
+  alien-signals@3.1.2:
+    resolution: {integrity: sha512-d9dYqZTS90WLiU0I5c6DHj/HcKkF8ZyGN3G5x8wSbslulz70KOxaqCT0hQCo9KOyhVqzqGojvNdJXoTumZOtcw==}
 
   ansi-align@3.0.1:
     resolution: {integrity: sha512-IOfwwBF5iczOjp/WeY4YxyjqAFMQoZufdQWDd19SEExbVLNXqvpzSJ/M7Za4/sCPmQ0+GRquoA7bGcINcxew6w==}
@@ -7040,8 +7032,8 @@ packages:
   vscode-uri@3.1.0:
     resolution: {integrity: sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==}
 
-  vue-tsc@3.1.8:
-    resolution: {integrity: sha512-deKgwx6exIHeZwF601P1ktZKNF0bepaSN4jBU3AsbldPx9gylUc1JDxYppl82yxgkAgaz0Y0LCLOi+cXe9HMYA==}
+  vue-tsc@3.2.2:
+    resolution: {integrity: sha512-r9YSia/VgGwmbbfC06hDdAatH634XJ9nVl6Zrnz1iK4ucp8Wu78kawplXnIDa3MSu1XdQQePTHLXYwPDWn+nyQ==}
     hasBin: true
     peerDependencies:
       typescript: '>=5.0.0'
@@ -9304,8 +9296,6 @@ snapshots:
 
   '@rolldown/pluginutils@1.0.0-beta.53': {}
 
-  '@rolldown/pluginutils@1.0.0-beta.54': {}
-
   '@rolldown/pluginutils@1.0.0-beta.58': {}
 
   '@rollup/plugin-babel@6.1.0(@babel/core@7.28.5)(@types/babel__core@7.20.5)(rollup@4.54.0)':
@@ -9948,15 +9938,15 @@ snapshots:
       '@vitest/pretty-format': 4.0.15
       tinyrainbow: 3.0.3
 
-  '@volar/language-core@2.4.26':
+  '@volar/language-core@2.4.27':
     dependencies:
-      '@volar/source-map': 2.4.26
+      '@volar/source-map': 2.4.27
 
-  '@volar/source-map@2.4.26': {}
+  '@volar/source-map@2.4.27': {}
 
-  '@volar/typescript@2.4.26':
+  '@volar/typescript@2.4.27':
     dependencies:
-      '@volar/language-core': 2.4.26
+      '@volar/language-core': 2.4.27
       path-browserify: 1.0.1
       vscode-uri: 3.1.0
 
@@ -10049,17 +10039,15 @@ snapshots:
       '@vue/compiler-dom': 3.5.26
       '@vue/shared': 3.5.26
 
-  '@vue/language-core@3.1.8(typescript@5.9.3)':
+  '@vue/language-core@3.2.2':
     dependencies:
-      '@volar/language-core': 2.4.26
-      '@vue/compiler-dom': 3.5.25
-      '@vue/shared': 3.5.25
-      alien-signals: 3.1.1
+      '@volar/language-core': 2.4.27
+      '@vue/compiler-dom': 3.5.26
+      '@vue/shared': 3.5.26
+      alien-signals: 3.1.2
       muggle-string: 0.4.1
       path-browserify: 1.0.1
       picomatch: 4.0.3
-    optionalDependencies:
-      typescript: 5.9.3
 
   '@vue/reactivity@3.5.25':
     dependencies:
@@ -10233,7 +10221,7 @@ snapshots:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
 
-  alien-signals@3.1.1: {}
+  alien-signals@3.1.2: {}
 
   ansi-align@3.0.1:
     dependencies:
@@ -14841,10 +14829,10 @@ snapshots:
 
   vscode-uri@3.1.0: {}
 
-  vue-tsc@3.1.8(typescript@5.9.3):
+  vue-tsc@3.2.2(typescript@5.9.3):
     dependencies:
-      '@volar/typescript': 2.4.26
-      '@vue/language-core': 3.1.8(typescript@5.9.3)
+      '@volar/typescript': 2.4.27
+      '@vue/language-core': 3.2.2
       typescript: 5.9.3
 
   vue@3.5.25(typescript@5.9.3):
