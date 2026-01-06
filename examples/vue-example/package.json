@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@stylexjs/stylex": "^0.17.4",
-    "vue": "^3.5.25"
+    "vue": "^3.5.26"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.0",
