@@ -1,6 +1,5 @@
 import { execSync } from 'node:child_process'
-import { existsSync } from 'node:fs'
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { type Browser, chromium, type Page } from 'playwright'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
@@ -14,9 +13,11 @@ describe('astro-example e2e tests', () => {
   beforeAll(async () => {
     // Build the astro-example if dist/index.html doesn't exist
     if (!existsSync(distPath)) {
-      execSync('pnpm build', {
-        cwd: exampleDir,
+      // Use workspace filter to build from root, which is more reliable in CI
+      execSync('pnpm --filter astro-example build', {
+        cwd: process.cwd(),
         stdio: 'inherit',
+        env: { ...process.env },
       })
     }
 
