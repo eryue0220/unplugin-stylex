@@ -92,7 +92,7 @@
     "changeset:release": "pnpm run build && pnpm dlx @changesets/cli publish"
   },
   "engines": {
-    "node": ">=18"
+    "node": "^20.19.0 || >=22.12.0"
   },
   "peerDependencies": {
     "@stylexjs/stylex": "0.x"
