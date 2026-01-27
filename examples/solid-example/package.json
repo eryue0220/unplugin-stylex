@@ -7,7 +7,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@stylexjs/stylex": "^0.17.4",
+    "@stylexjs/stylex": "^0.17.5",
     "solid-js": "^1.9.10"
   },
   "devDependencies": {
