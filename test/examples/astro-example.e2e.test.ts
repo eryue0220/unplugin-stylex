@@ -1,3 +1,5 @@
+import { execSync } from 'node:child_process'
+import { existsSync } from 'node:fs'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { type Browser, chromium, type Page } from 'playwright'
@@ -7,8 +9,17 @@ describe('astro-example e2e tests', () => {
   let browser: Browser
   let page: Page
   const exampleDir = join(process.cwd(), 'examples', 'astro-example')
+  const distPath = join(exampleDir, 'dist', 'index.html')
 
   beforeAll(async () => {
+    // Build the astro-example if dist/index.html doesn't exist
+    if (!existsSync(distPath)) {
+      execSync('pnpm build', {
+        cwd: exampleDir,
+        stdio: 'inherit',
+      })
+    }
+
     browser = await chromium.launch({
       headless: true,
     })
@@ -23,7 +34,7 @@ describe('astro-example e2e tests', () => {
   it('should detect CSS styles and colors', async () => {
     page = await browser.newPage()
 
-    const htmlContent = readFileSync(join(exampleDir, 'dist', 'index.html'), 'utf-8')
+    const htmlContent = readFileSync(distPath, 'utf-8')
     await page.setContent(htmlContent)
 
     await page.waitForLoadState('networkidle')
