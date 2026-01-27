@@ -6,7 +6,7 @@
     "build": "vue-tsc && vite build"
   },
   "dependencies": {
-    "@stylexjs/stylex": "^0.17.4",
+    "@stylexjs/stylex": "^0.17.5",
     "vue": "^3.5.26"
   },
   "devDependencies": {

@@ -70,8 +70,8 @@ importers:
   examples/astro-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.4
-        version: 0.17.4
+        specifier: ^0.17.5
+        version: 0.17.5
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -98,8 +98,8 @@ importers:
   examples/esbuild-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.4
-        version: 0.17.4
+        specifier: ^0.17.5
+        version: 0.17.5
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -123,8 +123,8 @@ importers:
   examples/farm-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.4
-        version: 0.17.4
+        specifier: ^0.17.5
+        version: 0.17.5
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -166,8 +166,8 @@ importers:
         specifier: ^2.17.2
         version: 2.17.2(typescript@5.9.3)
       '@stylexjs/stylex':
-        specifier: ^0.17.4
-        version: 0.17.4
+        specifier: ^0.17.5
+        version: 0.17.5
       isbot:
         specifier: ^5.1.32
         version: 5.1.32
@@ -203,8 +203,8 @@ importers:
   examples/rolldown-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.4
-        version: 0.17.4
+        specifier: ^0.17.5
+        version: 0.17.5
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -222,8 +222,8 @@ importers:
   examples/rollup-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.4
-        version: 0.17.4
+        specifier: ^0.17.5
+        version: 0.17.5
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -268,8 +268,8 @@ importers:
   examples/rsbuild-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.4
-        version: 0.17.4
+        specifier: ^0.17.5
+        version: 0.17.5
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -299,8 +299,8 @@ importers:
   examples/rspack-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.4
-        version: 0.17.4
+        specifier: ^0.17.5
+        version: 0.17.5
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -330,8 +330,8 @@ importers:
   examples/solid-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.4
-        version: 0.17.4
+        specifier: ^0.17.5
+        version: 0.17.5
       solid-js:
         specifier: ^1.9.10
         version: 1.9.10
@@ -349,8 +349,8 @@ importers:
   examples/vite-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.4
-        version: 0.17.4
+        specifier: ^0.17.5
+        version: 0.17.5
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -374,8 +374,8 @@ importers:
   examples/vue-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.4
-        version: 0.17.4
+        specifier: ^0.17.5
+        version: 0.17.5
       vue:
         specifier: ^3.5.26
         version: 3.5.26(typescript@5.9.3)
@@ -402,8 +402,8 @@ importers:
   examples/webpack-example:
     dependencies:
       '@stylexjs/stylex':
-        specifier: ^0.17.4
-        version: 0.17.4
+        specifier: ^0.17.5
+        version: 0.17.5
       react:
         specifier: ^19.2.1
         version: 19.2.3
@@ -2847,9 +2847,6 @@ packages:
 
   '@stylexjs/stylex@0.17.3':
     resolution: {integrity: sha512-uJKi6sWvsZo7A0Hku0SjnnxsYkQVyi/e1g34/Uik3PXLBVnGMZ+6N9NiwVGdfGQ+/ulqUqEHktROG02279Ug0Q==}
-
-  '@stylexjs/stylex@0.17.4':
-    resolution: {integrity: sha512-0ZppVdfMEO6JDBuW+nNYw+DSBIU7wCE+nBVvDOnLMihKvKRdAF4ViKfDQSBC4RnCNytabGj92FjsYCgIMSm4tw==}
 
   '@stylexjs/stylex@0.17.5':
     resolution: {integrity: sha512-mV+mIXqj1AsnGHFj/hyno7YOBjBpgRzvD00iif0w/LExeN8mwNb2yTfnTHkx62fLaM7vUtoIEcO/bFHqmiOtpw==}
@@ -9872,12 +9869,6 @@ snapshots:
   '@stylexjs/shared@0.17.5': {}
 
   '@stylexjs/stylex@0.17.3':
-    dependencies:
-      css-mediaquery: 0.1.2
-      invariant: 2.2.4
-      styleq: 0.2.1
-
-  '@stylexjs/stylex@0.17.4':
     dependencies:
       css-mediaquery: 0.1.2
       invariant: 2.2.4
