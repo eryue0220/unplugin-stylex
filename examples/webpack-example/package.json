@@ -9,7 +9,7 @@
     "@babel/core": "^7.28.5",
     "@babel/preset-env": "^7.28.5",
     "@babel/preset-react": "^7.28.5",
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.9",
     "@types/react-dom": "^19.2.3",
     "babel-loader": "^10.0.0",
     "html-webpack-plugin": "^5.6.5",
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@stylexjs/stylex": "^0.17.5",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1"
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   }
 }
