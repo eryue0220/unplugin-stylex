@@ -26,4 +26,3 @@ describe('vite plugin', () => {
     expect(plugin).toBeDefined()
   })
 })
-

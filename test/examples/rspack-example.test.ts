@@ -1,6 +1,6 @@
-import { describe, expect, it } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
+import { describe, expect, it } from 'vitest'
 
 describe('rspack-example', () => {
   const exampleDir = join(process.cwd(), 'examples', 'rspack-example')
@@ -24,4 +24,3 @@ describe('rspack-example', () => {
     expect(pkg.name).toBeDefined()
   })
 })
-

@@ -1,6 +1,5 @@
-import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest'
 import fs from 'node:fs'
-import path from 'node:path'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { getAliases } from '../../src/utils/get-aliases'
 
 // Mock fs and path modules
@@ -113,4 +112,3 @@ describe('getAliases', () => {
     expect(result).toBeDefined()
   })
 })
-

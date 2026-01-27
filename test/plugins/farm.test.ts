@@ -26,4 +26,3 @@ describe('farm plugin', () => {
     expect(plugin).toBeDefined()
   })
 })
-

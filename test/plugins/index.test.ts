@@ -20,12 +20,15 @@ describe('main unplugin', () => {
   })
 
   it('should accept options', () => {
-    const plugin = typeof unplugin === 'function' ? unplugin({
-      dev: true,
-      stylex: {
-        filename: 'custom.css',
-      },
-    }) : unplugin
+    const plugin =
+      typeof unplugin === 'function'
+        ? unplugin({
+            dev: true,
+            stylex: {
+              filename: 'custom.css',
+            },
+          })
+        : unplugin
     expect(plugin).toBeDefined()
   })
 
@@ -34,4 +37,3 @@ describe('main unplugin', () => {
     expect(plugin).toBeDefined()
   })
 })
-

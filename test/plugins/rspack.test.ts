@@ -26,4 +26,3 @@ describe('rspack plugin', () => {
     expect(plugin).toBeDefined()
   })
 })
-

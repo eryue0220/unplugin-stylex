@@ -1,6 +1,6 @@
-import { describe, expect, it } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
+import { describe, expect, it } from 'vitest'
 
 describe('esbuild-example', () => {
   const exampleDir = join(process.cwd(), 'examples', 'esbuild-example')
@@ -24,4 +24,3 @@ describe('esbuild-example', () => {
     expect(pkg.name).toBeDefined()
   })
 })
-

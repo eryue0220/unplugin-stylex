@@ -26,4 +26,3 @@ describe('rolldown plugin', () => {
     expect(plugin).toBeDefined()
   })
 })
-

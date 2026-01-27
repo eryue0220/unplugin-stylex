@@ -35,4 +35,3 @@ describe('astro plugin', () => {
     expect(plugin.hooks['astro:server:setup']).toBeDefined()
   })
 })
-

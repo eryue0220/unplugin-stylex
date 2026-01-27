@@ -26,4 +26,3 @@ describe('webpack plugin', () => {
     expect(plugin).toBeDefined()
   })
 })
-

@@ -1,4 +1,4 @@
-import { describe, expect, it, vi, beforeEach } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { buildStylexRules } from '../../src/core/build'
 
 // Mock @stylexjs/babel-plugin
@@ -79,4 +79,3 @@ describe('buildStylexRules', () => {
     expect(result).toBeTruthy()
   })
 })
-

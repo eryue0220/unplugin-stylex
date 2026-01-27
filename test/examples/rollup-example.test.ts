@@ -1,6 +1,6 @@
-import { describe, expect, it } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
+import { describe, expect, it } from 'vitest'
 
 describe('rollup-example', () => {
   const exampleDir = join(process.cwd(), 'examples', 'rollup-example')
@@ -26,4 +26,3 @@ describe('rollup-example', () => {
     expect(pkg.name).toBeDefined()
   })
 })
-

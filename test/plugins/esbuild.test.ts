@@ -26,4 +26,3 @@ describe('esbuild plugin', () => {
     expect(plugin).toBeDefined()
   })
 })
-

@@ -1,6 +1,6 @@
-import { describe, expect, it, vi, beforeEach } from 'vitest'
-import { svelte } from '../../../src/core/transformers/svelte'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { defaultTransformer } from '../../../src/core/transformers/default'
+import { svelte } from '../../../src/core/transformers/svelte'
 
 vi.mock('../../../src/core/transformers/default', () => ({
   defaultTransformer: vi.fn(),
@@ -154,4 +154,3 @@ describe('svelte transformer', () => {
     expect(result.code).toContain('</script>')
   })
 })
-

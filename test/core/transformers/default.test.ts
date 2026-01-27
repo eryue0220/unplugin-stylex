@@ -1,6 +1,6 @@
-import { describe, expect, it, vi, beforeEach } from 'vitest'
-import { defaultTransformer } from '../../../src/core/transformers/default'
 import * as babelCore from '@babel/core'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { defaultTransformer } from '../../../src/core/transformers/default'
 
 vi.mock('@babel/core', () => ({
   transformAsync: vi.fn(),
@@ -178,4 +178,3 @@ describe('defaultTransformer', () => {
     expect(result.map).toBeUndefined()
   })
 })
-

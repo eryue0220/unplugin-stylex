@@ -1,5 +1,5 @@
-import { describe, expect, it, beforeEach, afterEach } from 'vitest'
-import { PLUGIN_NAME, isDevelopment, EXTENSIONS } from '../../src/utils/constants'
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { EXTENSIONS, isDevelopment, PLUGIN_NAME } from '../../src/utils/constants'
 
 describe('constants', () => {
   const originalEnv = process.env.NODE_ENV
@@ -57,4 +57,3 @@ describe('constants', () => {
     })
   })
 })
-

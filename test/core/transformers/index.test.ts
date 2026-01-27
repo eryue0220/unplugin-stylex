@@ -22,4 +22,3 @@ describe('transformers', () => {
     expect(typeof transformers.svelte).toBe('function')
   })
 })
-

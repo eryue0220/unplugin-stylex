@@ -35,4 +35,3 @@ describe('getSyntaxPlugins', () => {
     expect(plugins).toBeDefined()
   })
 })
-

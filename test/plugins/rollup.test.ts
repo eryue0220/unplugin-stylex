@@ -26,4 +26,3 @@ describe('rollup plugin', () => {
     expect(plugin).toBeDefined()
   })
 })
-

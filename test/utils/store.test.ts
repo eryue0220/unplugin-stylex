@@ -1,6 +1,7 @@
-import { describe, expect, it, beforeEach } from 'vitest'
-import { stylexRulesStore, STORE_KEY } from '../../src/utils/store'
+import { beforeEach, describe, expect, it } from 'vitest'
+
 import { PLUGIN_NAME } from '../../src/utils/constants'
+import { STORE_KEY, stylexRulesStore } from '../../src/utils/store'
 
 describe('store', () => {
   beforeEach(() => {
@@ -57,4 +58,3 @@ describe('store', () => {
     })
   })
 })
-

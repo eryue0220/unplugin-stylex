@@ -1,4 +1,4 @@
-import { describe, expect, it, vi, beforeEach } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { astro } from '../../../src/core/transformers/astro'
 import { defaultTransformer } from '../../../src/core/transformers/default'
 
@@ -151,4 +151,3 @@ describe('astro transformer', () => {
     expect(result.code).toMatch(/\n---\n/)
   })
 })
-
