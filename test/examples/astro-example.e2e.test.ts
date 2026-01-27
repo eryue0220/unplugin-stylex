@@ -9,11 +9,15 @@ describe('astro-example e2e tests', () => {
   const exampleDir = join(process.cwd(), 'examples', 'astro-example')
 
   beforeAll(async () => {
-    browser = await chromium.launch()
+    browser = await chromium.launch({
+      headless: true,
+    })
   })
 
   afterAll(async () => {
-    await browser.close()
+    if (browser) {
+      await browser.close()
+    }
   })
 
   it('should detect CSS styles and colors', async () => {

@@ -15,11 +15,15 @@ describe('astro-example CSS detection', () => {
   let page: Page
 
   beforeAll(async () => {
-    browser = await chromium.launch()
+    browser = await chromium.launch({
+      headless: true,
+    })
   })
 
   afterAll(async () => {
-    await browser.close()
+    if (browser) {
+      await browser.close()
+    }
   })
 
   beforeEach(async () => {
@@ -27,7 +31,9 @@ describe('astro-example CSS detection', () => {
   })
 
   afterEach(async () => {
-    await page.close()
+    if (page) {
+      await page.close()
+    }
   })
 
   it('should detect background color', async () => {
