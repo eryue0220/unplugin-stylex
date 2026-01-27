@@ -14,12 +14,12 @@
     "babel-loader": "^10.0.0",
     "html-webpack-plugin": "^5.6.5",
     "unplugin-stylex": "workspace:*",
-    "webpack": "^5.103.0",
+    "webpack": "^5.104.1",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2"
   },
   "dependencies": {
-    "@stylexjs/stylex": "^0.17.2",
+    "@stylexjs/stylex": "^0.17.4",
     "react": "^19.2.1",
     "react-dom": "^19.2.1"
   }

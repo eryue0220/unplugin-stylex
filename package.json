@@ -103,21 +103,21 @@
     "@babel/plugin-syntax-jsx": "^7.27.1",
     "@babel/plugin-syntax-typescript": "^7.27.1",
     "@rollup/pluginutils": "^5.1.4",
-    "@stylexjs/babel-plugin": "^0.17.2",
+    "@stylexjs/babel-plugin": "^0.17.4",
     "@types/node": "^25.0.3",
     "unplugin": "^2.3.11"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.8",
+    "@biomejs/biome": "2.3.13",
     "@changesets/changelog-github": "^0.5.2",
     "@changesets/cli": "^2.29.8",
     "@vitest/coverage-v8": "^4.0.15",
-    "babel-plugin-syntax-hermes-parser": "^0.33.0",
+    "babel-plugin-syntax-hermes-parser": "^0.33.3",
     "jsr": "^0.13.4",
     "playwright": "^1.48.0",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3",
-    "vite": "^7.3.0",
+    "vite": "^7.3.1",
     "vitest": "^4.0.15"
   }
 }

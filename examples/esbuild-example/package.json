@@ -6,7 +6,7 @@
     "dev": "node scripts/dev.mjs"
   },
   "dependencies": {
-    "@stylexjs/stylex": "^0.17.2",
+    "@stylexjs/stylex": "^0.17.4",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "unplugin-stylex": "workspace:*"
@@ -14,6 +14,6 @@
   "devDependencies": {
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "esbuild": "^0.27.1"
+    "esbuild": "^0.27.2"
   }
 }
