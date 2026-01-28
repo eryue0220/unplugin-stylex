@@ -20,7 +20,7 @@
     "@rollup/plugin-html": "^2.0.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-replace": "^6.0.3",
-    "rollup": "^4.55.1",
+    "rollup": "^4.57.0",
     "rollup-plugin-serve": "^3.0.0",
     "unplugin-stylex": "workspace:^"
   }
