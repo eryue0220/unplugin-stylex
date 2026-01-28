@@ -98,10 +98,10 @@
     "@stylexjs/stylex": "0.x"
   },
   "dependencies": {
-    "@babel/core": "^7.28.5",
-    "@babel/plugin-syntax-flow": "^7.27.1",
-    "@babel/plugin-syntax-jsx": "^7.27.1",
-    "@babel/plugin-syntax-typescript": "^7.27.1",
+    "@babel/core": "^7.28.6",
+    "@babel/plugin-syntax-flow": "^7.28.6",
+    "@babel/plugin-syntax-jsx": "^7.28.6",
+    "@babel/plugin-syntax-typescript": "^7.28.6",
     "@rollup/pluginutils": "^5.1.4",
     "@stylexjs/babel-plugin": "^0.17.5",
     "unplugin": "^3.0.0"
