@@ -92,7 +92,7 @@
     "changeset:release": "pnpm run build && pnpm dlx @changesets/cli publish"
   },
   "engines": {
-    "node": ">=18"
+    "node": "^20.19.0 || >=22.12.0"
   },
   "peerDependencies": {
     "@stylexjs/stylex": "0.x"
@@ -114,6 +114,7 @@
     "@vitest/coverage-v8": "^4.0.15",
     "babel-plugin-syntax-hermes-parser": "^0.33.3",
     "jsr": "^0.13.4",
+    "playwright": "^1.48.0",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",

@@ -36,6 +36,7 @@
       "!!**/.astro",
       "!examples/**/node_modules",
       "!examples/**/dist",
+      "!examples/**/build",
       "src/**",
       "test/**"
     ]
