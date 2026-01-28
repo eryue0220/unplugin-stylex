@@ -32,7 +32,7 @@ describe('rollup-example', () => {
     const css = getCSSFromExample(exampleDir)
     expect(css).toBeTruthy()
     expect(css!.length).toBeGreaterThan(0)
-    
+
     const mainStyles = checkCSSProperties(css!, {
       width: '100vw',
       height: '100vh',
@@ -41,7 +41,7 @@ describe('rollup-example', () => {
       'justify-content': 'center',
       'background-color': /#d6336c|rgb\(214,\s*51,\s*108\)/i,
     })
-    
+
     expect(mainStyles.found).toBe(true)
     expect(mainStyles.matched.width).toBe(true)
     expect(mainStyles.matched.height).toBe(true)
@@ -54,7 +54,7 @@ describe('rollup-example', () => {
   it('should generate CSS with expected styles for .card class', async () => {
     const css = getCSSFromExample(exampleDir)
     expect(css).toBeTruthy()
-    
+
     const cardStyles = checkCSSProperties(css!, {
       display: 'flex',
       'justify-content': 'center',
@@ -64,7 +64,7 @@ describe('rollup-example', () => {
       'border-radius': /\.5rem|8px/,
       color: /#f8f9fa|rgb\(248,\s*249,\s*250\)/i,
     })
-    
+
     expect(cardStyles.found).toBe(true)
     expect(cardStyles.matched.display).toBe(true)
     expect(cardStyles.matched['justify-content']).toBe(true)

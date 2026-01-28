@@ -1,6 +1,6 @@
-import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs'
-import { join } from 'node:path'
 import { execSync } from 'node:child_process'
+import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
+import { join } from 'node:path'
 
 export interface CSSRule {
   selector: string
@@ -13,38 +13,38 @@ export interface CSSRule {
  */
 export function parseCSS(css: string): CSSRule[] {
   const rules: CSSRule[] = []
-  
+
   // Remove comments
   css = css.replace(/\/\*[\s\S]*?\*\//g, '')
-  
+
   // Remove @layer declarations at the start (like @layer priority1, priority2, ...;)
   css = css.replace(/@layer\s+[^;]+;/g, '')
-  
+
   // Remove @layer blocks but keep their content
   // Match @layer name { ... } and replace with just the content
   css = css.replace(/@layer\s+[^{]*\{/g, '')
-  
+
   // Remove other @ rules that don't contain selectors
   css = css.replace(/@[^{;]+;?/g, '')
-  
+
   // Now parse CSS rules: selector { properties }
   // Match selector { properties } where properties don't contain nested braces
   const ruleRegex = /([^{}\s][^{}]*?)\{([^{}]+)\}/g
   let match
-  
+
   while ((match = ruleRegex.exec(css)) !== null) {
     const selector = match[1].trim()
     const propertiesText = match[2].trim()
-    
+
     if (!selector || selector === '}') {
       continue
     }
-    
+
     const properties: Record<string, string> = {}
     // Match property: value pairs, handling quoted values and URLs
     const propRegex = /([^:;]+):([^;]+);?/g
     let propMatch
-    
+
     while ((propMatch = propRegex.exec(propertiesText)) !== null) {
       const key = propMatch[1].trim()
       const value = propMatch[2].trim()
@@ -52,12 +52,12 @@ export function parseCSS(css: string): CSSRule[] {
         properties[key] = value
       }
     }
-    
+
     if (selector && Object.keys(properties).length > 0) {
       rules.push({ selector, properties })
     }
   }
-  
+
   return rules
 }
 
@@ -68,13 +68,13 @@ export function findCSSFile(dir: string, filename = 'stylex.css'): string | null
   if (!existsSync(dir)) {
     return null
   }
-  
+
   const items = readdirSync(dir)
-  
+
   for (const item of items) {
     const fullPath = join(dir, item)
     const stat = statSync(fullPath)
-    
+
     if (stat.isDirectory()) {
       const found = findCSSFile(fullPath, filename)
       if (found) return found
@@ -82,7 +82,7 @@ export function findCSSFile(dir: string, filename = 'stylex.css'): string | null
       return fullPath
     }
   }
-  
+
   return null
 }
 
@@ -91,7 +91,7 @@ export function findCSSFile(dir: string, filename = 'stylex.css'): string | null
  */
 export function buildExample(exampleDir: string, buildCommand = 'npm run build'): string {
   const distDir = join(exampleDir, 'dist')
-  
+
   try {
     // Run build command
     execSync(buildCommand, {
@@ -102,7 +102,7 @@ export function buildExample(exampleDir: string, buildCommand = 'npm run build')
   } catch (error) {
     throw new Error(`Failed to build example at ${exampleDir}: ${error}`)
   }
-  
+
   return distDir
 }
 
@@ -115,13 +115,13 @@ export function buildExample(exampleDir: string, buildCommand = 'npm run build')
  */
 export function extractCSSFromJS(jsContent: string): string {
   let css = ''
-  
+
   // Extract @layer declarations
   const layerMatches = jsContent.match(/@layer[^;]+;/g)
   if (layerMatches) {
     css += layerMatches.join('\n') + '\n'
   }
-  
+
   // Extract CSS rules: .x...{...} patterns
   const ruleRegex = /\.x[a-z0-9]+\{[^}]+\}/g
   const ruleMatches = jsContent.match(ruleRegex)
@@ -135,7 +135,7 @@ export function extractCSSFromJS(jsContent: string): string {
       css += ruleMatches.join('\n')
     }
   }
-  
+
   // Also try to extract CSS from string literals (quoted CSS)
   const stringLiteralRegex = /['"`]([^'"`]*@layer[^'"`]*)['"`]/g
   let stringMatch
@@ -145,14 +145,14 @@ export function extractCSSFromJS(jsContent: string): string {
       css += '\n' + cssInString
     }
   }
-  
+
   // Extract from style tag content
   const styleTagRegex = /<style[^>]*>([^<]*)<\/style>/gi
   let styleMatch
   while ((styleMatch = styleTagRegex.exec(jsContent)) !== null) {
     css += '\n' + styleMatch[1]
   }
-  
+
   return css.trim()
 }
 
@@ -163,13 +163,13 @@ export function findJSFile(dir: string, filename?: string): string | null {
   if (!existsSync(dir)) {
     return null
   }
-  
+
   const items = readdirSync(dir)
-  
+
   for (const item of items) {
     const fullPath = join(dir, item)
     const stat = statSync(fullPath)
-    
+
     if (stat.isDirectory()) {
       const found = findJSFile(fullPath, filename)
       if (found) return found
@@ -179,7 +179,7 @@ export function findJSFile(dir: string, filename?: string): string | null {
       }
     }
   }
-  
+
   return null
 }
 
@@ -222,18 +222,20 @@ export function checkCSSClass(
   expectedProperties: Record<string, string | RegExp>,
 ): { exists: boolean; matched: Record<string, boolean>; actualProperties?: Record<string, string> } {
   const rules = parseCSS(css)
-  
+
   // Find rule that matches the class name
   // Class names in stylex are typically like .x1a2b3c4 or similar
   // We'll search for rules that contain the class name or match a pattern
   const matchingRule = rules.find((rule) => {
     // Check if selector contains the class name or matches a pattern
     // Stylex generates class names, so we need to be flexible
-    return rule.selector.includes(className) || 
-           rule.selector.match(new RegExp(`\\.x[\\w]+.*${className}`)) ||
-           className.includes(rule.selector.replace(/^\./, ''))
+    return (
+      rule.selector.includes(className) ||
+      rule.selector.match(new RegExp(`\\.x[\\w]+.*${className}`)) ||
+      className.includes(rule.selector.replace(/^\./, ''))
+    )
   })
-  
+
   if (!matchingRule) {
     // Try to find by checking if any rule has the expected properties
     for (const rule of rules) {
@@ -270,10 +272,10 @@ export function checkCSSClass(
         }
       }
     }
-    
+
     return { exists: false, matched: {} }
   }
-  
+
   const matched: Record<string, boolean> = {}
   for (const [key, expectedValue] of Object.entries(expectedProperties)) {
     const actualValue = matchingRule.properties[key]
@@ -287,7 +289,7 @@ export function checkCSSClass(
       matched[key] = false
     }
   }
-  
+
   return {
     exists: true,
     matched,
@@ -299,11 +301,7 @@ export function checkCSSClass(
  * Normalize CSS values for comparison (remove extra spaces, handle quotes, etc.)
  */
 function normalizeCSSValue(value: string): string {
-  return value
-    .trim()
-    .replace(/\s+/g, ' ')
-    .replace(/['"]/g, '')
-    .toLowerCase()
+  return value.trim().replace(/\s+/g, ' ').replace(/['"]/g, '').toLowerCase()
 }
 
 /**
@@ -317,7 +315,7 @@ export function checkCSSProperties(
   const rules = parseCSS(css)
   const matched: Record<string, boolean> = {}
   let foundAny = false
-  
+
   for (const [key, expectedValue] of Object.entries(expectedProperties)) {
     let found = false
     for (const rule of rules) {
@@ -338,7 +336,7 @@ export function checkCSSProperties(
     }
     matched[key] = found
   }
-  
+
   return {
     found: foundAny,
     matched,

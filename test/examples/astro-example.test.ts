@@ -28,12 +28,12 @@ describe('astro-example', () => {
   it('should generate CSS with expected styles for .main class', async () => {
     // Build the example
     buildExample(exampleDir, 'npm run build')
-    
+
     // Get CSS content
     const css = getCSSFromExample(exampleDir)
     expect(css).toBeTruthy()
     expect(css!.length).toBeGreaterThan(0)
-    
+
     // Check for main styles
     const mainStyles = checkCSSProperties(css!, {
       width: '100vw',
@@ -43,7 +43,7 @@ describe('astro-example', () => {
       'justify-content': 'center',
       'background-color': /#d6336c|rgb\(214,\s*51,\s*108\)/i,
     })
-    
+
     expect(mainStyles.found).toBe(true)
     expect(mainStyles.matched.width).toBe(true)
     expect(mainStyles.matched.height).toBe(true)
@@ -56,7 +56,7 @@ describe('astro-example', () => {
   it('should generate CSS with expected styles for .card class', async () => {
     const css = getCSSFromExample(exampleDir)
     expect(css).toBeTruthy()
-    
+
     // Check for card styles
     const cardStyles = checkCSSProperties(css!, {
       display: 'flex',
@@ -67,7 +67,7 @@ describe('astro-example', () => {
       'border-radius': /\.5rem|8px/,
       color: /#f8f9fa|rgb\(248,\s*249,\s*250\)/i,
     })
-    
+
     expect(cardStyles.found).toBe(true)
     expect(cardStyles.matched.display).toBe(true)
     expect(cardStyles.matched['justify-content']).toBe(true)

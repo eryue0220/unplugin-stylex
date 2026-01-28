@@ -52,7 +52,7 @@ describe('esbuild-example', () => {
   it('should generate CSS with expected styles for .card class', async () => {
     const css = getCSSFromExample(exampleDir)
     expect(css).toBeTruthy()
-    
+
     const cardStyles = checkCSSProperties(css!, {
       display: 'flex',
       'justify-content': 'center',
@@ -62,7 +62,7 @@ describe('esbuild-example', () => {
       'border-radius': /\.5rem|8px/,
       color: /#f8f9fa|rgb\(248,\s*249,\s*250\)/i,
     })
-    
+
     expect(cardStyles.found).toBe(true)
     expect(cardStyles.matched.display).toBe(true)
     expect(cardStyles.matched['justify-content']).toBe(true)
