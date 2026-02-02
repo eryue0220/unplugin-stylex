@@ -52,8 +52,8 @@ importers:
         specifier: ^0.33.3
         version: 0.33.3
       jsr:
-        specifier: ^0.13.4
-        version: 0.13.5
+        specifier: ^0.14.2
+        version: 0.14.2
       tsup:
         specifier: ^8.5.1
         version: 8.5.1(jiti@2.6.1)(postcss@8.5.6)(typescript@5.9.3)(yaml@2.8.2)
@@ -5117,8 +5117,8 @@ packages:
   jsonfile@6.2.0:
     resolution: {integrity: sha512-FGuPw30AdOIUTRMC2OMRtQV+jkVj2cfPqSeWXv1NEAJ1qZ5zb1X6z1mFhbfOB/iy3ssJCD+3KuZ8r8C3uVFlAg==}
 
-  jsr@0.13.5:
-    resolution: {integrity: sha512-qQP20ZcG28pYes7bCq3uuvixl1TL1EpJzwLPfoQadSyWk9j2AID66qhW8+aXpRDRFDvDkXFnONsSRhpnnQAupg==}
+  jsr@0.14.2:
+    resolution: {integrity: sha512-yrnhXNyTqX7RWym4SVbGX+P9U63VRRN0llSN4psz4IEoGw20alehT0PX71ecmY5vMxNXtCJ16oWlnfaoVg9wdA==}
     hasBin: true
 
   keygrip@1.1.0:
@@ -12771,7 +12771,7 @@ snapshots:
     optionalDependencies:
       graceful-fs: 4.2.11
 
-  jsr@0.13.5:
+  jsr@0.14.2:
     dependencies:
       node-stream-zip: 1.15.0
       semiver: 1.1.0
