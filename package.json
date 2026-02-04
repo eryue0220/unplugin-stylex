@@ -98,7 +98,7 @@
     "@stylexjs/stylex": "0.x"
   },
   "dependencies": {
-    "@babel/core": "^7.28.6",
+    "@babel/core": "^7.29.0",
     "@babel/plugin-syntax-flow": "^7.28.6",
     "@babel/plugin-syntax-jsx": "^7.28.6",
     "@babel/plugin-syntax-typescript": "^7.28.6",
