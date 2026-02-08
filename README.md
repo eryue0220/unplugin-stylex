@@ -164,6 +164,17 @@ Current support argument, which may have change in the future
 
 #### options.stylex.unstable_moduleResolution
 
+## Monorepo
+
+本仓库使用 [Turborepo](https://turbo.build/repo) 管理 monorepo。在根目录可执行：
+
+- `pnpm turbo:build` — 按依赖顺序构建所有包（主包与 examples）
+- `pnpm turbo:test` — 在所有包中运行测试
+- `pnpm turbo:lint` / `pnpm turbo:check` — 在所有包中运行 lint / check
+- `pnpm turbo:dev` — 并行启动所有包的 dev 脚本
+
+仅构建主包：`pnpm turbo run build --filter=unplugin-stylex`。仅构建某个 example：`pnpm turbo run build --filter=vite-example`。
+
 # Acknowledgments
 
 - [@stylexjs/rollup-plugin](https://github.com/facebook/stylex/tree/main/packages/rollup-plugin)
