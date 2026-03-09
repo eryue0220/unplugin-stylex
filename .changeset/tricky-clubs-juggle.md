@@ -2,4 +2,4 @@
 "unplugin-stylex": patch
 ---
 
-Update deps
+update project dependencies
