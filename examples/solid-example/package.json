@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@stylexjs/stylex": "^0.17.5",
-    "solid-js": "^1.9.10"
+    "solid-js": "^1.9.11"
   },
   "devDependencies": {
     "unplugin-stylex": "workspace:*",
