@@ -104,7 +104,7 @@
     "@babel/plugin-syntax-jsx": "^7.28.6",
     "@babel/plugin-syntax-typescript": "^7.28.6",
     "@rollup/pluginutils": "^5.1.4",
-    "@stylexjs/babel-plugin": "^0.17.5",
+    "@stylexjs/babel-plugin": "^0.18.1",
     "unplugin": "^3.0.0"
   },
   "devDependencies": {
