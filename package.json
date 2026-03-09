@@ -87,8 +87,9 @@
     "format:fix": "pnpm biome format --write .",
     "ci": "pnpm run lint && pnpm run check && pnpm run build",
     "jsr": "pnpm dlx jsr publish",
+    "sync:jsr-version": "node scripts/sync-jsr-version.mjs",
     "changeset": "pnpm dlx @changesets/cli add",
-    "changeset:version": "pnpm dlx @changesets/cli version && pnpm install",
+    "changeset:version": "pnpm dlx @changesets/cli version && pnpm run sync:jsr-version && pnpm install",
     "changeset:release": "pnpm run build && pnpm dlx @changesets/cli publish"
   },
   "engines": {
