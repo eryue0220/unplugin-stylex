@@ -7,7 +7,7 @@ on:
 
 jobs:
   release:
-    name: Release NPM
+    name: Release NPM and JSR
     if: github.repository == 'eryue0220/unplugin-stylex'
     permissions:
       contents: write
