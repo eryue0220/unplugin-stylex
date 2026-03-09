@@ -1,5 +1,11 @@
 # unplugin-stylex
 
+## 0.6.1
+
+### Patch Changes
+
+- [#247](https://github.com/eryue0220/unplugin-stylex/pull/247) [`02373e9`](https://github.com/eryue0220/unplugin-stylex/commit/02373e9a4f24d7bda76b5b3f59417a9e031a20a0) Thanks [@eryue0220](https://github.com/eryue0220)! - update project dependencies
+
 ## 0.6.0
 
 ### Minor Changes
