@@ -1,5 +1,13 @@
 # unplugin-stylex
 
+## 0.7.0
+
+### Minor Changes
+
+- [#241](https://github.com/eryue0220/unplugin-stylex/pull/241) [`5776861`](https://github.com/eryue0220/unplugin-stylex/commit/577686104f8c9cd2ea703f53d715a07469a28931) Thanks [@eryue0220](https://github.com/eryue0220)! - update dependencies
+
+- [#241](https://github.com/eryue0220/unplugin-stylex/pull/241) [`5776861`](https://github.com/eryue0220/unplugin-stylex/commit/577686104f8c9cd2ea703f53d715a07469a28931) Thanks [@eryue0220](https://github.com/eryue0220)! - Update deps
+
 ## 0.6.0
 
 ### Minor Changes
