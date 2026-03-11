@@ -109,7 +109,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.6",
-    "@changesets/changelog-github": "^0.5.2",
+    "@changesets/changelog-github": "^0.6.0",
     "@changesets/cli": "^2.30.0",
     "@types/node": "^25.3.0",
     "@vitest/coverage-v8": "^4.0.15",
