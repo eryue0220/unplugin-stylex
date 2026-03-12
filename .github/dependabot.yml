@@ -30,7 +30,6 @@ updates:
       typescript:
         patterns:
           - "typescript"
-          - "@tsd/typescript"
       babel:
         patterns:
           - "@babel/*"
@@ -49,6 +48,10 @@ updates:
           - "react-dom"
           - "@types/react"
           - "@types/react-dom"
+      astro:
+        patterns:
+          - "astro"
+          - "@astrojs/*"
     ignore:
       - dependency-name: "@stylexjs/stylex"
         update-types: ["version-update:semver-major"]
