@@ -33,6 +33,7 @@ updates:
       babel:
         patterns:
           - "@babel/*"
+          - "babel-*"
       stylex:
         patterns:
           - "@stylexjs/*"
