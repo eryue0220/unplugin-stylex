@@ -70,8 +70,10 @@ export function findCSSFile(dir: string, filename = 'stylex.css'): string | null
   }
 
   const items = readdirSync(dir)
+  console.log('items::', items)
 
   for (const item of items) {
+    console.log('item::', item)
     const fullPath = join(dir, item)
     const stat = statSync(fullPath)
 
@@ -271,7 +273,6 @@ export function getCSSFromExample(exampleDir: string, target = 'dist', cssFilena
   )
 
   for (const dir of searchDirs) {
-    console.log('dir::', dir)
     if (!existsSync(dir)) {
       continue
     }

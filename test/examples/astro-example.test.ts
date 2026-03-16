@@ -3,7 +3,7 @@ import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { buildExample, checkCSSProperties, getCSSFromExample } from '../utils/css-test-helpers'
 
-describe('astro-example', () => {
+describe.only('astro-example', () => {
   const exampleDir = join(process.cwd(), 'examples', 'astro-example')
 
   it('should have astro.config.mjs', () => {
