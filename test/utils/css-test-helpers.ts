@@ -101,7 +101,7 @@ export function buildExample(exampleDir: string, buildCommand = 'npm run build')
     // Run build command
     execSync(buildCommand, {
       cwd: exampleDir,
-      stdio: 'pipe',
+      stdio: 'inherit',
       env: { ...process.env, CI: 'true', NODE_ENV: 'production' },
     })
   } catch (error) {
