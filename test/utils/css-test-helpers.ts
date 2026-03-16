@@ -80,8 +80,7 @@ export function findCSSFile(dir: string, filename = 'stylex.css'): string | null
     if (stat.isDirectory()) {
       const found = findCSSFile(fullPath, filename)
       if (found) return found
-    } else if (item === filename || item.endsWith('.css')) {
-      console.log('fullPath::', fullPath, readFileSync(fullPath, 'utf-8'))
+    } else if (item.endsWith('.css') && (!filename || item === filename)) {
       return fullPath
     }
   }
