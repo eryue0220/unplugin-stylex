@@ -60,6 +60,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       }
 
       try {
+        console.log('transform::')
         const transformer = transformers[extname] ?? transformers.default
         const result = await transformer(context)
 
