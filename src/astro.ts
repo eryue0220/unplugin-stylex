@@ -9,6 +9,7 @@ import * as path from 'node:path'
 import { buildStylexRules } from './core/build'
 import { getOptions } from './core/options'
 import type { UnpluginStylexOptions } from './types'
+import { getStylexAssetFileName, getStylexPublicPath } from './utils/stylex-path'
 import { PLUGIN_NAME, STORE_KEY, stylexRulesStore } from './utils'
 import vitePlugin from './vite'
 
@@ -60,7 +61,8 @@ export default function astro(options: UnpluginStylexOptions = {}) {
           typeof (config as { build?: { assets?: string } }).build?.assets === 'string'
             ? (config as { build?: { assets?: string } }).build!.assets!
             : '_astro'
-        const cssPath = path.posix.join(base, assetsDir, filename).replace(/\/+/g, '/')
+        const fileName = getStylexAssetFileName(filename, assetsDir)
+        const cssPath = getStylexPublicPath(base, fileName)
 
         injectScript(
           'head-inline',
@@ -93,10 +95,17 @@ export default function astro(options: UnpluginStylexOptions = {}) {
       },
       'astro:server:setup': ({ server }) => {
         server.middlewares.use((req, res, next) => {
-          const base = '/'
-          const cssPath = path.posix.join(base, filename).replace(/\/+/g, base)
+          const assetsDir = '_astro'
+          const fileName = getStylexAssetFileName(filename, assetsDir)
+          const cssPath = getStylexPublicPath('/', fileName)
+          const normalizedUrl = req.url?.split('?')[0]
 
-          if (req.url === cssPath || req.url === `/${filename}` || req.url?.endsWith(`/${filename}`)) {
+          if (
+            normalizedUrl === cssPath ||
+            normalizedUrl === `/${filename}` ||
+            normalizedUrl?.endsWith(`/${filename}`) ||
+            normalizedUrl === filename
+          ) {
             const stylexRules = stylexRulesStore.get(STORE_KEY) ?? {}
             const collectedCSS = buildStylexRules(stylexRules, options.stylex?.useCSSLayers ?? false)
 

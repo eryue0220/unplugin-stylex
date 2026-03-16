@@ -70,11 +70,9 @@ export function findCSSFile(dir: string, filename = 'stylex.css'): string | null
   }
 
   const items = readdirSync(dir)
-  console.log('items::', items)
 
   for (const item of items) {
     const fullPath = join(dir, item)
-    console.log('fullPath::', item, fullPath)
     const stat = statSync(fullPath)
 
     if (stat.isDirectory()) {
@@ -295,7 +293,6 @@ export function getCSSFromExample(exampleDir: string, target = 'dist', cssFilena
     // If no CSS file found, try to extract CSS from HTML files
     const htmlFile = findHTMLFile(dir)
     if (htmlFile) {
-      console.log('htmlFile::', htmlFile)
       const htmlContent = readFileSync(htmlFile, 'utf-8')
       const extractedCSS = extractCSSFromHTML(htmlContent, htmlFile)
       if (extractedCSS) {

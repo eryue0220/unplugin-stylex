@@ -15,6 +15,7 @@ import { buildStylexRules } from './core/build'
 import { getOptions } from './core/options'
 import { transformers } from './core/transformers'
 import type { UnpluginStylexOptions } from './types'
+import { getStylexAssetFileName, getStylexPublicPath } from './utils/stylex-path'
 import { PLUGIN_NAME, STORE_KEY, stylexRulesStore } from './utils'
 
 /**
@@ -102,8 +103,8 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
             return
           }
 
-          const fileName = `${viteConfig?.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
-          const cssPath = path.posix.join(viteConfig?.base ?? '/', fileName.replace(/\\/g, '/')).replace(/\/+/g, '/')
+          const fileName = getStylexAssetFileName(options.stylex.filename, viteConfig?.build?.assetsDir ?? 'assets')
+          const cssPath = getStylexPublicPath(viteConfig?.base, fileName)
           const basePath = (viteConfig?.base ?? '/').replace(/\/+$/, '') || '/'
           const filename = options.stylex.filename
 
@@ -132,7 +133,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       },
 
       buildEnd() {
-        const fileName = `${viteConfig?.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
+        const fileName = getStylexAssetFileName(options.stylex.filename, viteConfig?.build?.assetsDir ?? 'assets')
         const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
 
         if (!collectedCSS) return
@@ -145,14 +146,14 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       },
 
       transformIndexHtml(html, ctx) {
-        const fileName = `${viteConfig?.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
+        const fileName = getStylexAssetFileName(options.stylex.filename, viteConfig?.build?.assetsDir ?? 'assets')
         const css = ctx.bundle?.[fileName]
 
         if (!css) {
           return html
         }
 
-        const publicPath = path.posix.join(viteConfig?.base ?? '/', fileName.replace(/\\/g, '/'))
+        const publicPath = getStylexPublicPath(viteConfig?.base, fileName)
 
         return [
           {
