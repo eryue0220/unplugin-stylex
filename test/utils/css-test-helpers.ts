@@ -70,6 +70,7 @@ export function findCSSFile(dir: string, filename = 'stylex.css'): string | null
   }
 
   const items = readdirSync(dir)
+  console.log('items::', items)
 
   for (const item of items) {
     const fullPath = join(dir, item)
@@ -91,7 +92,7 @@ export function findCSSFile(dir: string, filename = 'stylex.css'): string | null
  */
 export function buildExample(exampleDir: string, buildCommand = 'npm run build'): string {
   const distDir = join(exampleDir, 'dist')
-  const outputDirs = ['dist', 'build', '.rsbuild']
+  const outputDirs = ['dist', 'build']
 
   try {
     for (const outputDir of outputDirs) {
@@ -173,7 +174,12 @@ export function extractCSSFromHTML(htmlContent: string, htmlPath: string): strin
   const styleTagRegex = /<style[^>]*>([\s\S]*?)<\/style>/gi
   let styleMatch
   while ((styleMatch = styleTagRegex.exec(htmlContent)) !== null) {
-    css += `\n${styleMatch[1]}`
+    const inlineCSS = styleMatch[1].trim()
+    const looksLikeStylexCSS = inlineCSS.includes('@layer priority') || /\.x[a-z0-9]+/i.test(inlineCSS)
+
+    if (looksLikeStylexCSS) {
+      css += `\n${inlineCSS}`
+    }
   }
 
   const stylesheetLinkRegex = /<link[^>]+rel=["']stylesheet["'][^>]+href=["']([^"']+\.css)["'][^>]*>/gi
@@ -255,15 +261,17 @@ export function findHTMLFile(dir: string, filename?: string): string | null {
  */
 export function getCSSFromExample(exampleDir: string, target = 'dist', cssFilename = 'stylex.css'): string | null {
   const searchDirs = Array.from(
-    new Set([
-      join(exampleDir, target),
-      target === 'dist' ? join(exampleDir, 'dist') : null,
-      target === 'build' ? join(exampleDir, 'build') : null,
-      target === '.rsbuild' ? join(exampleDir, '.rsbuild') : null,
-    ].filter(Boolean) as string[]),
+    new Set(
+      [
+        join(exampleDir, target),
+        target === 'dist' ? join(exampleDir, 'dist') : null,
+        target === 'build' ? join(exampleDir, 'build') : null,
+      ].filter(Boolean) as string[],
+    ),
   )
 
   for (const dir of searchDirs) {
+    console.log('dir::', dir)
     if (!existsSync(dir)) {
       continue
     }

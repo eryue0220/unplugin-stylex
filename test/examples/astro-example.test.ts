@@ -31,7 +31,6 @@ describe('astro-example', () => {
 
     // Get CSS content
     const css = getCSSFromExample(exampleDir)
-    console.log('example::', exampleDir, css)
     expect(css).toBeTruthy()
     expect(css!.length).toBeGreaterThan(0)
 

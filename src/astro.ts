@@ -56,7 +56,11 @@ export default function astro(options: UnpluginStylexOptions = {}) {
         // ;(config as Record<string, unknown>).__stylexPlugin = wrappedPlugin
 
         const base = config.base ?? '/'
-        const cssPath = path.posix.join(base, filename).replace(/\/+/g, '/')
+        const assetsDir =
+          typeof (config as { build?: { assets?: string } }).build?.assets === 'string'
+            ? (config as { build?: { assets?: string } }).build!.assets!
+            : '_astro'
+        const cssPath = path.posix.join(base, assetsDir, filename).replace(/\/+/g, '/')
 
         injectScript(
           'head-inline',
