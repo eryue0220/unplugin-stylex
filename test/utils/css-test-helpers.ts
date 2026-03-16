@@ -257,10 +257,10 @@ export function getCSSFromExample(exampleDir: string, target = 'dist', cssFilena
   const searchDirs = Array.from(
     new Set([
       join(exampleDir, target),
-      join(exampleDir, 'dist'),
-      join(exampleDir, 'build'),
-      join(exampleDir, '.rsbuild'),
-    ]),
+      target === 'dist' ? join(exampleDir, 'dist') : null,
+      target === 'build' ? join(exampleDir, 'build') : null,
+      target === '.rsbuild' ? join(exampleDir, '.rsbuild') : null,
+    ].filter(Boolean) as string[]),
   )
 
   for (const dir of searchDirs) {
