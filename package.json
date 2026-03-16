@@ -111,7 +111,7 @@
     "@biomejs/biome": "2.4.6",
     "@changesets/changelog-github": "^0.6.0",
     "@changesets/cli": "^2.30.0",
-    "@types/node": "^25.4.0",
+    "@types/node": "^25.5.0",
     "@vitest/coverage-v8": "^4.0.15",
     "babel-plugin-syntax-hermes-parser": "^0.33.3",
     "jsr": "^0.14.3",
