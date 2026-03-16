@@ -295,6 +295,7 @@ export function getCSSFromExample(exampleDir: string, target = 'dist', cssFilena
     // If no CSS file found, try to extract CSS from HTML files
     const htmlFile = findHTMLFile(dir)
     if (htmlFile) {
+      console.log('htmlFile::', htmlFile)
       const htmlContent = readFileSync(htmlFile, 'utf-8')
       const extractedCSS = extractCSSFromHTML(htmlContent, htmlFile)
       if (extractedCSS) {
