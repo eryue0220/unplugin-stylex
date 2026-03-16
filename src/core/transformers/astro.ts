@@ -7,7 +7,7 @@ export const astro: UnpluginStylexTransformer = async (context) => {
   // Astro files have frontmatter between --- delimiters
   // Match the frontmatter section (including the --- delimiters)
   const frontmatterMatch = inputCode.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/)
-  console.log('astro::frontmatterMatch::', inputCode, frontmatterMatch)
+  console.log('astro::frontmatterMatch::', id, inputCode, frontmatterMatch)
 
   if (!frontmatterMatch) {
     console.log('astro::no frontmatter::', id, inputCode)
