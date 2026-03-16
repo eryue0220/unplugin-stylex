@@ -15,8 +15,7 @@ import { buildStylexRules } from './core/build'
 import { getOptions } from './core/options'
 import { transformers } from './core/transformers'
 import type { UnpluginStylexOptions } from './types'
-import { getStylexAssetFileName, getStylexPublicPath } from './utils/stylex-path'
-import { PLUGIN_NAME, STORE_KEY, stylexRulesStore } from './utils'
+import { getStylexAssetFileName, getStylexPublicPath, PLUGIN_NAME, STORE_KEY, stylexRulesStore } from './utils'
 
 /**
  * The main unplugin factory.
@@ -78,6 +77,11 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
     buildEnd() {
       const fileName = options.stylex.filename
       const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
+
+      if (meta.framework === 'astro') {
+        console.log('buildEnd::astro::', fileName, collectedCSS, STORE_KEY, stylexRulesStore.get(STORE_KEY))
+      }
+
 
       if (!collectedCSS) return
 

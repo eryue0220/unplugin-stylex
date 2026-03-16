@@ -4,13 +4,10 @@
  * @module
  */
 
-import * as path from 'node:path'
-
 import { buildStylexRules } from './core/build'
 import { getOptions } from './core/options'
 import type { UnpluginStylexOptions } from './types'
-import { getStylexAssetFileName, getStylexPublicPath } from './utils/stylex-path'
-import { PLUGIN_NAME, STORE_KEY, stylexRulesStore } from './utils'
+import { getStylexAssetFileName, getStylexPublicPath, PLUGIN_NAME, STORE_KEY, stylexRulesStore } from './utils'
 import vitePlugin from './vite'
 
 /**
