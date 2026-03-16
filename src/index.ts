@@ -78,10 +78,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       const fileName = options.stylex.filename
       const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
 
-      if (meta.framework === 'astro') {
-        console.log('buildEnd::astro::', fileName, collectedCSS, STORE_KEY, stylexRulesStore.get(STORE_KEY))
-      }
-
+      console.log('buildEnd::', fileName, collectedCSS, STORE_KEY, stylexRulesStore.get(STORE_KEY))
 
       if (!collectedCSS) return
 
