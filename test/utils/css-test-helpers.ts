@@ -1,6 +1,6 @@
 import { execSync } from 'node:child_process'
 import { existsSync, readdirSync, readFileSync, rmSync, statSync } from 'node:fs'
-import { join } from 'node:path'
+import { dirname, join, resolve } from 'node:path'
 
 export interface CSSRule {
   selector: string
@@ -162,6 +162,40 @@ export function extractCSSFromJS(jsContent: string): string {
 }
 
 /**
+ * Extract CSS from HTML content.
+ * CSS in HTML can be:
+ * 1. Inline <style> tags
+ * 2. Linked stylesheet files
+ */
+export function extractCSSFromHTML(htmlContent: string, htmlPath: string): string {
+  let css = ''
+
+  const styleTagRegex = /<style[^>]*>([\s\S]*?)<\/style>/gi
+  let styleMatch
+  while ((styleMatch = styleTagRegex.exec(htmlContent)) !== null) {
+    css += `\n${styleMatch[1]}`
+  }
+
+  const stylesheetLinkRegex = /<link[^>]+rel=["']stylesheet["'][^>]+href=["']([^"']+\.css)["'][^>]*>/gi
+  let linkMatch
+  while ((linkMatch = stylesheetLinkRegex.exec(htmlContent)) !== null) {
+    const href = linkMatch[1]
+    const normalizedHref = href.split('?')[0]
+
+    if (/^(?:https?:)?\/\//.test(normalizedHref)) {
+      continue
+    }
+
+    const cssPath = resolve(dirname(htmlPath), normalizedHref.replace(/^\//, ''))
+    if (existsSync(cssPath)) {
+      css += `\n${readFileSync(cssPath, 'utf-8')}`
+    }
+  }
+
+  return css.trim()
+}
+
+/**
  * Find JavaScript file in a directory recursively
  */
 export function findJSFile(dir: string, filename?: string): string | null {
@@ -189,29 +223,75 @@ export function findJSFile(dir: string, filename?: string): string | null {
 }
 
 /**
+ * Find HTML file in a directory recursively
+ */
+export function findHTMLFile(dir: string, filename?: string): string | null {
+  if (!existsSync(dir)) {
+    return null
+  }
+
+  const items = readdirSync(dir)
+
+  for (const item of items) {
+    const fullPath = join(dir, item)
+    const stat = statSync(fullPath)
+
+    if (stat.isDirectory()) {
+      const found = findHTMLFile(fullPath, filename)
+      if (found) return found
+    } else if (item.endsWith('.html')) {
+      if (!filename || item === filename) {
+        return fullPath
+      }
+    }
+  }
+
+  return null
+}
+
+/**
  * Get CSS content from built example
  * Supports both standalone CSS files and CSS embedded in JS files
  */
 export function getCSSFromExample(exampleDir: string, target = 'dist', cssFilename = 'stylex.css'): string | null {
-  const distDir = join(exampleDir, target)
+  const searchDirs = Array.from(
+    new Set([
+      join(exampleDir, target),
+      join(exampleDir, 'dist'),
+      join(exampleDir, 'build'),
+      join(exampleDir, '.rsbuild'),
+    ]),
+  )
 
-  if (!existsSync(distDir)) {
-    return null
-  }
+  for (const dir of searchDirs) {
+    if (!existsSync(dir)) {
+      continue
+    }
 
-  // First try to find a standalone CSS file
-  const cssPath = findCSSFile(distDir, cssFilename)
-  if (cssPath) {
-    return readFileSync(cssPath, 'utf-8')
-  }
+    // First try to find a standalone CSS file
+    const cssPath = findCSSFile(dir, cssFilename)
+    if (cssPath) {
+      return readFileSync(cssPath, 'utf-8')
+    }
 
-  // If no CSS file found, try to extract CSS from JS files
-  const jsFile = findJSFile(distDir)
-  if (jsFile) {
-    const jsContent = readFileSync(jsFile, 'utf-8')
-    const extractedCSS = extractCSSFromJS(jsContent)
-    if (extractedCSS) {
-      return extractedCSS
+    // If no CSS file found, try to extract CSS from JS files
+    const jsFile = findJSFile(dir)
+    if (jsFile) {
+      const jsContent = readFileSync(jsFile, 'utf-8')
+      const extractedCSS = extractCSSFromJS(jsContent)
+      if (extractedCSS) {
+        return extractedCSS
+      }
+    }
+
+    // If no CSS file found, try to extract CSS from HTML files
+    const htmlFile = findHTMLFile(dir)
+    if (htmlFile) {
+      const htmlContent = readFileSync(htmlFile, 'utf-8')
+      const extractedCSS = extractCSSFromHTML(htmlContent, htmlFile)
+      if (extractedCSS) {
+        return extractedCSS
+      }
     }
   }
 
