@@ -77,10 +77,9 @@ export function findCSSFile(dir: string, filename = 'stylex.css'): string | null
 
     if (stat.isDirectory()) {
       const found = findCSSFile(fullPath, filename)
-      console.log('found::', fullPath, readdirSync(fullPath), readFileSync(fullPath, 'utf-8'), found)
       if (found) return found
     } else if (item === filename || item.endsWith('.css')) {
-      console.log('fullPath::', fullPath)
+      console.log('fullPath::', fullPath, readFileSync(fullPath, 'utf-8'))
       return fullPath
     }
   }
