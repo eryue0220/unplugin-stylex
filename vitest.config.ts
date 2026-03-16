@@ -8,6 +8,7 @@ export default defineConfig({
     },
   },
   test: {
+    globalSetup: ['./test/global-setup.ts'],
     testTimeout: 30_000,
     coverage: {
       exclude: ['examples/**'],
