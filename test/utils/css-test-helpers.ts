@@ -73,8 +73,8 @@ export function findCSSFile(dir: string, filename = 'stylex.css'): string | null
   console.log('items::', items)
 
   for (const item of items) {
-    console.log('item::', item)
     const fullPath = join(dir, item)
+    console.log('fullPath::', item, fullPath)
     const stat = statSync(fullPath)
 
     if (stat.isDirectory()) {
