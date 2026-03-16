@@ -62,7 +62,6 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       try {
         const transformer = transformers[extname] ?? transformers.default
         const result = await transformer(context)
-        console.log('transform::', result)
 
         if (result.stylexRules?.[id]) {
           stylexRules[id] = result.stylexRules[id]
@@ -135,8 +134,6 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       buildEnd() {
         const fileName = getStylexAssetFileName(options.stylex.filename, viteConfig?.build?.assetsDir ?? 'assets')
         const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
-
-        console.log('buildEnd::vite::', fileName, collectedCSS, STORE_KEY, stylexRulesStore.get(STORE_KEY))
 
         if (!collectedCSS) return
 
