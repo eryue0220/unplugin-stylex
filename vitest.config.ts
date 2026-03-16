@@ -8,6 +8,7 @@ export default defineConfig({
     },
   },
   test: {
+    testTimeout: 30_000,
     coverage: {
       exclude: ['examples/**'],
       reporter: ['text', 'json', 'html'],

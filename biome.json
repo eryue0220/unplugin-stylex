@@ -34,9 +34,9 @@
     "includes": [
       "examples/**",
       "!!**/.astro",
-      "!examples/**/node_modules",
-      "!examples/**/dist",
       "!examples/**/build",
+      "!examples/**/dist",
+      "!examples/**/node_modules",
       "src/**",
       "test/**"
     ]

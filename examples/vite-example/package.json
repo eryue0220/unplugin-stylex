@@ -6,14 +6,14 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@stylexjs/stylex": "^0.17.5",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1"
+    "@stylexjs/stylex": "^0.18.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   },
   "devDependencies": {
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.2",
+    "@vitejs/plugin-react": "^6.0.1",
     "unplugin-stylex": "workspace:*"
   }
 }

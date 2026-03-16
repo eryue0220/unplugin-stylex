@@ -35,11 +35,12 @@ export default {
         treeshakeCompensation: true,
       },
     }),
-    serve({
-      contentBase: ['dist'],
-      host: '127.0.0.1',
-      port: 8081,
-    }),
+    process.env.NODE_ENV !== 'production' &&
+      serve({
+        contentBase: ['dist'],
+        host: '127.0.0.1',
+        port: 8081,
+      }),
     html({
       publicPath: '/',
       title: 'Stylex With Rollup',
@@ -62,5 +63,5 @@ export default {
           .replace(/{scripts}/g, scripts)
       },
     }),
-  ],
+  ].filter(Boolean),
 }

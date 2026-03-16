@@ -1,5 +1,5 @@
 import { execSync } from 'node:child_process'
-import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync, rmSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 
 export interface CSSRule {
@@ -91,13 +91,18 @@ export function findCSSFile(dir: string, filename = 'stylex.css'): string | null
  */
 export function buildExample(exampleDir: string, buildCommand = 'npm run build'): string {
   const distDir = join(exampleDir, 'dist')
+  const outputDirs = ['dist', 'build', '.rsbuild']
 
   try {
+    for (const outputDir of outputDirs) {
+      rmSync(join(exampleDir, outputDir), { force: true, recursive: true })
+    }
+
     // Run build command
     execSync(buildCommand, {
       cwd: exampleDir,
       stdio: 'pipe',
-      env: { ...process.env, NODE_ENV: 'production' },
+      env: { ...process.env, CI: 'true', NODE_ENV: 'production' },
     })
   } catch (error) {
     throw new Error(`Failed to build example at ${exampleDir}: ${error}`)

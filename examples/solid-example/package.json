@@ -7,12 +7,12 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@stylexjs/stylex": "^0.17.5",
-    "solid-js": "^1.9.10"
+    "@stylexjs/stylex": "^0.18.1",
+    "solid-js": "^1.9.11"
   },
   "devDependencies": {
     "unplugin-stylex": "workspace:*",
-    "vite": "^7.3.1",
+    "vite": "^8.0.0",
     "vite-plugin-solid": "^2.11.10"
   }
 }

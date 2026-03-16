@@ -7,7 +7,7 @@
     "declarationDir": "dist",
     "outDir": "./dist",
     "lib": ["ESNext"],
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "preserveSymlinks": true,
     "module": "esnext",
     "skipLibCheck": true,
