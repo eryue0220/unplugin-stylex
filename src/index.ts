@@ -15,7 +15,14 @@ import { buildStylexRules } from './core/build'
 import { getOptions } from './core/options'
 import { transformers } from './core/transformers'
 import type { UnpluginStylexOptions } from './types'
-import { PLUGIN_NAME, STORE_KEY, stylexRulesStore } from './utils'
+import {
+  getStylexAssetFileName,
+  getStylexPublicPath,
+  normalizePath,
+  PLUGIN_NAME,
+  STORE_KEY,
+  stylexRulesStore,
+} from './utils'
 
 /**
  * The main unplugin factory.
@@ -43,9 +50,9 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
     },
 
     async transform(code, id) {
-      const dir = path.dirname(id)
-      const basename = path.basename(id)
-      const file = path.join(dir, basename.includes('?') ? basename.split('?')[0] : basename)
+      const file = id.split('?')[0]
+      const normalizedFile = normalizePath(file)
+      const normalizedId = normalizePath(id)
       const extname = path.extname(file).slice(1)
 
       if (!options.stylex.stylexImports.some((importName) => code.includes(importName))) {
@@ -62,9 +69,14 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       try {
         const transformer = transformers[extname] ?? transformers.default
         const result = await transformer(context)
+        const transformedRules =
+          result.stylexRules?.[file] ??
+          result.stylexRules?.[normalizedFile] ??
+          result.stylexRules?.[id] ??
+          result.stylexRules?.[normalizedId]
 
-        if (result.stylexRules?.[id]) {
-          stylexRules[id] = result.stylexRules[id]
+        if (transformedRules) {
+          stylexRules[normalizedFile] = transformedRules
         }
 
         return result
@@ -102,8 +114,8 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
             return
           }
 
-          const fileName = `${viteConfig?.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
-          const cssPath = path.posix.join(viteConfig?.base ?? '/', fileName.replace(/\\/g, '/')).replace(/\/+/g, '/')
+          const fileName = getStylexAssetFileName(options.stylex.filename, viteConfig?.build?.assetsDir ?? 'assets')
+          const cssPath = getStylexPublicPath(viteConfig?.base, fileName)
           const basePath = (viteConfig?.base ?? '/').replace(/\/+$/, '') || '/'
           const filename = options.stylex.filename
 
@@ -132,7 +144,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       },
 
       buildEnd() {
-        const fileName = `${viteConfig?.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
+        const fileName = getStylexAssetFileName(options.stylex.filename, viteConfig?.build?.assetsDir ?? 'assets')
         const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
 
         if (!collectedCSS) return
@@ -145,14 +157,14 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       },
 
       transformIndexHtml(html, ctx) {
-        const fileName = `${viteConfig?.build?.assetsDir ?? 'assets'}/${options.stylex.filename}`
+        const fileName = getStylexAssetFileName(options.stylex.filename, viteConfig?.build?.assetsDir ?? 'assets')
         const css = ctx.bundle?.[fileName]
 
         if (!css) {
           return html
         }
 
-        const publicPath = path.posix.join(viteConfig?.base ?? '/', fileName.replace(/\\/g, '/'))
+        const publicPath = getStylexPublicPath(viteConfig?.base, fileName)
 
         return [
           {
