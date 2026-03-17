@@ -62,7 +62,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       try {
         const transformer = transformers[extname] ?? transformers.default
         const result = await transformer(context)
-        console.log('transform::', id, result)
+        console.log('transform::', id, result, result.stylexRules?.[id])
 
         if (result.stylexRules?.[id]) {
           stylexRules[id] = result.stylexRules[id]
