@@ -71,6 +71,7 @@ export function findCSSFile(dir: string, filename = 'stylex.css'): string | null
   }
 
   const items = readdirSync(dir)
+  console.log('findCSSFile::', dir, items)
 
   for (const item of items) {
     const fullPath = join(dir, item)
