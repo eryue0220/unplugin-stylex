@@ -65,6 +65,7 @@ export function parseCSS(css: string): CSSRule[] {
  * Find CSS file in a directory recursively
  */
 export function findCSSFile(dir: string, filename = 'stylex.css'): string | null {
+  console.log('findCSSFile::', dir, filename)
   if (!existsSync(dir)) {
     return null
   }
@@ -270,7 +271,7 @@ export function getCSSFromExample(exampleDir: string, target = 'dist', cssFilena
   )
 
   for (const dir of searchDirs) {
-    console.log('searchDirs::', dir)
+    console.log('searchDirs::', readdirSync(dir))
     if (!existsSync(dir)) {
       console.log('searchDirs::', dir, 'does not exist')
       continue
