@@ -270,12 +270,15 @@ export function getCSSFromExample(exampleDir: string, target = 'dist', cssFilena
   )
 
   for (const dir of searchDirs) {
+    console.log('searchDirs::', dir)
     if (!existsSync(dir)) {
+      console.log('searchDirs::', dir, 'does not exist')
       continue
     }
 
     // First try to find a standalone CSS file
     const cssPath = findCSSFile(dir, cssFilename)
+    console.log('cssPath::', cssPath)
     if (cssPath) {
       return readFileSync(cssPath, 'utf-8')
     }

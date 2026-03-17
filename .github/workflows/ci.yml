@@ -40,4 +40,4 @@ jobs:
         run: pnpm i --frozen-lockfile
 
       - name: Unit Test
-        run: pnpm run test -t "astro-example"
+        run: pnpm run test -t "astro should generate CSS with expected styles for .main class"

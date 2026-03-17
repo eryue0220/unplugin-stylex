@@ -7,7 +7,6 @@ export const astro: UnpluginStylexTransformer = async (context) => {
   // Astro files have frontmatter between --- delimiters
   // Match the frontmatter section (including the --- delimiters)
   const frontmatterMatch = inputCode.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/)
-  console.log('astro::frontmatterMatch::', id, inputCode, frontmatterMatch)
 
   if (!frontmatterMatch) {
     console.log('astro::no frontmatter::', id, inputCode)
@@ -27,7 +26,6 @@ export const astro: UnpluginStylexTransformer = async (context) => {
   const stylexImports = stylex.stylexImports ?? ['@stylexjs/stylex']
 
   if (!stylexImports.some((importName) => frontmatterContent.includes(importName))) {
-    console.log('astro::no stylex imports::', id, inputCode)
     return {
       code: inputCode,
       map: undefined,
@@ -46,7 +44,6 @@ export const astro: UnpluginStylexTransformer = async (context) => {
   const result = await defaultTransformer(ctx)
   const transformedFrontmatter = `---\n${result.code}\n---`
   const transformedCode = transformedFrontmatter + (templateContent ? `\n${templateContent}` : '')
-  console.log('final::', result, transformedCode)
 
   return {
     code: transformedCode,

@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+import { readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { buildExample, checkCSSProperties, getCSSFromExample } from '../utils/css-test-helpers'
@@ -30,6 +30,7 @@ describe('astro-example', () => {
     buildExample(exampleDir, 'npm run build')
 
     // Get CSS content
+    console.log('exampleDir::', readdirSync(exampleDir))
     const css = getCSSFromExample(exampleDir)
     console.log('css::', exampleDir, css)
     expect(css).toBeTruthy()
