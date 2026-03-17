@@ -25,12 +25,13 @@ describe('astro-example', () => {
     expect(pkg.name).toBeDefined()
   })
 
-  it('should generate CSS with expected styles for .main class', async () => {
+  it('astro should generate CSS with expected styles for .main class', async () => {
     // Build the example
     buildExample(exampleDir, 'npm run build')
 
     // Get CSS content
     const css = getCSSFromExample(exampleDir)
+    console.log('css::', exampleDir, css)
     expect(css).toBeTruthy()
     expect(css!.length).toBeGreaterThan(0)
 
