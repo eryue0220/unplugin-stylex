@@ -15,7 +15,14 @@ import { buildStylexRules } from './core/build'
 import { getOptions } from './core/options'
 import { transformers } from './core/transformers'
 import type { UnpluginStylexOptions } from './types'
-import { getStylexAssetFileName, getStylexPublicPath, PLUGIN_NAME, STORE_KEY, stylexRulesStore } from './utils'
+import {
+  getStylexAssetFileName,
+  getStylexPublicPath,
+  normalizePath,
+  PLUGIN_NAME,
+  STORE_KEY,
+  stylexRulesStore,
+} from './utils'
 
 /**
  * The main unplugin factory.
@@ -43,9 +50,9 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
     },
 
     async transform(code, id) {
-      const dir = path.dirname(id)
-      const basename = path.basename(id)
-      const file = path.join(dir, basename.includes('?') ? basename.split('?')[0] : basename)
+      const file = id.split('?')[0]
+      const normalizedFile = normalizePath(file)
+      const normalizedId = normalizePath(id)
       const extname = path.extname(file).slice(1)
 
       if (!options.stylex.stylexImports.some((importName) => code.includes(importName))) {
@@ -62,10 +69,14 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       try {
         const transformer = transformers[extname] ?? transformers.default
         const result = await transformer(context)
-        console.log('transform::', id, result, result.stylexRules?.[id])
+        const transformedRules =
+          result.stylexRules?.[file] ??
+          result.stylexRules?.[normalizedFile] ??
+          result.stylexRules?.[id] ??
+          result.stylexRules?.[normalizedId]
 
-        if (result.stylexRules?.[id]) {
-          stylexRules[id] = result.stylexRules[id]
+        if (transformedRules) {
+          stylexRules[normalizedFile] = transformedRules
         }
 
         return result
