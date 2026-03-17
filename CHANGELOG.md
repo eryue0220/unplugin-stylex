@@ -1,5 +1,11 @@
 # unplugin-stylex
 
+## 0.6.2
+
+### Patch Changes
+
+- [#281](https://github.com/eryue0220/unplugin-stylex/pull/281) [`e3eb53d`](https://github.com/eryue0220/unplugin-stylex/commit/e3eb53d5f30142cffa5578ec872df7244351bc4f) Thanks [@eryue0220](https://github.com/eryue0220)! - fix windows path error
+
 ## 0.6.1
 
 ### Patch Changes
