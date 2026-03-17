@@ -9,7 +9,6 @@ export const astro: UnpluginStylexTransformer = async (context) => {
   const frontmatterMatch = inputCode.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/)
 
   if (!frontmatterMatch) {
-    console.log('astro::no frontmatter::', id, inputCode)
     // No frontmatter found, return as-is
     return {
       code: inputCode,
