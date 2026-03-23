@@ -437,13 +437,13 @@ importers:
         version: link:../..
       webpack:
         specifier: ^5.105.4
-        version: 5.105.4(esbuild@0.27.4)(webpack-cli@7.0.1)
+        version: 5.105.4(esbuild@0.27.4)(webpack-cli@7.0.2)
       webpack-cli:
-        specifier: ^7.0.1
-        version: 7.0.1(webpack-bundle-analyzer@4.10.2)(webpack-dev-server@5.2.3)(webpack@5.105.4)
+        specifier: ^7.0.2
+        version: 7.0.2(webpack-bundle-analyzer@4.10.2)(webpack-dev-server@5.2.3)(webpack@5.105.4)
       webpack-dev-server:
         specifier: ^5.2.3
-        version: 5.2.3(webpack-cli@7.0.1)(webpack@5.105.4)
+        version: 5.2.3(webpack-cli@7.0.2)(webpack@5.105.4)
 
 packages:
 
@@ -7315,8 +7315,8 @@ packages:
     engines: {node: '>= 10.13.0'}
     hasBin: true
 
-  webpack-cli@7.0.1:
-    resolution: {integrity: sha512-QeNvbQ3q67tiY7UqjbsfhK2026YTVhtW8XsfdrrGfGUtBe6EQpxBB1w9SbB2eLTZzx4m8tRvm8dqKo8rBNfeFg==}
+  webpack-cli@7.0.2:
+    resolution: {integrity: sha512-dB0R4T+C/8YuvM+fabdvil6QE44/ChDXikV5lOOkrUeCkW5hTJv2pGLE3keh+D5hjYw8icBaJkZzpFoaHV4T+g==}
     engines: {node: '>=20.9.0'}
     hasBin: true
     peerDependencies:
@@ -10875,7 +10875,7 @@ snapshots:
       find-up: 5.0.0
     optionalDependencies:
       '@rspack/core': 1.7.9(@swc/helpers@0.5.18)
-      webpack: 5.105.4(esbuild@0.27.4)(webpack-cli@7.0.1)
+      webpack: 5.105.4(esbuild@0.27.4)(webpack-cli@7.0.2)
 
   babel-plugin-jsx-dom-expressions@0.40.5(@babel/core@7.29.0):
     dependencies:
@@ -12216,7 +12216,7 @@ snapshots:
       tapable: 2.3.0
     optionalDependencies:
       '@rspack/core': 1.7.9(@swc/helpers@0.5.18)
-      webpack: 5.105.4(esbuild@0.27.4)(webpack-cli@7.0.1)
+      webpack: 5.105.4(esbuild@0.27.4)(webpack-cli@7.0.2)
 
   htmlparser2@6.1.0:
     dependencies:
@@ -14841,7 +14841,7 @@ snapshots:
       jest-worker: 27.5.1
       schema-utils: 4.3.3
       terser: 5.44.1
-      webpack: 5.105.4(esbuild@0.27.4)(webpack-cli@7.0.1)
+      webpack: 5.105.4(esbuild@0.27.4)(webpack-cli@7.0.2)
     optionalDependencies:
       esbuild: 0.27.4
 
@@ -15433,7 +15433,7 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  webpack-cli@7.0.1(webpack-bundle-analyzer@4.10.2)(webpack-dev-server@5.2.3)(webpack@5.105.4):
+  webpack-cli@7.0.2(webpack-bundle-analyzer@4.10.2)(webpack-dev-server@5.2.3)(webpack@5.105.4):
     dependencies:
       '@discoveryjs/json-ext': 1.0.0
       commander: 14.0.3
@@ -15443,11 +15443,11 @@ snapshots:
       import-local: 3.2.0
       interpret: 3.1.1
       rechoir: 0.8.0
-      webpack: 5.105.4(esbuild@0.27.4)(webpack-cli@7.0.1)
+      webpack: 5.105.4(esbuild@0.27.4)(webpack-cli@7.0.2)
       webpack-merge: 6.0.1
     optionalDependencies:
       webpack-bundle-analyzer: 4.10.2
-      webpack-dev-server: 5.2.3(webpack-cli@7.0.1)(webpack@5.105.4)
+      webpack-dev-server: 5.2.3(webpack-cli@7.0.2)(webpack@5.105.4)
 
   webpack-dev-middleware@7.4.5(webpack@5.105.4(esbuild@0.27.4)):
     dependencies:
@@ -15469,7 +15469,7 @@ snapshots:
       range-parser: 1.2.1
       schema-utils: 4.3.3
     optionalDependencies:
-      webpack: 5.105.4(esbuild@0.27.4)(webpack-cli@7.0.1)
+      webpack: 5.105.4(esbuild@0.27.4)(webpack-cli@7.0.2)
 
   webpack-dev-server@5.2.2(webpack@5.105.4(esbuild@0.27.4)):
     dependencies:
@@ -15509,7 +15509,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  webpack-dev-server@5.2.3(webpack-cli@7.0.1)(webpack@5.105.4):
+  webpack-dev-server@5.2.3(webpack-cli@7.0.2)(webpack@5.105.4):
     dependencies:
       '@types/bonjour': 3.5.13
       '@types/connect-history-api-fallback': 1.5.4
@@ -15540,8 +15540,8 @@ snapshots:
       webpack-dev-middleware: 7.4.5(webpack@5.105.4)
       ws: 8.19.0
     optionalDependencies:
-      webpack: 5.105.4(esbuild@0.27.4)(webpack-cli@7.0.1)
-      webpack-cli: 7.0.1(webpack-bundle-analyzer@4.10.2)(webpack-dev-server@5.2.3)(webpack@5.105.4)
+      webpack: 5.105.4(esbuild@0.27.4)(webpack-cli@7.0.2)
+      webpack-cli: 7.0.2(webpack-bundle-analyzer@4.10.2)(webpack-dev-server@5.2.3)(webpack@5.105.4)
     transitivePeerDependencies:
       - bufferutil
       - debug
@@ -15591,7 +15591,7 @@ snapshots:
       - uglify-js
     optional: true
 
-  webpack@5.105.4(esbuild@0.27.4)(webpack-cli@7.0.1):
+  webpack@5.105.4(esbuild@0.27.4)(webpack-cli@7.0.2):
     dependencies:
       '@types/eslint-scope': 3.7.7
       '@types/estree': 1.0.8
@@ -15619,7 +15619,7 @@ snapshots:
       watchpack: 2.5.1
       webpack-sources: 3.3.4
     optionalDependencies:
-      webpack-cli: 7.0.1(webpack-bundle-analyzer@4.10.2)(webpack-dev-server@5.2.3)(webpack@5.105.4)
+      webpack-cli: 7.0.2(webpack-bundle-analyzer@4.10.2)(webpack-dev-server@5.2.3)(webpack@5.105.4)
     transitivePeerDependencies:
       - '@swc/core'
       - esbuild
