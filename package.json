@@ -121,7 +121,7 @@
     "babel-plugin-syntax-hermes-parser": "^0.34.0",
     "jsr": "^0.14.3",
     "tsup": "^8.5.1",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.2",
     "vite": "^8.0.3",
     "vitest": "^4.0.15"
   }
