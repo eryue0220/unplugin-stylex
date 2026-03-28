@@ -1,4 +1,4 @@
-import type { UnpluginStylexTransformer } from '@/types'
+import type { UnpluginStylexTransformer } from '../../types'
 import { defaultTransformer } from './default'
 
 export const svelte: UnpluginStylexTransformer = async (context) => {

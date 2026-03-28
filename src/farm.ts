@@ -4,10 +4,12 @@
  * @module
  */
 
+import type { UnpluginInstance } from 'unplugin'
 import { createFarmPlugin } from 'unplugin'
 import { unpluginFactory } from './index'
+import type { UnpluginStylexOptions } from './types'
 
-const farmPlugin: ReturnType<typeof createFarmPlugin> = createFarmPlugin(unpluginFactory)
+const farmPlugin: UnpluginInstance<UnpluginStylexOptions | undefined>['farm'] = createFarmPlugin(unpluginFactory)
 
 /**
  * Farm plugin

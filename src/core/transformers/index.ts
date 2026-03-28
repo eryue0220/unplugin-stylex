@@ -1,4 +1,4 @@
-import type { UnpluginStylexTransformer } from '@/types'
+import type { UnpluginStylexTransformer } from '../../types'
 import { astro } from './astro'
 import { defaultTransformer } from './default'
 import { svelte } from './svelte'

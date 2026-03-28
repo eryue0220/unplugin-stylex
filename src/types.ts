@@ -1,5 +1,14 @@
-import type { SourceMap } from '@babel/core'
 import type { Rule } from '@stylexjs/babel-plugin'
+
+export type SourceMap = {
+  version: number
+  sources: string[]
+  names: string[]
+  mappings: string
+  file?: string
+  sourceRoot?: string
+  sourcesContent?: Array<string | null>
+}
 
 export type BabelConfig = {
   plugins: unknown[]

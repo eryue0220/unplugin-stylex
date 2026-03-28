@@ -9,11 +9,7 @@
     "isolatedModules": true,
     "resolveJsonModule": true,
     "moduleResolution": "bundler",
-    "useDefineForClassFields": true,
-    "baseUrl": "./",
-    "paths": {
-      "~/*": ["app/*"]
-    }
+    "useDefineForClassFields": true
   },
   "include": ["app"],
   "exclude": ["node_modules"]

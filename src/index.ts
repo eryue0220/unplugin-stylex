@@ -29,12 +29,15 @@ import {
  */
 export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined> = (rawOptions, meta) => {
   const options = getOptions({ ...(rawOptions || {}), framework: meta.framework })
+  const stylexFilename = options.stylex.filename ?? 'stylex.css'
+  const stylexImports = options.stylex.stylexImports ?? ['@stylexjs/stylex']
+  const useCSSLayers = options.stylex.useCSSLayers ?? false
 
   if (!stylexRulesStore.has(STORE_KEY)) {
     stylexRulesStore.set(STORE_KEY, {})
   }
 
-  const stylexRules = stylexRulesStore.get(STORE_KEY)
+  const stylexRules = stylexRulesStore.get(STORE_KEY) ?? {}
   let viteConfig: { build: BuildOptions | undefined; base: string | undefined } | null = null
 
   return {
@@ -55,7 +58,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       const normalizedId = normalizePath(id)
       const extname = path.extname(file).slice(1)
 
-      if (!options.stylex.stylexImports.some((importName) => code.includes(importName))) {
+      if (!stylexImports.some((importName) => code.includes(importName))) {
         return
       }
 
@@ -82,13 +85,13 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
         return result
       } catch (error) {
         console.error('transform::error::', error)
-        this.error(error)
+        this.error(error instanceof Error ? error.message : String(error))
       }
     },
 
     buildEnd() {
-      const fileName = options.stylex.filename
-      const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
+      const fileName = stylexFilename
+      const collectedCSS = buildStylexRules(stylexRules, useCSSLayers)
 
       if (!collectedCSS) return
 
@@ -114,10 +117,10 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
             return
           }
 
-          const fileName = getStylexAssetFileName(options.stylex.filename, viteConfig?.build?.assetsDir ?? 'assets')
+          const fileName = getStylexAssetFileName(stylexFilename, viteConfig?.build?.assetsDir ?? 'assets')
           const cssPath = getStylexPublicPath(viteConfig?.base, fileName)
           const basePath = (viteConfig?.base ?? '/').replace(/\/+$/, '') || '/'
-          const filename = options.stylex.filename
+          const filename = stylexFilename
 
           // Check if the request is for the CSS file
           // Match various path formats: /assets/stylex.css, /stylex.css, assets/stylex.css
@@ -130,7 +133,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
             normalizedUrl === filename
 
           if (isCSSRequest) {
-            const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
+            const collectedCSS = buildStylexRules(stylexRules, useCSSLayers)
 
             res.setHeader('Content-Type', 'text/css')
             res.setHeader('Cache-Control', 'no-cache')
@@ -144,8 +147,8 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       },
 
       buildEnd() {
-        const fileName = getStylexAssetFileName(options.stylex.filename, viteConfig?.build?.assetsDir ?? 'assets')
-        const collectedCSS = buildStylexRules(stylexRules, options.stylex.useCSSLayers)
+        const fileName = getStylexAssetFileName(stylexFilename, viteConfig?.build?.assetsDir ?? 'assets')
+        const collectedCSS = buildStylexRules(stylexRules, useCSSLayers)
 
         if (!collectedCSS) return
 
@@ -157,7 +160,7 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
       },
 
       transformIndexHtml(html, ctx) {
-        const fileName = getStylexAssetFileName(options.stylex.filename, viteConfig?.build?.assetsDir ?? 'assets')
+        const fileName = getStylexAssetFileName(stylexFilename, viteConfig?.build?.assetsDir ?? 'assets')
         const css = ctx.bundle?.[fileName]
 
         if (!css) {

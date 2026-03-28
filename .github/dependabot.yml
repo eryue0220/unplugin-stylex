@@ -53,6 +53,9 @@ updates:
         patterns:
           - "astro"
           - "@astrojs/*"
+      rspack:
+        patterns:
+          - "@rspack/*"
     ignore:
       - dependency-name: "@stylexjs/stylex"
         update-types: ["version-update:semver-major"]

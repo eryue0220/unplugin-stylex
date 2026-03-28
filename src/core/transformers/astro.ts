@@ -1,4 +1,4 @@
-import type { UnpluginStylexTransformer } from '@/types'
+import type { UnpluginStylexTransformer } from '../../types'
 import { defaultTransformer } from './default'
 
 export const astro: UnpluginStylexTransformer = async (context) => {

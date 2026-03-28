@@ -4,11 +4,43 @@
  * @module
  */
 
+import type { IncomingMessage, ServerResponse } from 'node:http'
 import { buildStylexRules } from './core/build'
 import { getOptions } from './core/options'
 import type { UnpluginStylexOptions } from './types'
 import { getStylexAssetFileName, getStylexPublicPath, PLUGIN_NAME, STORE_KEY, stylexRulesStore } from './utils'
 import vitePlugin from './vite'
+
+type AstroConfigSetupContext = {
+  config: {
+    base?: string
+    build?: {
+      assets?: string
+    }
+    vite: {
+      plugins?: unknown[]
+      ssr?: {
+        noExternal?: unknown
+      }
+    }
+  }
+  updateConfig: (config: {
+    vite: {
+      ssr: {
+        noExternal: string[]
+      }
+    }
+  }) => void
+  injectScript: (stage: string, content: string) => void
+}
+
+type AstroServerSetupContext = {
+  server: {
+    middlewares: {
+      use: (handler: (req: IncomingMessage & { url?: string }, res: ServerResponse, next: () => void) => void) => void
+    }
+  }
+}
 
 /**
  * Astro plugin
@@ -27,13 +59,13 @@ import vitePlugin from './vite'
 
 export default function astro(options: UnpluginStylexOptions = {}) {
   const configured = getOptions({ ...options, framework: 'vite' })
-  const filename = configured.stylex.filename
+  const filename = configured.stylex.filename ?? 'stylex.css'
 
   return {
     name: PLUGIN_NAME,
 
     hooks: {
-      'astro:config:setup': async ({ config, updateConfig, injectScript }) => {
+      'astro:config:setup': async ({ config, updateConfig, injectScript }: AstroConfigSetupContext) => {
         const astroOptions: UnpluginStylexOptions = {
           ...options,
           validExts: options.validExts ?? /\.[mc]?[jt]sx?$|\.astro$|\.stylex$/,
@@ -90,7 +122,7 @@ export default function astro(options: UnpluginStylexOptions = {}) {
           },
         })
       },
-      'astro:server:setup': ({ server }) => {
+      'astro:server:setup': ({ server }: AstroServerSetupContext) => {
         server.middlewares.use((req, res, next) => {
           const assetsDir = '_astro'
           const fileName = getStylexAssetFileName(filename, assetsDir)
