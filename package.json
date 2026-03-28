@@ -77,7 +77,9 @@
   },
   "scripts": {
     "dev": "tsup src/*ts --watch src",
-    "build": "tsup src/*.ts --format cjs,esm --dts --splitting --clean",
+    "build": "pnpm run build:js && pnpm run build:types",
+    "build:js": "tsup src/*.ts --format cjs,esm --splitting --clean",
+    "build:types": "tsc -p tsconfig.json --emitDeclarationOnly --noCheck",
     "test": "vitest",
     "test:update": "vitest -u",
     "test:cov": "vitest --coverage",
@@ -121,7 +123,7 @@
     "babel-plugin-syntax-hermes-parser": "^0.34.0",
     "jsr": "^0.14.3",
     "tsup": "^8.5.1",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.2",
     "vite": "^8.0.3",
     "vitest": "^4.0.15"
   }

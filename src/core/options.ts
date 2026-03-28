@@ -1,5 +1,5 @@
-import type { StylexOptions, UnpluginStylexOptions } from '@/types'
-import { getAliases, isDevelopment } from '@/utils'
+import type { StylexOptions, UnpluginStylexOptions } from '../types'
+import { getAliases, isDevelopment } from '../utils'
 
 export function getOptions(options: UnpluginStylexOptions & { framework: string }): Required<UnpluginStylexOptions> {
   const projectAliases = getAliases(options.framework)

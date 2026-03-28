@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
+    "rootDir": "./src",
     "declaration": true,
     "declarationMap": true,
     "declarationDir": "dist",
@@ -10,10 +10,7 @@
     "moduleResolution": "bundler",
     "preserveSymlinks": true,
     "module": "esnext",
-    "skipLibCheck": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "skipLibCheck": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]

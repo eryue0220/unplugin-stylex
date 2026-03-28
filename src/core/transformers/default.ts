@@ -3,7 +3,7 @@ import { transformAsync } from '@babel/core'
 import jsxSyntaxPlugin from '@babel/plugin-syntax-jsx'
 import stylexBabelPlugin from '@stylexjs/babel-plugin'
 
-import type { UnpluginStylexTransformer } from '@/types'
+import type { UnpluginStylexTransformer } from '../../types'
 import { getSyntaxPlugins } from '../plugins'
 
 export const defaultTransformer: UnpluginStylexTransformer = async (context) => {
