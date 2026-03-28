@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "rootDir": "./src",
     "declaration": true,
     "declarationMap": true,
     "declarationDir": "dist",
@@ -9,7 +10,6 @@
     "moduleResolution": "bundler",
     "preserveSymlinks": true,
     "module": "esnext",
-    "ignoreDeprecations": "6.0",
     "skipLibCheck": true
   },
   "include": ["src"],
