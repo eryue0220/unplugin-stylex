@@ -10,7 +10,7 @@
     "vue": "^3.5.32"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^6.0.5",
+    "@vitejs/plugin-vue": "^6.0.6",
     "@vitejs/plugin-vue-jsx": "^5.1.5",
     "typescript": "^6.0.2",
     "unplugin-stylex": "workspace:*",
