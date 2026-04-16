@@ -12,7 +12,7 @@
     "react-dom": "^19.2.5"
   },
   "devDependencies": {
-    "rolldown": "1.0.0-rc.13",
+    "rolldown": "1.0.0-rc.16",
     "unplugin-stylex": "workspace:*"
   }
 }
