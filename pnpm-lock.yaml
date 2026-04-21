@@ -290,8 +290,8 @@ importers:
         specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.14)
       html-webpack-plugin:
-        specifier: ^5.6.6
-        version: 5.6.6(@rspack/core@1.7.11(@swc/helpers@0.5.20))(webpack@5.106.2(esbuild@0.27.7))
+        specifier: ^5.6.7
+        version: 5.6.7(@rspack/core@1.7.11(@swc/helpers@0.5.20))(webpack@5.106.2(esbuild@0.27.7))
       unplugin-stylex:
         specifier: workspace:*
         version: link:../..
@@ -321,8 +321,8 @@ importers:
         specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.14)
       html-webpack-plugin:
-        specifier: ^5.6.6
-        version: 5.6.6(@rspack/core@1.7.11(@swc/helpers@0.5.20))(webpack@5.106.2(esbuild@0.27.7))
+        specifier: ^5.6.7
+        version: 5.6.7(@rspack/core@1.7.11(@swc/helpers@0.5.20))(webpack@5.106.2(esbuild@0.27.7))
       unplugin-stylex:
         specifier: workspace:*
         version: link:../..
@@ -430,8 +430,8 @@ importers:
         specifier: ^10.1.1
         version: 10.1.1(@babel/core@7.29.0)(@rspack/core@1.7.11(@swc/helpers@0.5.20))(webpack@5.106.2)
       html-webpack-plugin:
-        specifier: ^5.6.6
-        version: 5.6.6(@rspack/core@1.7.11(@swc/helpers@0.5.20))(webpack@5.106.2)
+        specifier: ^5.6.7
+        version: 5.6.7(@rspack/core@1.7.11(@swc/helpers@0.5.20))(webpack@5.106.2)
       unplugin-stylex:
         specifier: workspace:*
         version: link:../..
@@ -4746,8 +4746,8 @@ packages:
   html-void-elements@3.0.0:
     resolution: {integrity: sha512-bEqo66MRXsUGxWHV5IP0PUiAWwoEjba4VCzg0LjFJBpchPaTfyfCKTG6bc5F8ucKec3q5y6qOdGyYTSBEvhCrg==}
 
-  html-webpack-plugin@5.6.6:
-    resolution: {integrity: sha512-bLjW01UTrvoWTJQL5LsMRo1SypHW80FTm12OJRSnr3v6YHNhfe+1r0MYUZJMACxnCHURVnBWRwAsWs2yPU9Ezw==}
+  html-webpack-plugin@5.6.7:
+    resolution: {integrity: sha512-md+vXtdCAe60s1k6AU3dUyMJnDxUyQAwfwPKoLisvgUF1IXjtlLsk2se54+qfL9Mdm26bbwvjJybpNx48NKRLw==}
     engines: {node: '>=10.13.0'}
     peerDependencies:
       '@rspack/core': 0.x || 1.x
@@ -5297,6 +5297,9 @@ packages:
 
   lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+
+  lodash@4.18.1:
+    resolution: {integrity: sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==}
 
   log-symbols@4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}
@@ -6786,8 +6789,8 @@ packages:
     resolution: {integrity: sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==}
     engines: {node: '>=8'}
 
-  strip-ansi@7.1.2:
-    resolution: {integrity: sha512-gmBGslpoQJtgnMAvOVqGZpEz9dyoKTCzy2nfz/n8aIFhN/jCE/rCmcxabB6jOOHV+0WNnylOxaxBQPSvcWklhA==}
+  strip-ansi@7.2.0:
+    resolution: {integrity: sha512-yDPMNjp4WyfYBkHnjIRLfca1i6KMyGCtsVgoKe/z1+6vukgaENdgGBZt+ZmKPc4gavvEZ5OgHfHdrazhgNyG7w==}
     engines: {node: '>=12'}
 
   strip-bom@3.0.0:
@@ -6830,10 +6833,6 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  tapable@2.3.0:
-    resolution: {integrity: sha512-g9ljZiwki/LfxmQADO3dEY1CbpmXT5Hm2fJ+QaGKwSXUylMybePR7/67YW7jOrrvjEgL1Fmz5kzyAjWVWLlucg==}
-    engines: {node: '>=6'}
-
   tapable@2.3.2:
     resolution: {integrity: sha512-1MOpMXuhGzGL5TTCZFItxCc0AARf1EZFQkGqMm7ERKj8+Hgr5oLvJOVFcC+lRmR8hCe2S3jC4T5D7Vg/d7/fhA==}
     engines: {node: '>=6'}
@@ -6869,11 +6868,6 @@ packages:
         optional: true
       uglify-js:
         optional: true
-
-  terser@5.44.1:
-    resolution: {integrity: sha512-t/R3R/n0MSwnnazuPpPNVO60LX0SKL45pyl9YlvxIdkH0Of7D5qM2EVe+yASRIlY5pZ73nclYJfNANGWPwFDZw==}
-    engines: {node: '>=10'}
-    hasBin: true
 
   terser@5.46.1:
     resolution: {integrity: sha512-vzCjQO/rgUuK9sf8VJZvjqiqiHFaZLnOiimmUuOKODxWL8mm/xua7viT7aqX7dgPY60otQjUotzFMmCB4VdmqQ==}
@@ -9446,7 +9440,7 @@ snapshots:
     dependencies:
       string-width: 5.1.2
       string-width-cjs: string-width@4.2.3
-      strip-ansi: 7.1.2
+      strip-ansi: 7.2.0
       strip-ansi-cjs: strip-ansi@6.0.1
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
@@ -12524,28 +12518,28 @@ snapshots:
       he: 1.2.0
       param-case: 3.0.4
       relateurl: 0.2.7
-      terser: 5.44.1
+      terser: 5.46.1
 
   html-void-elements@3.0.0: {}
 
-  html-webpack-plugin@5.6.6(@rspack/core@1.7.11(@swc/helpers@0.5.20))(webpack@5.106.2(esbuild@0.27.7)):
+  html-webpack-plugin@5.6.7(@rspack/core@1.7.11(@swc/helpers@0.5.20))(webpack@5.106.2(esbuild@0.27.7)):
     dependencies:
       '@types/html-minifier-terser': 6.1.0
       html-minifier-terser: 6.1.0
-      lodash: 4.17.21
+      lodash: 4.18.1
       pretty-error: 4.0.0
-      tapable: 2.3.0
+      tapable: 2.3.2
     optionalDependencies:
       '@rspack/core': 1.7.11(@swc/helpers@0.5.20)
       webpack: 5.106.2(esbuild@0.27.7)
 
-  html-webpack-plugin@5.6.6(@rspack/core@1.7.11(@swc/helpers@0.5.20))(webpack@5.106.2):
+  html-webpack-plugin@5.6.7(@rspack/core@1.7.11(@swc/helpers@0.5.20))(webpack@5.106.2):
     dependencies:
       '@types/html-minifier-terser': 6.1.0
       html-minifier-terser: 6.1.0
-      lodash: 4.17.21
+      lodash: 4.18.1
       pretty-error: 4.0.0
-      tapable: 2.3.0
+      tapable: 2.3.2
     optionalDependencies:
       '@rspack/core': 1.7.11(@swc/helpers@0.5.20)
       webpack: 5.106.2(esbuild@0.27.7)(webpack-cli@7.0.2)
@@ -13062,6 +13056,8 @@ snapshots:
   lodash.startcase@4.4.0: {}
 
   lodash@4.17.21: {}
+
+  lodash@4.18.1: {}
 
   log-symbols@4.1.0:
     dependencies:
@@ -14306,7 +14302,7 @@ snapshots:
 
   pretty-error@4.0.0:
     dependencies:
-      lodash: 4.17.21
+      lodash: 4.18.1
       renderkid: 3.0.0
 
   pretty-ms@7.0.1:
@@ -14576,7 +14572,7 @@ snapshots:
       css-select: 4.3.0
       dom-converter: 0.2.0
       htmlparser2: 6.1.0
-      lodash: 4.17.21
+      lodash: 4.18.1
       strip-ansi: 6.0.1
 
   require-from-string@2.0.2: {}
@@ -15080,7 +15076,7 @@ snapshots:
     dependencies:
       eastasianwidth: 0.2.0
       emoji-regex: 9.2.2
-      strip-ansi: 7.1.2
+      strip-ansi: 7.2.0
 
   string_decoder@1.1.1:
     dependencies:
@@ -15099,7 +15095,7 @@ snapshots:
     dependencies:
       ansi-regex: 5.0.1
 
-  strip-ansi@7.1.2:
+  strip-ansi@7.2.0:
     dependencies:
       ansi-regex: 6.2.2
 
@@ -15144,8 +15140,6 @@ snapshots:
       csso: 5.0.5
       picocolors: 1.1.1
       sax: 1.6.0
-
-  tapable@2.3.0: {}
 
   tapable@2.3.2: {}
 
@@ -15195,13 +15189,6 @@ snapshots:
       webpack: 5.106.2(esbuild@0.27.7)(webpack-cli@7.0.2)
     optionalDependencies:
       esbuild: 0.27.7
-
-  terser@5.44.1:
-    dependencies:
-      '@jridgewell/source-map': 0.3.11
-      acorn: 8.16.0
-      commander: 2.20.3
-      source-map-support: 0.5.21
 
   terser@5.46.1:
     dependencies:
@@ -16070,7 +16057,7 @@ snapshots:
     dependencies:
       ansi-styles: 6.2.3
       string-width: 5.1.2
-      strip-ansi: 7.1.2
+      strip-ansi: 7.2.0
 
   wrappy@1.0.2: {}
 
