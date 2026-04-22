@@ -15,6 +15,6 @@
     "typescript": "^6.0.3",
     "unplugin-stylex": "workspace:*",
     "vite": "^8.0.9",
-    "vue-tsc": "^3.2.6"
+    "vue-tsc": "^3.2.7"
   }
 }
