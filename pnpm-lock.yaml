@@ -213,8 +213,8 @@ importers:
         version: 19.2.5(react@19.2.5)
     devDependencies:
       rolldown:
-        specifier: 1.0.0-rc.16
-        version: 1.0.0-rc.16
+        specifier: 1.0.0-rc.17
+        version: 1.0.0-rc.17
       unplugin-stylex:
         specifier: workspace:*
         version: link:../..
