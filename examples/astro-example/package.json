@@ -12,10 +12,10 @@
     "react-dom": "^19.2.5"
   },
   "devDependencies": {
-    "@astrojs/react": "^5.0.3",
+    "@astrojs/react": "^5.0.4",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "astro": "^6.1.8",
+    "astro": "^6.1.10",
     "unplugin-stylex": "workspace:*"
   }
 }
