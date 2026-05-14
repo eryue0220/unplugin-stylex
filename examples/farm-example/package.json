@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "@stylexjs/stylex": "^0.18.3",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
   },
   "devDependencies": {
     "@farmfe/cli": "^1.0.5",
