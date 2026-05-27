@@ -6,9 +6,9 @@
     "build": "webpack build"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.0",
-    "@babel/preset-env": "^7.29.5",
-    "@babel/preset-react": "^7.28.5",
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "@babel/preset-react": "^7.29.7",
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
     "babel-loader": "^10.1.1",
