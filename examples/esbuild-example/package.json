@@ -7,12 +7,12 @@
   },
   "dependencies": {
     "@stylexjs/stylex": "^0.18.3",
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "unplugin-stylex": "workspace:*"
   },
   "devDependencies": {
-    "@types/react": "^19.2.15",
+    "@types/react": "^19.2.16",
     "@types/react-dom": "^19.2.3",
     "esbuild": "^0.28.0"
   }
