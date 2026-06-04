@@ -241,8 +241,8 @@ importers:
         specifier: ^7.29.7
         version: 7.29.7(@babel/core@7.29.7)
       '@rollup/plugin-babel':
-        specifier: ^7.0.0
-        version: 7.0.0(@babel/core@7.29.7)(@types/babel__core@7.20.5)(rollup@4.60.4)
+        specifier: ^7.1.0
+        version: 7.1.0(@babel/core@7.29.7)(@types/babel__core@7.20.5)(rollup@4.60.4)
       '@rollup/plugin-commonjs':
         specifier: ^29.0.2
         version: 29.0.2(rollup@4.60.4)
@@ -552,10 +552,6 @@ packages:
 
   '@babel/helper-module-imports@7.18.6':
     resolution: {integrity: sha512-0NFvs3VkuSYbFi1x2Vd6tKrywq+z/cLeYC/RJNFrIX/30Bf5aiGYbtvGXolEktzJH8o5E5KJ3tT+nkxuuZFVlA==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/helper-module-imports@7.27.1':
-    resolution: {integrity: sha512-0gSFWUPNXNopqtIPQvlD5WgXYI5GY2kP2cCvoT8kczjbfcfuIljTbcWrulD1CIPIX2gt1wghbDy08yE1p+/r3w==}
     engines: {node: '>=6.9.0'}
 
   '@babel/helper-module-imports@7.28.6':
@@ -2713,8 +2709,8 @@ packages:
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
 
-  '@rollup/plugin-babel@7.0.0':
-    resolution: {integrity: sha512-NS2+P7v80N3MQqehZEjgpaFb9UyX3URNMW/zvoECKGo4PY4DvJfQusTI7BX/Ks+CPvtTfk3TqcR6S9VYBi/C+A==}
+  '@rollup/plugin-babel@7.1.0':
+    resolution: {integrity: sha512-h9Y+xYha6p4wKO+FwdiPIkE+eIYCm8MzZPpX1iARIoFBnmKP9CnpT1p9dDf/DTFm6fyN8PmuLyRI5qZgchnitw==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -7970,6 +7966,9 @@ packages:
   wildcard@2.0.1:
     resolution: {integrity: sha512-CC1bOL87PIWSBhDcTrdeLo6eGT7mCFtrg0uIJtqJUFyK+eJnzl8A1niH56uu7KMa5XFrtiV+AQuHO3n7DsHnLQ==}
 
+  workerpool@9.3.4:
+    resolution: {integrity: sha512-TmPRQYYSAnnDiEB0P/Ytip7bFGvqnSU6I2BcuSw7Hx+JSg/DsUi5ebYfc8GYaSdpuvOcEs6dXxPurOYpe9QFwg==}
+
   wrap-ansi@6.2.0:
     resolution: {integrity: sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==}
     engines: {node: '>=8'}
@@ -8298,13 +8297,6 @@ snapshots:
   '@babel/helper-module-imports@7.18.6':
     dependencies:
       '@babel/types': 7.29.7
-
-  '@babel/helper-module-imports@7.27.1':
-    dependencies:
-      '@babel/traverse': 7.29.7
-      '@babel/types': 7.29.7
-    transitivePeerDependencies:
-      - supports-color
 
   '@babel/helper-module-imports@7.28.6':
     dependencies:
@@ -10503,11 +10495,12 @@ snapshots:
 
   '@rolldown/pluginutils@1.0.1': {}
 
-  '@rollup/plugin-babel@7.0.0(@babel/core@7.29.7)(@types/babel__core@7.20.5)(rollup@4.60.4)':
+  '@rollup/plugin-babel@7.1.0(@babel/core@7.29.7)(@types/babel__core@7.20.5)(rollup@4.60.4)':
     dependencies:
       '@babel/core': 7.29.7
-      '@babel/helper-module-imports': 7.27.1
-      '@rollup/pluginutils': 5.3.0(rollup@4.60.4)
+      '@babel/helper-module-imports': 7.29.7
+      '@rollup/pluginutils': 5.4.0(rollup@4.60.4)
+      workerpool: 9.3.4
     optionalDependencies:
       '@types/babel__core': 7.20.5
       rollup: 4.60.4
@@ -10550,6 +10543,14 @@ snapshots:
   '@rollup/pluginutils@5.3.0(rollup@4.60.4)':
     dependencies:
       '@types/estree': 1.0.8
+      estree-walker: 2.0.2
+      picomatch: 4.0.4
+    optionalDependencies:
+      rollup: 4.60.4
+
+  '@rollup/pluginutils@5.4.0(rollup@4.60.4)':
+    dependencies:
+      '@types/estree': 1.0.9
       estree-walker: 2.0.2
       picomatch: 4.0.4
     optionalDependencies:
@@ -11323,7 +11324,7 @@ snapshots:
 
   '@vue/babel-plugin-jsx@2.0.1(@babel/core@7.29.7)':
     dependencies:
-      '@babel/helper-module-imports': 7.28.6
+      '@babel/helper-module-imports': 7.29.7
       '@babel/helper-plugin-utils': 7.29.7
       '@babel/plugin-syntax-jsx': 7.29.7(@babel/core@7.29.7)
       '@babel/template': 7.29.7
@@ -15666,7 +15667,7 @@ snapshots:
   solid-refresh@0.6.3(solid-js@1.9.13):
     dependencies:
       '@babel/generator': 7.29.7
-      '@babel/helper-module-imports': 7.28.6
+      '@babel/helper-module-imports': 7.29.7
       '@babel/types': 7.29.7
       solid-js: 1.9.13
     transitivePeerDependencies:
@@ -16699,6 +16700,8 @@ snapshots:
       stackback: 0.0.2
 
   wildcard@2.0.1: {}
+
+  workerpool@9.3.4: {}
 
   wrap-ansi@6.2.0:
     dependencies:
