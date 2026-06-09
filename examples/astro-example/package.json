@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@astrojs/react": "^5.0.7",
-    "@types/react": "^19.2.16",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "astro": "^6.4.4",
     "unplugin-stylex": "workspace:*"
