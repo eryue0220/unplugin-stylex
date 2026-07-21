@@ -117,7 +117,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.5.3",
     "@changesets/changelog-github": "^0.7.0",
-    "@changesets/cli": "^2.31.0",
+    "@changesets/cli": "^2.31.1",
     "@types/node": "^26.1.1",
     "@vitest/coverage-v8": "^4.0.15",
     "babel-plugin-syntax-hermes-parser": "^0.36.1",
