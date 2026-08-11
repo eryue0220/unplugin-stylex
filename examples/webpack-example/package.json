@@ -12,7 +12,7 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "babel-loader": "^10.1.1",
-    "html-webpack-plugin": "^5.6.7",
+    "html-webpack-plugin": "^5.6.8",
     "unplugin-stylex": "workspace:*",
     "webpack": "^5.109.2",
     "webpack-cli": "^7.2.2",
