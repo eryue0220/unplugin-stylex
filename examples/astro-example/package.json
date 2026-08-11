@@ -15,7 +15,7 @@
     "@astrojs/react": "^6.0.2",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
-    "astro": "^7.1.6",
+    "astro": "^7.2.0",
     "unplugin-stylex": "workspace:*"
   }
 }
