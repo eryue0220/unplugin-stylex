@@ -16,7 +16,7 @@
     "@farmfe/core": "^1.7.11",
     "@farmfe/plugin-react": "^1.2.6",
     "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.4",
+    "@types/react-dom": "^19.2.5",
     "react-refresh": "^0.18.0",
     "unplugin-stylex": "workspace:*"
   }
