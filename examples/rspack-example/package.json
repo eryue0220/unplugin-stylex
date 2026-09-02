@@ -11,8 +11,8 @@
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
-    "@rspack/cli": "^2.1.10",
-    "@rspack/core": "^2.1.10",
+    "@rspack/cli": "^2.2.1",
+    "@rspack/core": "^2.2.1",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.5",
     "html-webpack-plugin": "^5.6.8",
