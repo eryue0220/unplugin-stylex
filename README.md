@@ -1,4 +1,9 @@
-# unplugin-stylex &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/eryue0220/unplugin-stylex/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/unplugin-stylex.svg?style=flat)](https://www.npmjs.com/package/unplugin-stylex)
+# unplugin-stylex  
+
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/eryue0220/unplugin-stylex/blob/main/LICENSE)
+[![CI](https://github.com/eryue0220/unplugin-stylex/actions/workflows/ci.yml/badge.svg)](https://github.com/eryue0220/unplugin-stylex/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/unplugin-stylex.svg?style=flat)](https://www.npmjs.com/package/unplugin-stylex)
+[![npm downloads](https://img.shields.io/npm/dm/unplugin-stylex.svg)](https://www.npmjs.com/package/unplugin-stylex)
 
 `unplugin-stylex` brings StyleX transform support to multiple bundlers via [unplugin](https://github.com/unjs/unplugin).
 
