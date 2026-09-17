@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - ".changeset/**"
+      - "!.changeset/README.md"
+      - "!.changeset/config.json"
 
 jobs:
   release:
@@ -20,7 +24,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup PNPM
-        uses: pnpm/action-setup@v6.0.10
+        uses: pnpm/action-setup@v6.1.0
 
       - name: Setup Node
         uses: actions/setup-node@v7
@@ -42,16 +46,15 @@ jobs:
         id: changesets
         uses: changesets/action@v2
         with:
-          version: pnpm run changeset:version
-          commit: "chore: Update version for release"
-          title: "chore: Update version for release"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          version-script: pnpm run changeset:version
+          commit-message: "chore: Update version for release"
+          pr-title: "chore: Update version for release"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to npm (Trusted Publishing)
-        if: steps.changesets.outputs.hasChangesets == 'false'
+        if: steps.changesets.outputs.has-changesets == 'false'
         run: pnpm run changeset:release
 
       - name: Publish to JSR
-        if: steps.changesets.outputs.hasChangesets == 'false'
+        if: steps.changesets.outputs.has-changesets == 'false'
         run: pnpm run jsr
