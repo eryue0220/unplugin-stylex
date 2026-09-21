@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import stylexVitePlugin from 'unplugin-stylex/vite'
 import { defineConfig } from 'vite'
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   server: {
     port: 3000,
   },
@@ -16,7 +16,7 @@ export default defineConfig({
   plugins: [
     {
       ...stylexVitePlugin({
-        dev: true,
+        dev: command === 'serve',
         stylex: {
           useCSSLayers: true,
           genConditionalClasses: true,
@@ -28,4 +28,4 @@ export default defineConfig({
     tanstackStart(),
     react(),
   ],
-})
+}))

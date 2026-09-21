@@ -1,10 +1,27 @@
-import { readFileSync } from 'node:fs'
+import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { describe, expect, it } from 'vitest'
+import { beforeAll, describe, expect, it } from 'vitest'
 import { buildExample, checkCSSProperties, getCSSFromExample } from '../utils/css-test-helpers'
 
 describe('tanstack-router-example', () => {
   const exampleDir = join(process.cwd(), 'examples', 'tanstack-router-example')
+
+  beforeAll(() => {
+    buildExample(exampleDir, 'npm run build')
+  })
+
+  it('does not ship development metadata or runtime CSS injection', () => {
+    const assets = join(exampleDir, 'dist/assets')
+    const javascript = readdirSync(assets)
+      .filter((file) => file.endsWith('.js'))
+      .map((file) => readFileSync(join(assets, file), 'utf-8'))
+      .join('\n')
+    expect(javascript.includes('src/routes/index.tsx:')).toBe(false)
+    expect(javascript.includes('src/routes/details.tsx:')).toBe(false)
+    expect(javascript.includes('index__styles')).toBe(false)
+    expect(javascript.includes('data-stylex')).toBe(false)
+    expect(javascript.includes('.x11s8qkn{background-color:#d6336c}')).toBe(false)
+  })
 
   it('should have vite.config.ts', () => {
     const configPath = join(exampleDir, 'vite.config.ts')
@@ -28,8 +45,6 @@ describe('tanstack-router-example', () => {
   })
 
   it('should generate CSS with expected styles for .main class', async () => {
-    buildExample(exampleDir, 'npm run build')
-
     const css = getCSSFromExample(exampleDir)
     expect(css).toBeTruthy()
     expect(css!.length).toBeGreaterThan(0)

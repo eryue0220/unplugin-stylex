@@ -1,10 +1,28 @@
-import { readFileSync } from 'node:fs'
+import { execFileSync } from 'node:child_process'
+import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { describe, expect, it } from 'vitest'
+import { beforeAll, describe, expect, it } from 'vitest'
 import { buildExample, checkCSSProperties, getCSSFromExample } from '../utils/css-test-helpers'
 
 describe('tanstack-start-example', () => {
   const exampleDir = join(process.cwd(), 'examples', 'tanstack-start-example')
+
+  beforeAll(() => {
+    buildExample(exampleDir, 'npm run build')
+  })
+
+  it('does not ship development metadata or runtime CSS injection', () => {
+    const assets = join(exampleDir, 'dist/client/assets')
+    const javascript = readdirSync(assets)
+      .filter((file) => file.endsWith('.js'))
+      .map((file) => readFileSync(join(assets, file), 'utf-8'))
+      .join('\n')
+    expect(javascript.includes('src/routes/index.tsx:')).toBe(false)
+    expect(javascript.includes('src/routes/details.tsx:')).toBe(false)
+    expect(javascript.includes('index__styles')).toBe(false)
+    expect(javascript.includes('data-stylex')).toBe(false)
+    expect(javascript.includes('.x11s8qkn{background-color:#d6336c}')).toBe(false)
+  })
 
   it('should have vite.config.ts', () => {
     const configPath = join(exampleDir, 'vite.config.ts')
@@ -28,7 +46,6 @@ describe('tanstack-start-example', () => {
   })
 
   it('should generate CSS with expected styles for .main class', async () => {
-    buildExample(exampleDir, 'npm run build')
     const css = getCSSFromExample(exampleDir, 'dist/client/assets')
     expect(css).toBeTruthy()
     expect(css!.length).toBeGreaterThan(0)
@@ -73,5 +90,25 @@ describe('tanstack-start-example', () => {
     expect(cardStyles.matched.padding).toBe(true)
     expect(cardStyles.matched['border-radius']).toBe(true)
     expect(cardStyles.matched.color).toBe(true)
+  })
+  it('serves SSR routes with matching styles and dynamic CSS variables', () => {
+    execFileSync(process.execPath, [join(process.cwd(), 'test/utils/check-vite-preview.mjs')], {
+      cwd: exampleDir,
+      stdio: 'inherit',
+      timeout: 20_000,
+    })
+  })
+})
+
+// Build separately to exercise resolved CLI overrides as well as SSR stylesheet URLs.
+describe('tanstack-start-example under a base path', () => {
+  it('serves SSR styles from a custom assets directory', () => {
+    const exampleDir = join(process.cwd(), 'examples', 'tanstack-start-example')
+    buildExample(exampleDir, 'npm run build -- --base /example/ --assetsDir static')
+    execFileSync(process.execPath, [join(process.cwd(), 'test/utils/check-vite-preview.mjs'), '/example/', 'static'], {
+      cwd: exampleDir,
+      stdio: 'inherit',
+      timeout: 20_000,
+    })
   })
 })

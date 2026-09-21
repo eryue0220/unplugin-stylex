@@ -4,7 +4,7 @@ import { getAliases, isDevelopment } from '../utils'
 export function getOptions(options: UnpluginStylexOptions & { framework: string }): Required<UnpluginStylexOptions> {
   const projectAliases = getAliases(options.framework)
   const stylex = options.stylex || ({} as StylexOptions)
-  const isDev = options.dev || isDevelopment
+  const isDev = options.dev ?? isDevelopment()
 
   return {
     ...options,

@@ -1,3 +1,4 @@
+import stylexCssUrl from 'virtual:stylex-css-url'
 import { createRootRoute, HeadContent, Outlet, Scripts } from '@tanstack/react-router'
 
 export const Route = createRootRoute({
@@ -17,7 +18,7 @@ export const Route = createRootRoute({
     links: [
       {
         rel: 'stylesheet',
-        href: '/assets/stylex.css',
+        href: stylexCssUrl,
       },
     ],
   }),

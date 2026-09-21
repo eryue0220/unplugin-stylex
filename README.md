@@ -243,3 +243,28 @@ type UnpluginStylexOptions = {
 
 - [@stylexjs/rollup-plugin](https://github.com/facebook/stylex/tree/main/packages/rollup-plugin)
 - [vite-plugin-stylex](https://github.com/HorusGoul/vite-plugin-stylex)
+
+### TanStack Start / Vite SSR
+
+Run StyleX before TanStack's route splitting by setting `enforce: 'pre'` on the StyleX plugin.
+Use `defineConfig(({ command }) => ...)` with `dev: command === 'serve'` so production builds
+extract CSS without runtime injection or debug metadata.
+
+SSR frameworks that render their own HTML can import the generated stylesheet URL:
+
+```tsx
+import stylexCssUrl from 'virtual:stylex-css-url'
+
+// In the root route's head configuration:
+links: [{ rel: 'stylesheet', href: stylexCssUrl }]
+```
+
+The URL follows Vite's resolved `base`, `build.assetsDir`, and the plugin's `stylex.filename`.
+For TypeScript, add a declaration in an included `.d.ts` file:
+
+```ts
+declare module 'virtual:stylex-css-url' {
+  const href: string
+  export default href
+}
+```

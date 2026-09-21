@@ -9,7 +9,7 @@ import * as path from 'node:path'
 
 import type { UnpluginFactory, UnpluginInstance } from 'unplugin'
 import { createUnplugin } from 'unplugin'
-import type { BuildOptions } from 'vite'
+import type { BuildOptions, ResolvedConfig } from 'vite'
 
 import { buildStylexRules } from './core/build'
 import { getOptions } from './core/options'
@@ -103,11 +103,21 @@ export const unpluginFactory: UnpluginFactory<UnpluginStylexOptions | undefined>
     },
 
     vite: {
-      config(config) {
+      configResolved(config: ResolvedConfig) {
         viteConfig = {
           build: config.build,
           base: config.base,
         }
+      },
+
+      resolveId(id: string) {
+        if (id === 'virtual:stylex-css-url') return '\0virtual:stylex-css-url'
+      },
+
+      load(id: string) {
+        if (id !== '\0virtual:stylex-css-url') return
+        const fileName = getStylexAssetFileName(stylexFilename, viteConfig?.build?.assetsDir ?? 'assets')
+        return `export default ${JSON.stringify(getStylexPublicPath(viteConfig?.base, fileName))}`
       },
 
       configureServer(server) {
