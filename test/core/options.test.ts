@@ -2,16 +2,26 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { getOptions } from '../../src/core/options'
 
 describe('getOptions', () => {
-  const originalEnv = process.env.NODE_ENV
-  const originalBabelEnv = process.env.BABEL_ENV
-
   beforeEach(() => {
     vi.clearAllMocks()
   })
 
   afterEach(() => {
-    process.env.NODE_ENV = originalEnv
-    process.env.BABEL_ENV = originalBabelEnv
+    vi.unstubAllEnvs()
+  })
+
+  it.each([
+    ['production', undefined, false],
+    ['development', undefined, true],
+    [undefined, undefined, true],
+    ['development', 'production', false],
+    ['production', 'development', true],
+  ])('detects mode with NODE_ENV=%s and BABEL_ENV=%s', (nodeEnv, babelEnv, dev) => {
+    vi.stubEnv('NODE_ENV', nodeEnv)
+    vi.stubEnv('BABEL_ENV', babelEnv)
+    const options = getOptions({ framework: 'vite' })
+    expect(options.dev).toBe(dev)
+    expect(options.stylex.runtimeInjection).toBe(dev)
   })
 
   it('should return default options when no options provided', () => {
@@ -28,7 +38,7 @@ describe('getOptions', () => {
   it('should merge provided options with defaults', () => {
     const customOptions = {
       framework: 'vite',
-      dev: true, // Use true to avoid fallback to isDevelopment
+      dev: true,
       validExts: ['.ts', '.tsx'],
       stylex: {
         filename: 'custom.css',
@@ -50,10 +60,8 @@ describe('getOptions', () => {
     const devOptions = getOptions({ framework: 'vite', dev: true })
     expect(devOptions.dev).toBe(true)
 
-    // Note: when dev is false, it falls back to isDevelopment which is evaluated at module load time
-    // So we test that dev: true works correctly
-    const prodOptions = getOptions({ framework: 'vite', dev: true })
-    expect(prodOptions.dev).toBe(true)
+    const prodOptions = getOptions({ framework: 'vite', dev: false })
+    expect(prodOptions.dev).toBe(false)
   })
 
   it('should use default validExts regex when not provided', () => {
@@ -66,16 +74,7 @@ describe('getOptions', () => {
     const devOptions = getOptions({ framework: 'vite', dev: true })
     expect(devOptions.stylex.runtimeInjection).toBe(true)
 
-    // Test with explicit dev: false - runtimeInjection defaults to isDev
-    // Since isDev = options.dev || isDevelopment, when dev is false it uses isDevelopment
-    // So we test that it respects explicit runtimeInjection override
-    const prodOptions = getOptions({
-      framework: 'vite',
-      dev: false,
-      stylex: {
-        runtimeInjection: false,
-      },
-    })
+    const prodOptions = getOptions({ framework: 'vite', dev: false })
     expect(prodOptions.stylex.runtimeInjection).toBe(false)
   })
 

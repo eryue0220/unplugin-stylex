@@ -8,7 +8,8 @@ const __dirname = path.dirname(__filename)
 export const config = {
   entryPoints: [path.resolve(__dirname, '..', 'src/index.tsx')],
   bundle: true,
-  outfile: 'dist/output.js',
+  outdir: 'dist',
+  entryNames: 'output',
   plugins: [
     stylexEsbuildPlugin({
       stylex: {
